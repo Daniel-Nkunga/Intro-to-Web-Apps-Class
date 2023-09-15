@@ -1,6 +1,7 @@
-/* .page-wrapper {
+.page-wrapper {
     position: relative;
     display: grid;
+    /* Three columns */
     grid-template-columns: 1fr 1fr 1fr;
     grid-column-gap: 32px;
     border: 1px solid transparent;
@@ -9,6 +10,7 @@
     overflow: hidden;
   }
   
+  /* Two faux columns */
   .page-wrapper:before,
   .page-wrapper:after {
     position: absolute;
@@ -22,31 +24,8 @@
     left: 0;
     border-right: 1px solid #DADCE0;
   }
-
+  
   .page-wrapper:after {
     right: 0;
     border-left: 1px solid #DADCE0;
-  } */
-
-  .page-wrapper {
-    position: relative;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-column-gap: 32px;
-    border: 1px solid transparent;
-    border-top: 1px solid #DADCE0;
-    border-bottom: 1px solid #DADCE0;
-    overflow: hidden;
-  }
-  
-  .page-wrapper:before {
-    box-sizing: border-box;
-    position: absolute;
-    top: 0;
-    height: 100%;
-    content: '';
-    left: calc(33.3% - 5.3px);
-    width: calc(33.3% + 10.7px);
-    border-left: 1px solid #DADCE0;
-    border-right: 1px solid #DADCE0;
   }
