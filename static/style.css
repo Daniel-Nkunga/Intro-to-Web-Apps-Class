@@ -1,31 +1,77 @@
-.page-wrapper {
-    position: relative;
-    display: grid;
-    /* Three columns */
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-column-gap: 32px;
-    border: 1px solid transparent;
-    border-top: 1px solid #DADCE0;
-    border-bottom: 1px solid #DADCE0;
-    overflow: hidden;
-  }
-  
-  /* Two faux columns */
-  .page-wrapper:before,
-  .page-wrapper:after {
-    position: absolute;
-    top: 0;
-    height: 100%;
-    content: '';
-    width: calc(33.3% - 4px);
-  }
-  
-  .page-wrapper:before {
-    left: 0;
-    border-right: 1px solid #DADCE0;
-  }
-  
-  .page-wrapper:after {
-    right: 0;
-    border-left: 1px solid #DADCE0;
-  }
+*{
+    font-family: 'Playfair Display';
+    margin: 0px;
+    text-align: center;
+}
+h1, h2, h3, section{
+    text-align: center;
+}
+h1{
+    border-color: black;
+    border-style: solid;
+    border-width: 8px 0px 8px 0px;
+    font-size: 121px;
+}
+h2{
+    border-color: black;
+    border-style: solid;
+    border-width: 0px 0px 2px 0px;
+    font-size: 24px;
+}
+h3{
+    font-size: 24px;
+}
+[role = "article"]{
+    border-color: black;
+    border-style: solid;
+    border-width: 0px 0px 2px 0px;
+    /* border-width: 2px; */
+    font-size: 24px;
+}
+.preamble{
+    width: 60%;
+}
+[role = "article"]{
+    font-size: 14px;
+}
+.explanation{
+    width: 60%;
+    margin-left: 40%;
+    margin-right: 0%;
+}
+.participation{
+    width: 50%;
+    float: left;
+    border: 0px 0px 0px 0px;
+}
+.benefits{
+    width: 50%;
+    text-align: right;
+    display: block;
+    float: right;
+}
+.requirements{
+    float: left;
+    text-align: 20%;
+}
+.requirements p{
+    column-count: 3;
+    width: 80%;
+    display: block;
+}
+.design-selection{
+    /* width: 15%; */
+    float: right;
+    display: block;
+}
+footer{
+    display: block;
+    float: right;
+    width: 15%;
+}
+.design-archives{
+    display: none;
+}
+.zen-resources{
+    display: none;
+}
