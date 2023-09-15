@@ -23,21 +23,6 @@ h2{
     border-color: black;
     border-style: solid;
 }
-
-/*Article Formating*/
-[role = "article"]{
-    font-size: 24px;
-    column-count: 3;
-    column-rule: solid black 4px;
-    column-gap: 36px;
-}
-.column1{
-    width: 20%;
-}
-h3{
-    text-align: left;
-    font-size: 36px;
-}
-.summary{
-    column-span: none;
+.intro{
+    text-align: center;
 }
