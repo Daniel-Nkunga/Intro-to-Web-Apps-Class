@@ -1,0 +1,28 @@
+*{
+    font-family: 'Comfortaa', sans-serif;
+    color: black;
+    font-size: 12px;
+    text-decoration: none;
+    margin: 0px;
+}
+.web-display{
+    background-color: lightgrey;
+    width: 75%;
+    padding: 5px 50px 32px 32px;
+    /* margin: 0px; */
+    border-radius: 32px;
+}
+h2{
+    font-size: 2em;
+    text-decoration: .1em solid underline;
+}
+h3{
+    font-size: .75em;
+    margin: 0px;
+    font-weight: 100;
+}
+p{
+    width: 60%;
+    margin: 1em;
+    line-height: 1.25em;
+}
