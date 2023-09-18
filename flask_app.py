@@ -42,16 +42,20 @@ def serve_valid():
 
 @app.route('/quiz', methods=['GET'])
 def quiz():
-    if "quiz" in request.args:
-        num = int(request.args["quiz"])
-        if num == 1:
-            return send_from_directory('static', 'question1.html')
-        elif num == 2:
-            return send_from_directory('static', 'question2.html')
-        # Add more conditions for additional quiz questions if needed
-        else: 
-            return "Invalid quiz question number."
-    return "No quiz question specified."
+    num = request.args.get("quiz", None)  # Get the "quiz" query parameter or None if not provided
+    if num is None:
+        # If "quiz" parameter is not provided, redirect to question 1 by default
+        return redirect(url_for("quiz", quiz=1))
+    
+    num = int(num)  # Convert the "quiz" parameter to an integer
+
+    if num == 1:
+        return send_from_directory('static', 'question1.html')
+    elif num == 2:
+        return send_from_directory('static', 'question2.html')
+    # Add more conditions for additional quiz questions if needed
+    else: 
+        return "Invalid quiz question number."
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=4208)
