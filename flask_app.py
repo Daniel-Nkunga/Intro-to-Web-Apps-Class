@@ -40,22 +40,42 @@ def serve_good():
 def serve_valid():
     return send_from_directory('static', 'HelloThere.html')
 
+# def quiz():
+#     num = request.args.get("quiz", None) 
+#     if num is None:
+#         return redirect(url_for("quiz", quiz=1))
+#     num = int(num) 
+#     if num >= 1 and num <= 8: 
+#         next_question = num + 1
+#         return redirect(url_for("quiz", quiz=next_question))
+#     elif num == 9:
+#         return "You have completed the quiz. Thank you!"
+#     else: 
+#         return "Invalid quiz question number."
+    
 @app.route('/quiz', methods=['GET'])
 def quiz():
-    num = request.args.get("quiz", None)  # Get the "quiz" query parameter or None if not provided
-    if num is None:
-        # If "quiz" parameter is not provided, redirect to question 1 by default
-        return redirect(url_for("quiz", quiz=1))
-    
-    num = int(num)  # Convert the "quiz" parameter to an integer
+    num = session.get("quiz", 1)  # Get the current question number from the session or default to 1
 
-    if num == 1:
-        return send_from_directory('static', 'question1.html')
-    elif num == 2:
-        return send_from_directory('static', 'question2.html')
-    # Add more conditions for additional quiz questions if needed
-    else: 
+    if num >= 1 and num <= 8:  # Assuming you have questions from 1 to 8
+        return send_from_directory('static', f'question{num}.html')
+    elif num == 9:
+        return "You have completed the quiz. Thank you!"
+    else:
         return "Invalid quiz question number."
+
+@app.route('/submit', methods=['POST'])
+def submit():
+    # Process the submitted answer here and determine the next question number
+    # For example, you can check the submitted answer and increment the question number
+
+    num = session.get("quiz", 1)  # Get the current question number from the session or default to 1
+    if num < 8:  # Assuming you have questions from 1 to 8
+        num += 1  # Go to the next question
+
+    session["quiz"] = num  # Update the session with the new question number
+
+    return redirect(url_for("quiz"))
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=4208)
