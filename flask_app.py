@@ -40,42 +40,45 @@ def serve_good():
 def serve_valid():
     return send_from_directory('static', 'HelloThere.html')
 
-# def quiz():
-#     num = request.args.get("quiz", None) 
-#     if num is None:
-#         return redirect(url_for("quiz", quiz=1))
-#     num = int(num) 
-#     if num >= 1 and num <= 8: 
-#         next_question = num + 1
-#         return redirect(url_for("quiz", quiz=next_question))
-#     elif num == 9:
-#         return "You have completed the quiz. Thank you!"
-#     else: 
-#         return "Invalid quiz question number."
-    
+questions = [
+    'question1.html',
+    'question2.html',
+    'question3.html',
+    'question4.html',
+    'question5.html',
+    'question6.html',
+    'question7.html',
+    'question8.html',
+    'question9.html',
+]
+
 @app.route('/quiz', methods=['GET'])
 def quiz():
-    num = session.get("quiz", 1)  # Get the current question number from the session or default to 1
-
-    if num >= 1 and num <= 8:  # Assuming you have questions from 1 to 8
-        return send_from_directory('static', f'question{num}.html')
+    num = request.args.get("quiz", None)
+    if num is None:
+        return redirect(url_for("quiz", quiz=1))
+    num = int(num)
+    if num == 1:
+        num = num + 1
+        return send_from_directory('static', 'question1.html')
+    elif num == 2:
+        return send_from_directory('static', 'question2.html')
+    elif num == 3:
+        return send_from_directory('static', 'question3.html')
+    elif num == 4:
+        return send_from_directory('static', 'question4.html')
+    elif num == 5:
+        return send_from_directory('static', 'question5.html')
+    elif num == 6:
+        return send_from_directory('static', 'question6.html')
+    elif num == 7:
+        return send_from_directory('static', 'question7.html')
+    elif num == 8:
+        return send_from_directory('static', 'question8.html')
     elif num == 9:
-        return "You have completed the quiz. Thank you!"
-    else:
+        return send_from_directory('static', 'question9.html')
+    else: 
         return "Invalid quiz question number."
-
-@app.route('/submit', methods=['POST'])
-def submit():
-    # Process the submitted answer here and determine the next question number
-    # For example, you can check the submitted answer and increment the question number
-
-    num = session.get("quiz", 1)  # Get the current question number from the session or default to 1
-    if num < 8:  # Assuming you have questions from 1 to 8
-        num += 1  # Go to the next question
-
-    session["quiz"] = num  # Update the session with the new question number
-
-    return redirect(url_for("quiz"))
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=4208)
