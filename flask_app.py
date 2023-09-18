@@ -59,7 +59,6 @@ def quiz():
         return redirect(url_for("quiz", quiz=1))
     num = int(num)
     if num == 1:
-        num = num + 1
         return send_from_directory('static', 'question1.html')
     elif num == 2:
         return send_from_directory('static', 'question2.html')

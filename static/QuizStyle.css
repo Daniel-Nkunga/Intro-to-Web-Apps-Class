@@ -15,3 +15,14 @@ input[type = radio]{
 input[type = checkbox]{
     background-color: #5C9EAD;
 }
+form{
+    background-color: #EEEEEE;
+    width: 75%;
+    padding: 5px 50px 16px 32px;
+    border-radius: 32px;
+    margin: 2em;
+    border: 4px solid #326273;
+}
+input[type = submit]{
+    border-radius: 8px;
+}
