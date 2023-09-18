@@ -1,4 +1,5 @@
-from flask import Flask, send_from_directory
+# from flask import Flask, send_from_directory
+from flask import *
 
 app = Flask(__name__)
 app.secret_key = '88'
@@ -44,9 +45,9 @@ def quiz():
     if "quiz" in request.args:
         num = int(request.args["quiz"])
         if num == 1:
-            return send_from_directory('static', 'quiz_question1.html')
+            return send_from_directory('static', 'question1.html')
         elif num == 2:
-            return send_from_directory('static', 'quiz_question2.html')
+            return send_from_directory('static', 'question2.html')
         # Add more conditions for additional quiz questions if needed
         else: 
             return "Invalid quiz question number."
