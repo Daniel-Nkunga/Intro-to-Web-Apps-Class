@@ -26,3 +26,7 @@ p{
     margin: 1em;
     line-height: 1.25em;
 }
+img{
+    float: right;
+    width: 25%
+}
