@@ -30,5 +30,6 @@ def serve_other():
 def serve_bad():
     return send_from_directory('static', 'BadCSS.html')
 
+
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=4208)
