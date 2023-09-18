@@ -34,5 +34,9 @@ def serve_bad():
 def serve_good():
     return send_from_directory('static', 'CSS Zen Garden_ The Beauty of CSS Design.html')
 
+@app.route('/valid')
+def serve_valid():
+    return send_from_directory('static', 'HelloThere.html')
+
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=4208)
