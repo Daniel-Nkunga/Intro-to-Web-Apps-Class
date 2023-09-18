@@ -1,6 +1,7 @@
 from flask import Flask, send_from_directory
 
 app = Flask(__name__)
+app.secret_key = '88'
 
 @app.route('/')
 def serve_home():
@@ -37,6 +38,19 @@ def serve_good():
 @app.route('/valid')
 def serve_valid():
     return send_from_directory('static', 'HelloThere.html')
+
+@app.route('/quiz', methods=['GET'])
+def quiz():
+    if "quiz" in request.args:
+        num = int(request.args["quiz"])
+        if num == 1:
+            return send_from_directory('static', 'quiz_question1.html')
+        elif num == 2:
+            return send_from_directory('static', 'quiz_question2.html')
+        # Add more conditions for additional quiz questions if needed
+        else: 
+            return "Invalid quiz question number."
+    return "No quiz question specified."
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=4208)
