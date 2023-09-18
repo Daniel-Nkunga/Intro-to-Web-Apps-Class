@@ -31,7 +31,7 @@ def serve_bad():
     return send_from_directory('static', 'BadCSS.html')
 
 @app.route('/good')
-def serve_bad():
+def serve_good():
     return send_from_directory('static', 'CSS Zen Garden_ The Beauty of CSS Design.html')
 
 if __name__ == '__main__':
