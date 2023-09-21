@@ -15,6 +15,12 @@
             <input type="checkbox" id="device4" name="device4" value="Retro">
             <label for="device4">Retro</label><br>
             <input type="submit" value="Submit">
+            {% for name in previtems %}
+                {% if "quiz" not in name %}
+                    <input type="hidden" name="{{name}}" value="{{previtems[name]}}">
+                {% endif %}
+            {% endfor %}
+            <input type="hidden" name="quiz" value="2">
         </form>
     </body>
 </html>

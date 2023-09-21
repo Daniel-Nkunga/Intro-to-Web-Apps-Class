@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <script>
+            mothWidth = 100;
+            function func(){
+                elem = document.getElementById("moth");
+                mothWidth += 10;
+                elem.style.width = mothWidth+"px";
+            }     
+            function calc(){
+                num1 = parseInt(document.getElementById("num1").value);
+                num2 = parseInt(document.getElementById("num2").value);
+                document.getElementById("answer").innerHTML = num1 + num2;
+
+            }   
+        </script>
+    </head>
+    <body onload = "func()">
+        <h1>Hello, World! :D</h1>
+        <p>This is a webstie! Isn't that cool?</p>
+        <img src = "\static\Images\BiositeLogo.png" alt = "* * M O T H * *"  id = "moth" width = "100px" onclick = "func()"><br><br>
+
+        <input type = "text" id = "num1" input type = "text" id = "num2"> = 
+        <span id = "answer">0</span><br>
+        <input type = "button" id = "calc" value =  "calc" onclick = "calc()"><br>
+
+    </body>
+    
+</html>

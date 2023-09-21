@@ -15,6 +15,12 @@
             <input type="radio" id="amount4" name="amount4" value="26+ Hours">
             <label for="device1">26+</label><br>
             <input type="submit" value="Submit">
+            {% for name in previtems %}
+                {% if "quiz" not in name %}
+                    <input type = "hidden" name = "{{name}}" value = "{{previtems[name]}}">
+                {% endif %}
+            {% endfor %}
+            <input type = "hidden" name = "quiz" value = "3">
         </form>
     </body>
 </html>

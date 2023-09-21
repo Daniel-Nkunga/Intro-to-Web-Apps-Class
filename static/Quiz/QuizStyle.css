@@ -26,3 +26,6 @@ form{
 input[type = submit]{
     border-radius: 8px;
 }
+input:hover{
+    background-color:#5C9EAD;
+}
