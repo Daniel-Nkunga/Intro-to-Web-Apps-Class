@@ -67,20 +67,20 @@ def serve_valid():
 #     else: 
 #         return "Invalid quiz question number."
 
-@app.route('/quiz', methods=['GET'])
-def generate_form():
-    previtems = {
-        'item1': 'value1',
-        'item2': 'value2',
-        'quiz_question': 'What is your name?',
-    }
+# @app.route('/quiz', methods=['GET'])
+# def generate_form():
+#     previtems = {
+#         'item1': 'value1',
+#         'item2': 'value2',
+#         'quiz_question': 'What is your name?',
+#     }
 
-    # Render a template containing your code
-    return render_template('form_template.html', previtems=previtems)
+#     # Render a template containing your code
+#     return render_template('form_template.html', previtems=previtems)
 
-@app.route('/example')
-def serve_example():
-    return send_from_directory('static', 'JScriptExample.html')
+# @app.route('/example')
+# def serve_example():
+#     return send_from_directory('static', 'JScriptExample.html')
 
 #Segment to be Quiz 1, Quiz 2, etc. 
 
@@ -100,6 +100,17 @@ def serve_example():
 #         num = int(request.args["quiz"])
 #         return render_template(f"question.html", previousitems=request.args)
 #     return render_template("question.html", question=question)
+
+@app.route('/quiz', methods=['GET', 'POST'])
+def wtf_quiz():
+    form = PopQuiz()
+    if form.validate_on_submit():
+        return redirected(url_for('passed')) return
+    render_template('quiz.html', form=form)
+
+@app.route('/passed')
+def passed():
+    return render_template('passed.html')
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=4208)
