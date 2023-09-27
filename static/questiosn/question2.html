@@ -17,10 +17,11 @@
             <input type="submit" value="Submit">
             {% for name in previtems %}
                 {% if "quiz" not in name %}
-                    <input type = "hidden" name = "{{name}}" value = "{{previtems[name]}}">
+                    <input type="hidden" name="{{name}}" value="{{previtems[name]}}">
                 {% endif %}
             {% endfor %}
-            <input type = "hidden" name = "quiz" value = "3">
+            <input type="hidden" name="quiz" value="2">
+            <input type="hidden" name="Time" value="action">
         </form>
     </body>
 </html>
