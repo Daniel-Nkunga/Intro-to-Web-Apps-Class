@@ -53,7 +53,7 @@ def quiz():
             question_content = question_file.read()
     except FileNotFoundError:
         return "Question not found"
-
+    
     return render_template('quiz.html', question_content=question_content)
 
 @app.route('/passed')
