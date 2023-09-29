@@ -24,7 +24,7 @@ function randomize() {
             let randomNumber;
             do {
                 randomNumber = Math.floor(Math.random() * 6) + 1;
-            } while ((i > 0 && grid[i - 1][j] === randomNumber) || (j > 0 && grid[i][j - 1] === randomNumber));         
+            } while ((i > 0 && grid[i - 1][j] === randomNumber) || (j > 0 && grid[i][j - 1] === randomNumber) || (j > 0 && i > 0 && grid[i - 1][j - 1] === randomNumber));         
             grid[i][j] = randomNumber;
             cell.textContent = randomNumber;
         }
