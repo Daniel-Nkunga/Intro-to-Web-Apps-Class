@@ -6,20 +6,26 @@ function setup() {
             cell.classList.add('cell');
             cell.id = `cell_${i}_${j}`;
             cell.addEventListener('click', () => {
-                cell.classList.toggle("highlight");
-                // alertCell(cell);
+                const startCell = document.getElementById(`cell_${i}_${j}`);
             });
             board.appendChild(cell);
         }
     }
-    randomize(); 
+    randomize();
+    repaint();
 }
 
 function randomize() {
+    const grid = [];
     for (let i = 0; i < 10; i++) {
+        grid[i] = [];
         for (let j = 0; j < 10; j++) {
             const cell = document.getElementById(`cell_${i}_${j}`);
-            const randomNumber = Math.floor(Math.random() * 6) + 1;
+            let randomNumber;
+            do {
+                randomNumber = Math.floor(Math.random() * 6) + 1;
+            } while ((i > 0 && grid[i - 1][j] === randomNumber) || (j > 0 && grid[i][j - 1] === randomNumber));         
+            grid[i][j] = randomNumber;
             cell.textContent = randomNumber;
         }
     }
@@ -56,7 +62,7 @@ function repaint() {
                     color = "purple";
                     break;
                 default:
-                    color = "white"; 
+                    color = "white";
                     break;
             }
             cell.style.backgroundColor = color;
