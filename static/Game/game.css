@@ -27,8 +27,8 @@ p{
     grid-template-columns: repeat(10, 1fr);
     grid-template-rows: repeat(10, 1fr);
     gap: 1px;
-    width: 400px;
-    height: 400px;
+    width: 600px;
+    height: 600px;
     border-collapse: collapse;
 
   }
@@ -37,6 +37,10 @@ p{
     height: 100%;
     background-color: #fff;
     border: 1px solid #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0px;
   }
   
   .cell.highlight {
