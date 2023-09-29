@@ -7,6 +7,8 @@ function setup() {
             cell.id = `cell_${i}_${j}`;
             cell.addEventListener('click', () => {
                 const startCell = document.getElementById(`cell_${i}_${j}`);
+                startCell.textContent = "0"; 
+                repaint(); 
             });
             board.appendChild(cell);
         }
@@ -61,6 +63,9 @@ function repaint() {
                 case 6:
                     color = "purple";
                     break;
+                case 0:
+                    color = "black";
+                    break;
                 default:
                     color = "white";
                     break;
@@ -69,3 +74,16 @@ function repaint() {
         }
     }
 }
+
+function highlight(cell){
+    const cellValue = cell.textContent;
+    cellValue = 0;
+    alertCell(cell)
+}
+
+function flood_fill(grid, x, y, target, replacement){
+    if(document.getElementById(`cell_${i}_${j}`) != target){
+        return;
+    }  
+    document.getElementById(`cell_${i}_${j}`) = replacement;
+} 
