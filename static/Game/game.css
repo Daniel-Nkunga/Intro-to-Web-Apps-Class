@@ -40,7 +40,7 @@ p{
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 0px;
+    font-size: 0px; /*No, I will not be looking into the better way to hide these numbers*/
   }
   
   .cell.highlight {
