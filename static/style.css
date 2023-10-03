@@ -2,76 +2,56 @@
     font-family: 'Playfair Display';
     margin: 0px;
     text-align: center;
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto;
+    grid-template-rows: auto auto auto auto auto auto auto auto auto;
+    grid-colu
+    gap: 12px;
 }
-h1, h2, h3, section{
-    text-align: center;
+.page-wrapper{
+    display: grid;
+    grid-template-areas: 
+    'header header header header header header'
+    'preamble preamble preamble preamble picture1 picture1'
+    'picture2 picture2 explaination explaination explaination explaination'
+    'participation participation participation participation benefits benefits'
+    'participation participation participation participation picture3 picture3'
+    'requirements requirements requirements requirements requirements requirements'
+    ;
 }
-h1{
-    border-color: black;
-    border-style: solid;
-    border-width: 8px 0px 8px 0px;
-    font-size: 121px;
+[role = "banner"]{
+    grid-area: header;
 }
-h2{
-    border-color: black;
-    border-style: solid;
-    border-width: 0px 0px 2px 0px;
-    font-size: 24px;
-}
-h3{
-    font-size: 24px;
-}
-[role = "article"]{
-    border-color: black;
-    border-style: solid;
-    border-width: 0px 0px 2px 0px;
-    /* border-width: 2px; */
-    font-size: 24px;
+.summary{
+    grid-area: summary;
 }
 .preamble{
-    width: 60%;
+    grid-area: preamble;
 }
-[role = "article"]{
-    font-size: 14px;
-}
-.explanation{
-    width: 60%;
-    margin-left: 40%;
-    margin-right: 0%;
+.explaination{
+    grid-area: explaination;
 }
 .participation{
-    width: 50%;
-    float: left;
-    border: 0px 0px 0px 0px;
+    grid-area: participation;
 }
 .benefits{
-    width: 50%;
-    text-align: right;
-    display: block;
-    float: right;
+    grid-area: benefits;
 }
 .requirements{
-    float: left;
-    text-align: 20%;
+    grid-area: requirements;
 }
-.requirements p{
-    column-count: 3;
-    width: 80%;
-    display: block;
+.extra1{
+    grid-area: picture1;
 }
-.design-selection{
-    /* width: 15%; */
-    float: right;
-    display: block;
+.extra2{
+    grid-area: picture2;
 }
-footer{
-    display: block;
-    float: right;
-    width: 15%;
+.extra3{
+    grid-area: picture3;
 }
-.design-archives{
+.sidebar{
     display: none;
 }
-.zen-resources{
+.design-archives{
     display: none;
 }

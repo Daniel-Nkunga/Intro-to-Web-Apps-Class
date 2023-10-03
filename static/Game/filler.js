@@ -7,7 +7,7 @@ function setup() {
             cell.id = `cell_${i}_${j}`;
             cell.addEventListener('click', () => {
                 const startCell = document.getElementById(`cell_${i}_${j}`);
-                startCell.textContent = "0"; 
+                highlight(startCell);
                 repaint(); 
             });
             board.appendChild(cell);
@@ -81,9 +81,28 @@ function highlight(cell){
     alertCell(cell)
 }
 
+function game_action(cell){
+    const cellValue = cell.textContent;
+    flood_fill(board, 0, 0, board[0][0], cellValue)
+    repaint();
+}
+
 function flood_fill(grid, x, y, target, replacement){
-    if(document.getElementById(`cell_${i}_${j}`) != target){
+    if(grid[x][y] != target){
         return;
     }  
-    document.getElementById(`cell_${i}_${j}`) = replacement;
+    grid[x][y] = replacement_color;
+
+   if (x > 0){
+    flood_fill(grid, x -1, y, target, replacement)
+   }
+   if (x < 10){
+    flood_fill(grid, x + 1, y, target, replacement)
+   }
+   if (y > 0){
+    flood_fill(grid, x, y - 1, target, replacement)
+   }
+   if(y < 0 ){
+    flood_fill(grid, x, y + 1, target, replacement)
+   }
 } 
