@@ -5,6 +5,7 @@ function setup() {
     for (let i = 0; i < 10; i++) {
         grid[i] = []; // Initialize grid
         for (let j = 0; j < 10; j++) {
+            // grid [i][j] = []
             const cell = document.createElement('div');
             cell.classList.add('cell');
             cell.id = `cell_${i}_${j}`;
