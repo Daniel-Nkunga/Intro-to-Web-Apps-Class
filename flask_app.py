@@ -62,7 +62,7 @@ def passed():
 
 @app.route('/game')
 def serve_game():
-    return send_from_directory('static\Game', 'Game.html')
+    return send_from_directory('static', 'Game.html')
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=4208)
