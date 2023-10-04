@@ -1,31 +1,59 @@
+let grid = [];
+
 function setup() {
     let board = document.getElementById("board");
     for (let i = 0; i < 10; i++) {
+        grid[i] = []; // Initialize grid
         for (let j = 0; j < 10; j++) {
             const cell = document.createElement('div');
             cell.classList.add('cell');
             cell.id = `cell_${i}_${j}`;
-            // cell.addEventListener('click', () => {
-            //     const clickedCell = document.getElementById(`cell_${i}_${j}`);
-            //     highlight(clickedCell);
-            // });
+            cell.addEventListener('click', (event) => {
+                if (event.ctrlKey) {
+                    const cellId = event.target.id;
+                    const cellValue = document.getElementById(cellId).textContent;
+                    alert(`Cell Value: ${cellValue}`);
+                }
+            });
             board.appendChild(cell);
         }
     }
-
-    // document.getElementById("botton1").addEventListener("click", floodFill(grid, 0, 0, 'cell_${i}_${j}', 1));
-
-    const colorButtons = document.querySelectorAll('.button');
-    colorButtons.forEach((button) => {
-        button.addEventListener('click', () => {
-            const color = button.getAttribute('data-color');
-            const targetColorCell = document.getElementById('cell_0_0');
-            const targetColor = parseInt(targetColorCell.textContent);
-            floodFill(grid, 0, 0, targetColor, parseInt(color));
-        });
-    });
     randomize();
     repaint();
+}
+
+function game() {
+    setup();
+    while (!isGameOver()) {
+        const colorButtons = document.querySelectorAll('.button');
+        colorButtons.forEach((button) => {
+            button.addEventListener('click', () => {
+                const color = button.getAttribute('data-color');
+                const targetColorCell = document.getElementById('cell_0_0');
+                const targetColor = parseInt(targetColorCell.textContent);
+                floodFill(grid, 0, 0, targetColor, parseInt(color));
+                repaint();
+            });
+        });
+    }
+}
+
+function isGameOver() {
+    let colorCount = [];
+    for (let i = 0; i < 10; i++) {
+        for (let j = 0; j < 10; j++) {
+            const cell = document.getElementById(`cell_${i}_${j}`);
+            if (!colorCount.includes(cell.id)) {
+                colorCount.push(cell.id);
+            }
+        }
+    }
+    if (colorCount.length >= 2) {
+        return true;
+    } else {
+        console.log("Not over yet");
+        return false;
+    }
 }
 
 function randomize() {

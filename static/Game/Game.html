@@ -1,31 +1,32 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="/static/Game/game.css">
-        <link href='https://fonts.googleapis.com/css?family=Comfortaa' rel='stylesheet'>
-        <script src="/static/Game/filler.js"></script>
-        <title>Filler</title>
-    </head>
-    <body onload = "setup()">
-        <h1>Filler!</h1>
-        <h2>Filler is a Game Pidgeon fame for IOS where the goal is to get the most colors as possible. Read more about the rules at the bottom of the page</h2>
-        <div id = "container">
-            <div id="board"></div>
-        </div>
-        <div class = "colorPicker">
-            <h2>Choose a Color!</h2>
-            <button class = "button" id = "button1" data-color = "1"></button>
-            <button class = "button" id = "button2" data-color = "2"></button>
-            <button class = "button" id = "button3" data-color = "3"></button>
-            <button class = "button" id = "button4" data-color = "4"></button>
-            <button class = "button" id = "button5" data-color = "5"></button>
-            <button class = "button" id = "button6" data-color = "6"></button>
-        </div>
-        <h2>How to play Filler</h2>
-        <p>- To win, get the majority of the board under your control<br>
-        - You can either choose a tile on the board or select the from the buttons at the bottom of the board to claim a color<br>
-        - You CANNOT chose a color that is already chosen by a player<br> 
-        </p>
-    </body>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/Game/game.css">
+    <link href='https://fonts.googleapis.com/css?family=Comfortaa' rel='stylesheet'>
+    <script src="/static/Game/filler.js"></script>
+    <title>Filler</title>
+</head>
+<body onload="game()">
+<h1>Filler!</h1>
+<h2>Filler is a Game Pidgeon game for iOS where the goal is to get the most colors as possible. Read more about the rules at the bottom of the page</h2>
+<div id="container">
+    <div id="board"></div>
+</div>
+<div class="colorPicker">
+    <h2>Choose a Color!</h2>
+    <button class="button" id="button1" onclick="floodFill(grid, 0, 0, 'cell_0_0', 1); repaint(); console.log('Clicked');">Color 1</button>
+    <button class="button" id="button2" data-color="2">Color 2</button>
+    <button class="button" id="button3" data-color="3">Color 3</button>
+    <button class="button" id="button4" data-color="4">Color 4</button>
+    <button class="button" id="button5" data-color="5">Color 5</button>
+    <button class="button" id="button6" data-color="6">Color 6</button>
+</div>
+<h2>How to play Filler</h2>
+<p>
+    - To win, get the majority of the board under your control<br>
+    - You can either choose a tile on the board or select from the buttons at the bottom of the board to claim a color<br>
+    - You CANNOT choose a color that is already chosen by a player<br>
+</p>
+</body>
 </html>
