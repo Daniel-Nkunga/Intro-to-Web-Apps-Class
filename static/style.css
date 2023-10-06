@@ -1,56 +1,72 @@
 *{
-    font-family: 'Playfair Display';
     margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Open Sans', sans-serif;
+    width: 90%;
+    margin: auto;
+    /* border: 4px solid black; */
+    padding: 4px;
+}
+.intro{
+    display: inline-block;
+    height: 1px;
+    border: 0px;
+    border-top: 1px solid black;
+    padding: 0px;
+}
+h1{
+    font-size: 150px;
+    font-weight: 800;
     text-align: center;
-    display: grid;
-    grid-template-columns: auto auto auto auto auto auto;
-    grid-template-rows: auto auto auto auto auto auto auto auto auto;
-    gap: 12px;
+    margin: 0px;
+    border-top: 24px solid black;
 }
-.page-wrapper{
-    display: grid;
-    grid-template-areas: 
-    'header header header header header header'
-    'preamble preamble preamble preamble picture1 picture1'
-    'picture2 picture2 explaination explaination explaination explaination'
-    'participation participation participation participation benefits benefits'
-    'participation participation participation participation picture3 picture3'
-    'requirements requirements requirements requirements requirements requirements'
-    ;
+h2{
+    font-size: 28px;
+    font-weight: 800;
+    text-align: center;
+    margin: 0px;
 }
-[role = "banner"]{
-    grid-area: header;
-}
-.summary{
-    grid-area: summary;
+.summary p{
+    font-size: 14px;
+    text-align: center;
 }
 .preamble{
-    grid-area: preamble;
+    width: 60%;
 }
-.explaination{
-    grid-area: explaination;
+.explanation{
+    width: 60%;
+    float: right;
 }
 .participation{
-    grid-area: participation;
+    width: 50%;
+    float: left;
 }
 .benefits{
-    grid-area: benefits;
+    width: 50%;
+    float: right;
 }
 .requirements{
-    grid-area: requirements;
+    width: 100%;
+    float: left;
 }
-.extra1{
-    grid-area: picture1;
-}
-.extra2{
-    grid-area: picture2;
-}
-.extra3{
-    grid-area: picture3;
+.p1 h4{
+    text-transform: uppercase;
+    font-size: 20px;
 }
 .sidebar{
-    display: none;
+    margin-top: 20px;
+    display: block;
+    height: 1px;
+    border: 0px;
+    border-top: 1px solid black;
+    padding: 0px;
+    width: 100%;
+    font-size: 200px;
 }
-.design-archives{
-    display: none;
+footer{
+    font-size: 200px;
 }
