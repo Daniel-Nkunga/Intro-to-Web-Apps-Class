@@ -1,9 +1,14 @@
 *{
-    font-family: 'Comfortaa', sans-serif;
+    font-family: 'Lucida Console', sans-serif;
     color: black;
     font-size: 16px;
     text-decoration: none;
     margin: 0px;
+}
+p{
+    text-align: center;
+    font-size: 1.75em;
+    padding: 1em;
 }
 input {
     margin: .5em;
@@ -16,11 +21,11 @@ input[type = checkbox]{
     background-color: #5C9EAD;
 }
 form{
-    background-color: #EEEEEE;
+    background-color: lightgray;
     width: 75%;
     padding: 5px 50px 16px 32px;
     border-radius: 32px;
-    margin: 2em;
+    margin: auto;
     border: 4px solid #326273;
 }
 input[type = submit]{
@@ -28,4 +33,7 @@ input[type = submit]{
 }
 input:hover{
     background-color:#5C9EAD;
+}
+body{
+    background-color: gray;
 }
