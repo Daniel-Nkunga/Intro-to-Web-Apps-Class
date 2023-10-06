@@ -7,8 +7,12 @@
 }
 p{
     text-align: center;
-    font-size: 1.75em;
+    font-size: 2.25em;
     padding: 1em;
+    border: black;
+    border-radius: 1em;
+    background-color: #5C9EAD;
+    margin: .5em;
 }
 input {
     margin: .5em;
