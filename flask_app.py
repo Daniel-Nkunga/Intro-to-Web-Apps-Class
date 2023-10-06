@@ -1,7 +1,8 @@
 # from flask import Flask, send_from_directory
 from flask import *
+import random
 
-app = Flask(__name__)
+app = Flask(__name__,static_folder="static")
 app.secret_key = 'wowcool88'
 
 @app.route('/')
@@ -40,21 +41,42 @@ def serve_good():
 def serve_valid():
     return send_from_directory('static', 'HelloThere.html')
 
-# @app.route('/quiz', methods=['GET'])
-# def quiz():
-#     # Get the question number from the URL query parameter
-#     question_number = request.args.get('question_number', type=int)
-    
-#     # Load the corresponding question HTML file
-#     question_filename = f'questions/question{question_number}.html'
+@app.route('/quiz')
+def quiz():
+    if request.method == "GET" and "form" in request.args:
+        num = int(request.args['quiz'])
+        print(num)
+        if num == 1:
+            session["device"] = request.args["device"]
+        elif num == 2:
+            session["amount"]=request.args["amount"]
+        elif num == 3:
+            session["price"]=request.args["price"]
+        elif num == 4:
+            session["color"]=request.args["color"]
+        elif num == 5:
+            session["multiplayer"]=request.args["multiplayer"]
+        elif num == 6:
+            session["frequency"]=request.args["frequency"]
+        elif num == 7:
+            session["victory"]=request.args["victory"]
+        elif num == 8:
+            session["completion"]=request.args["completion"]
+        elif num == 9:
+            session["LoL"]=request.args["LoL"]
 
-#     try:
-#         with open(question_filename, 'r') as question_file:
-#             question_content = question_file.read()
-#     except FileNotFoundError:
-#         return "Question not found"
+            # # Generate a random seed based on the user's answers
+            # seed = hash((session["name"], session["utensil"], session["superpower"], session["spirit"], session["smell"], session["dance"], session["transport"]))
+            # random.seed(seed)
 
-#     return render_template('quiz.html', question_content=question_content)
+            # # Randomly select a mascot for this session
+            # session["mascot"] = random.choice(mascots)
+
+        #     session["image"] = f"static/images/{session['mascot'].lower().replace(' ','')}.webp"
+        #     return render_template('finalmsg.html', session)
+        # return render_template(f'form{num+1}.html',request.args)
+    return render_template('form1.html')
+
 
 @app.route('/passed')
 def passed():
