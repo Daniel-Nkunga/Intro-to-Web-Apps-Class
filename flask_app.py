@@ -76,8 +76,7 @@ def quiz():
 
 @app.route('/final')
 def final():
-    #Boy, I sure do love some easy to code, hard to read, heavily unoptomized code
-    #Variables
+    # Retrieve the data stored in the session
     playstyle = 0
     gamer = 0
     gaymer = False
@@ -90,7 +89,6 @@ def final():
     victory = session.get("victory")
     completion = session.get("completion")
     LoL = session.get("LoL")
-    #Result Value Assignment
     if(device == "PC"):
         playstyle += 2
         gamer += 2
@@ -131,11 +129,9 @@ def final():
         playstyle += 2
         gamer += 2
         gaymer = True
-        border = "RAINBOW"
     if(color != "RAINBOW"):
         playstyle += 3
         gamer += 1
-        border = session.get("color")
     if(multiplayer == "Singleplayer"):
         playstyle += 2
         gamer += 1
@@ -193,42 +189,13 @@ def final():
     if(LoL == "right"):
         playstyle += 1
         gamer += 1
-    #Final Results
     print(gamer)
     print(playstyle)
     print(gaymer)
-    if(gamer <= 12):
-        result1 = "CASUAL"
-        message1 = "Casual Gamers enjoy playing videogames, but might not play them that often. Whether that be to finding more enjoyment in other things or not having the time, Casual Gamers don't play many games in thier off times. This means the games they do play are of high value to them."
-    elif(12 < gamer <= 18):
-        result1 = "TRY HARD"
-        message1 = "Try Hard Gamers really enjoy playing games. Though they may not be perceived as \"try hard\" in the gaming community, they definitely are among the public. They either have a wide variety of games they play or a select few that they love to death. They are always actively seeking out more games to play and enjoy gaming whenever they play."
-    elif(18 < gamer <= 24):
-        result1 = "COMPETITVE"
-        message1 = "Competitive Gamers don't just enjoy playing games, they enjoy grinding them out. Though the idea of \"practicing\" videogames might sound ridiculous to someone outside of the gaming community. Competitve Gamers don't even bat an eye because at the end of the day, they're still gaming. Competitve Gamers always have a game they say is their favorite and a game they are playing the most at the momement. It is a rare momment when both of those games align."
-    else:
-        result1 = "NO LIFE"
-        message1 = "No Life Gamers are considered to be try hards among the gaining community and unreasonable to anyone outside of it. Practicing is no longer for fun, its to \"git gud,\" the ultimate goal of any tryhard gamer. Some of the games they play bring out such a rage in them to the point where an outsider might ask if they're even having fun. They don't know either. At the end of the day, they will never stop gaming. Whether that's becuase they still enoy it or becuase of the sum-cost fallicy is unknown by NASA's greatest minds."
-    if(gamer <= 14):
-        result2 = "GAMER"
-        message2 = "Gamers are you garden variety gamer. They play games from time to time and definetly have a favorite, most likely a game they play in their childhood. They might not be as into it as everyone else, but that doesn't mean they enjoy it any less."
-        picture = "\static\Images\gamer.jpg"
-    elif(14 < gamer <= 22):
-        result2 = "HOBBIEST"
-        message2 = "Hobbiest are gamers that find games to be something of value. They enjoy talking about, watching, and, most of all, playing games. Hobbiest have high ambitions when it comes to gaming. Whether that be completing thier game library (impossible), finishing their gaming backlog (impossible), or creating their own game (theoretical). Gaming means a lot to them."
-        picture = "\static\Images\hobbiest.jpg"
-    else:
-        result2 = "COMPLETIONIST"
-        message2 = "Completionist are gamers who take thier hobby very seriously. Though they might not achieve all the goals the Hobbiest have (because most of them are impossible), they are definetly on their way to becoming their perfect gamer."
-        picture = "\static\Images\completionist.jpg"
-    if(gaymer == True):
-        result3 = "GAYMER B)"
-        message3 = "Rainbow PC. Rainbow Controller. Rainbow Keyboard. Rainbow Lights. Rainbow Everything. These gamers know that gaming is about the looks, and they always look EBIC when gaming B)"
-        picture = "\static\Images\gaymer.jpg"
     # Render the final page template and pass the session data to it
     return render_template('final.html', device=device, amount=amount, price=price, color=color,
                            multiplayer=multiplayer, frequency=frequency, victory=victory,
-                           completion=completion, LoL=LoL, result1=result1, result2=result2, result3=result3, message1=message1, message2=message2, message3=message3, picture=picture)
+                           completion=completion, LoL=LoL, result1=result1, result2=result2, result3=result3, message1=message1, message2=message2, message3=message3)
 
 @app.route('/passed')
 def passed():
