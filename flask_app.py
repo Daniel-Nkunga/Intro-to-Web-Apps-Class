@@ -131,7 +131,6 @@ def final():
         playstyle += 2
         gamer += 2
         gaymer = True
-        border = "RAINBOW"
     if(color != "RAINBOW"):
         playstyle += 3
         gamer += 1
@@ -221,10 +220,11 @@ def final():
     if(gaymer == True):
         result3 = "GAYMER B)"
         message3 = "Rainbow PC. Rainbow Controller. Rainbow Keyboard. Rainbow Lights. Rainbow Everything. These gamers know that gaming is about the looks, and they always look EBIC when gaming B)"
+    else:
+        result3 = ""
+        message3 = ""
     # Render the final page template and pass the session data to it
-    return render_template('final.html', device=device, amount=amount, price=price, color=color,
-                           multiplayer=multiplayer, frequency=frequency, victory=victory,
-                           completion=completion, LoL=LoL, result1=result1, result2=result2, result3=result3, message1=message1, message2=message2, message3=message3)
+    return render_template('final.html', device=device, amount=amount, price=price, color=color, multiplayer=multiplayer, frequency=frequency, victory=victory, completion=completion, LoL=LoL, result1=result1, result2=result2, result3=result3, message1=message1, message2=message2, message3=message3)
 
 @app.route('/passed')
 def passed():
