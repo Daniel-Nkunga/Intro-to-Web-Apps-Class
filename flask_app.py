@@ -135,7 +135,6 @@ def final():
     if(color != "RAINBOW"):
         playstyle += 3
         gamer += 1
-        border = session.get("color")
     if(multiplayer == "Singleplayer"):
         playstyle += 2
         gamer += 1
@@ -216,15 +215,12 @@ def final():
     elif(14 < gamer <= 22):
         result2 = "HOBBIEST"
         message2 = "Hobbiest are gamers that find games to be something of value. They enjoy talking about, watching, and, most of all, playing games. Hobbiest have high ambitions when it comes to gaming. Whether that be completing thier game library (impossible), finishing their gaming backlog (impossible), or creating their own game (theoretical). Gaming means a lot to them."
-        picture = "\static\Images\hobbiest.jpg"
     else:
         result2 = "COMPLETIONIST"
         message2 = "Completionist are gamers who take thier hobby very seriously. Though they might not achieve all the goals the Hobbiest have (because most of them are impossible), they are definetly on their way to becoming their perfect gamer."
-        picture = "\static\Images\completionist.jpg"
     if(gaymer == True):
         result3 = "GAYMER B)"
         message3 = "Rainbow PC. Rainbow Controller. Rainbow Keyboard. Rainbow Lights. Rainbow Everything. These gamers know that gaming is about the looks, and they always look EBIC when gaming B)"
-        picture = "\static\Images\gaymer.jpg"
     # Render the final page template and pass the session data to it
     return render_template('final.html', device=device, amount=amount, price=price, color=color,
                            multiplayer=multiplayer, frequency=frequency, victory=victory,
