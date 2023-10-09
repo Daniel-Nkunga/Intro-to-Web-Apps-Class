@@ -224,12 +224,6 @@ def quiz():
     
     return render_template('form1.html')
 
-@app.route('/final')
-def final():
-    #Boy, I sure do love some easy to code, hard to read, heavily unoptomized code
-    #Variables
-    
-
 @app.route('/passed')
 def passed():
     return render_template('passed.html')
