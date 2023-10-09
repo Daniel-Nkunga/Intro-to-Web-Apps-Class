@@ -67,9 +67,135 @@ def quiz():
         elif num == 9:
             session["LoL"]=request.args["LoL"]
         print(session.items())
-        return render_template(f'form{num+1}.html',**request.args)
+        if num == 9:
+            return redirect('/final')
+
+        return render_template(f'form{num+1}.html', **request.args)
+    
     return render_template('form1.html')
 
+@app.route('/final')
+def final():
+    # Retrieve the data stored in the session
+    playstyle = 0
+    gamer = 0
+    gaymer = False
+    device = session.get("device")
+    amount = session.get("amount")
+    price = session.get("price")
+    color = session.get("color")
+    multiplayer = session.get("multiplayer")
+    frequency = session.get("frequency")
+    victory = session.get("victory")
+    completion = session.get("completion")
+    LoL = session.get("LoL")
+    if(device == "PC"):
+        playstyle += 2
+        gamer += 2
+    if(device == "Mobile"):
+        playstyle -= 1
+        gamer += 1
+    if(device == "Console"):
+        playstyle += 1
+        gamer += 2
+    if(device == "Retro"):
+        playstyle += 1
+        gamer += 1
+    if(amount == "0-5 Hours"):
+        playstyle += 1
+        gamer += 0
+    if(amount == "6-15 Hours"):
+        playstyle += 1
+        gamer += 1
+    if(amount == "16-25 Hours"):
+        playstyle += 2
+        gamer += 1
+    if(amount == "26+ Hours"):
+        playstyle += 2
+        gamer += 1
+    if(price == "Free"):
+        playstyle += 1
+        gamer += 1
+    if(price == "$1-$30"):
+        playstyle += 1
+        gamer += 1
+    if(price == "$31-$60"):
+        playstyle += 2
+        gamer += 1
+    if(price == "$60+"):
+        playstyle += 3
+        gamer += 2
+    if(color == "RAINBOW"):
+        playstyle += 2
+        gamer += 2
+        gaymer = True
+    if(color != "RAINBOW"):
+        playstyle += 3
+        gamer += 1
+    if(multiplayer == "Singleplayer"):
+        playstyle += 2
+        gamer += 1
+    if(multiplayer == "Monthly"):
+        playstyle += 1
+        gamer += 2
+    if(multiplayer == "Weekly"):
+        playstyle += 2
+        gamer += 1
+    if(multiplayer == "Daily"):
+        playstyle += 3
+        gamer += 2
+    if(frequency == "Offline"):
+        playstyle += 1
+        gamer += 1
+    if(frequency == "Monthly"):
+        playstyle += 2
+        gamer += 1
+    if(frequency == "Weekly"):
+        playstyle += 2
+        gamer += 2
+    if(frequency == "Daily"):
+        playstyle += 3
+        gamer += 3
+    if(victory == "for_fun"):
+        playstyle -= 1
+        gamer += 1
+    if(victory == "rarely"):
+        playstyle += 0
+        gamer += 0
+    if(victory == "often"):
+        playstyle += 1
+        gamer += 1
+    if(victory == "always"):
+        playstyle += 2
+        gamer += 3
+    if(completion == "none"):
+        playstyle += 1
+        gamer += 1
+    if(completion == "few"):
+        playstyle += 1
+        gamer += 1
+    if(completion == "average"):
+        playstyle += 2
+        gamer += 2
+    if(completion == "majority"):
+        playstyle += 4
+        gamer += 3
+    if(LoL == "innocent"):
+        playstyle -= 1
+        gamer -= 1
+    if(LoL == "wrong"):
+        playstyle += 4
+        gamer += 4
+    if(LoL == "right"):
+        playstyle += 1
+        gamer += 1
+    print(gamer)
+    print(playstyle)
+    print(gaymer)
+    # Render the final page template and pass the session data to it
+    return render_template('final.html', device=device, amount=amount, price=price, color=color,
+                           multiplayer=multiplayer, frequency=frequency, victory=victory,
+                           completion=completion, LoL=LoL)
 
 @app.route('/passed')
 def passed():
