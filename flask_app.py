@@ -195,7 +195,7 @@ def final():
     # Render the final page template and pass the session data to it
     return render_template('final.html', device=device, amount=amount, price=price, color=color,
                            multiplayer=multiplayer, frequency=frequency, victory=victory,
-                           completion=completion, LoL=LoL, result1=result1, result2=result2, result3=result3, message1=message1, message2=message2, message3=message3)
+                           completion=completion, LoL=LoL)
 
 @app.route('/passed')
 def passed():
