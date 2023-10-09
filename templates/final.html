@@ -1,21 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Final Page</title>
+    <title>What Type of Gamer are YOU? :O - Results May Suprise You!</title>
+    <link rel="stylesheet" href="/static/QuizFinal.css">
 </head>
 <body>
-    <h1>Final Selections</h1>
-    <ul>
-        <li>Device: {{ device }}</li>
-        <li>Amount: {{ amount }}</li>
-        <li>Price: {{ price }}</li>
-        <li>Color: {{ color }}</li>
-        <li>Multiplayer: {{ multiplayer }}</li>
-        <li>Frequency: {{ frequency }}</li>
-        <li>Victory: {{ victory }}</li>
-        <li>Completion: {{ completion }}</li>
-        <li>LoL: {{ LoL }}</li>
-    </ul>
-    <p>{{ amount }}</p>
+    <h1>Congradulations! You're a</h1>
+    <h2>{{ result1 }} {{ result2 }} {{ result3 }}!</h2>
+    <p>{{ message1 }}</p><br>
+    <p>{{ message2 }}</p><br>
+    <p>{{ message3 }}</p>
 </body>
 </html>
