@@ -1,0 +1,21 @@
+/* Add this CSS to style the grid */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(10, 40px); /* Adjust the number of columns and cell size as needed */
+    grid-gap: 2px; /* Adjust the gap between cells as needed */
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.grid-cell {
+    width: 40px; /* Adjust the cell size to match the grid-template-columns */
+    height: 40px; /* Adjust the cell size to match the grid-template-columns */
+    background-color: lightgray; /* Default background color for cells */
+    border: 1px solid #333; /* Add borders for cells */
+    text-align: center;
+    font-size: 18px;
+    line-height: 38px;
+    cursor: pointer;
+}
+
+/* Add more CSS rules as needed for different cell colors */
