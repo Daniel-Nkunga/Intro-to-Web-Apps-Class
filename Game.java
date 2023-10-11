@@ -47,7 +47,7 @@ public class Game {
         floodFill(board, row, col - 1, targetColor, replacementColor);
         floodFill(board, row, col + 1, targetColor, replacementColor);
     }
-    public static boolean contains(int[] array, int target) { //Is this not in Java?
+    public static boolean contains(int[] array, int target) {
         for (int element : array) {
             if (element == target) {
                 return true;
@@ -125,6 +125,7 @@ public class Game {
                 target = scan.nextInt();
             } else {
                 floodFill(board, 0, 0, board[0][0], target);
+                System.out.println("\n Player 1 Turn");
                 System.out.println(printBoard(board));
                 doublePrevColor = prevColor;
                 prevColor = target;
@@ -136,6 +137,7 @@ public class Game {
                 target = scan.nextInt();
             } else {
                 floodFill(board, board.length-1, board.length-1, board[board.length-1][board.length-1], target);
+                System.out.println("\n Player 2 Turn");
                 System.out.println(printBoard(board));
                 doublePrevColor = prevColor;
                 prevColor = target;
@@ -160,6 +162,8 @@ public class Game {
         System.out.println("In this version of filler, you start in the middle of the board and take over moving outwards.");
         Scanner scan = new Scanner(System.in);
         int boardSize = 10;
+        int player1Start = boardSize/2-1;
+        int player2start = boardSize/2;
         int[][] board = new int[boardSize][boardSize];
         randomize(board);
         int prevColor = board[4][4];
@@ -172,7 +176,8 @@ public class Game {
                 System.out.print("Capture: ");
                 target = scan.nextInt();
             } else {
-                floodFill(board, 4, 4, board[4][4], target);
+                floodFill(board, player1Start, player1Start, board[player1Start][player1Start], target);
+                System.out.println("\n Player 1 Turn");
                 System.out.println(printBoard(board));
                 doublePrevColor = prevColor;
                 prevColor = target;
@@ -183,7 +188,8 @@ public class Game {
                 System.out.print("Capture: ");
                 target = scan.nextInt();
             } else {
-                floodFill(board, 5, 5, board[5][5], target);
+                floodFill(board, player2start, player2start, board[player2start][player2start], target);
+                System.out.println("\n Player 2 Turn");
                 System.out.println(printBoard(board));
                 doublePrevColor = prevColor;
                 prevColor = target;
@@ -284,16 +290,18 @@ public class Game {
     public static void main(String[] args) {
     Scanner scan = new Scanner(System.in);
     System.out.println("Which gamemode would you like to play?");
-    System.out.print("Standard (0), Close Quarters(1), Conquest(2): ");
+    // System.out.print("Standard (0), Close Quarters(1), Conquest(2): ");
+    System.out.print("Standard (0) or Close Quarters(1): "); 
     int game = scan.nextInt();
     if(game == 0){
         standard();
     } else if(game == 1){
         closeQuarters();
-    } else if(game ==2){
-        conquest();
+    // } else if(game ==2){
+    //     conquest();
     } else {
-        System.out.print("Standard (0), Close Quarters(1), Conquest(2): ");
+        // System.out.print("Standard (0), Close Quarters(1), Conquest(2): ");
+        System.out.print("Standard (0) or Close Quarters(1): ");
         game = scan.nextInt();
     }
     }
