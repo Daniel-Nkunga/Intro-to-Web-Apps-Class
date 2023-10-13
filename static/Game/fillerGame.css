@@ -1,4 +1,8 @@
-/* CSS for the game board */
+*{
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 18px;
+
+}
 #game-board {
     display: grid;
     grid-template-columns: repeat(10, 1fr);
@@ -12,4 +16,12 @@
     border: 1px solid black;
     text-align: center;
     vertical-align: middle;
+}
+h1{
+    font-size: 2em;
+    text-align: center;
+}
+h2{
+    font-size: 1em;
+    text-align: center;
 }

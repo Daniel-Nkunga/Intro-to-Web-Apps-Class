@@ -213,9 +213,9 @@ function closeQuarters() {
 console.log("Which gamemode would you like to play?");
 console.log("Standard (0) or Close Quarters (1):");
 
-const game = prompt("Enter the game mode (0 or 1):");
-if (game == 0) {
-  standard();
-} else if (game == 1) {
-  closeQuarters();
-}
+// const game = prompt("Enter the game mode (0 or 1):");
+// if (game == 0) {
+//   standard();
+// } else if (game == 1) {
+//   closeQuarters();
+// }
