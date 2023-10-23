@@ -37,11 +37,10 @@ p{
 .page{
     margin: 0 auto;
     text-align: center;
-    /* background-color: green; */
 }
 .card{
-    width: 300px;
-    height: 300px;
+    width: 325px;
+    height: 325px;
     background-color: #fff;
     z-index: 10000;
     padding: 16px;
@@ -64,9 +63,10 @@ p{
     color: #2b2a2a;
     font-family: 'Comfortaa', sans-serif;
     text-align: center;
+    height: 3.25em;
 }
 .card img{
-    width: 250px;
+    width: 200px;
     margin-left: 23px;
 }
 .card form{
@@ -75,6 +75,11 @@ p{
     text-align: center;
     align-self: auto;
     
+}
+input[type = checkbox]{
+    font-size: 1.25em;
+    width: 80px;
+    border-radius: 8px;
 }
 input[type = submit]{
     font-size: 1.25em;
