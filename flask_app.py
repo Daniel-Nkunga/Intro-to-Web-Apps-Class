@@ -1,7 +1,7 @@
 from flask import *
 import random
-import firebase_admin
-from firebase_admin import credentials, firestore
+# import firebase_admin
+# from firebase_admin import credentials, firestore
 import html
 
 app = Flask(__name__,static_folder="static")
@@ -234,10 +234,10 @@ def passed():
 def serve_game():
     return send_from_directory('static', 'Game.html')
 
-#Firebase
-cred = credentials.Certificate("../creds.json")
-firebase_admin.initialize_app(cred)
-db = firestore.client()
+# #Firebase
+# cred = credentials.Certificate("../creds.json")
+# firebase_admin.initialize_app(cred)
+# db = firestore.client()
 
 
 
