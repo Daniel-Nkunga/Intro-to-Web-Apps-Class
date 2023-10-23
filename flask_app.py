@@ -240,7 +240,7 @@ def serve_game():
 # db = firestore.client()
 
 @app.route('/vote')
-def passed():
+def vote():
     return render_template('vote.html')
 
 if __name__ == '__main__':
