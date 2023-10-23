@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Voting Results</title>
+</head>
+<body>
+    <h2>Voting Results</h2>
+    <ul>
+        {% for animal, count in votes.items() %}
+        <li>{{ animal }}: {{ count }} votes</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

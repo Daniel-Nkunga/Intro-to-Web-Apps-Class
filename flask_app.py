@@ -7,11 +7,6 @@ import html
 app = Flask(__name__,static_folder="static")
 app.secret_key = 'wowcool88'
 
-#Firebase
-cred = credentials.Certificate("../creds.json")
-firebase_admin.initialize_app(cred)
-db = firestore.client()
-
 @app.route('/')
 def serve_home():
     return send_from_directory('static', 'HelloThere.html')
@@ -47,8 +42,6 @@ def serve_good():
 @app.route('/valid')
 def serve_valid():
     return send_from_directory('static', 'HelloThere.html')
-
-mascots=["elmo", "barney", "mario"]
 
 @app.route('/quiz')
 def quiz():
@@ -241,35 +234,12 @@ def passed():
 def serve_game():
     return send_from_directory('static', 'Game.html')
 
-@app.route('/vote', methods=['POST'])
-def vote():
-    fruit = request.form.get('fruit')
-    if fruit:
-        vote_ref = db.collection('votes').add({
-            'animal': fruit,
-            'timestamp': firestore.SERVER_TIMESTAMP  # Assuming you might want a timestamp for each vote
-        })
-        print(vote_ref[-1].id)
-    return redirect(url_for('results'))
-
-@app.route('/check/<doc_id>', methods=['GET'])
-def check_id(doc_id):
-    doc_ref = db.collection('votes').document(doc_id)
-    doc = doc_ref.get()
-    if doc.exists:
-        return jsonify({"exists": "yes"})
-    else:
-        return jsonify({"exists": "no"})
+#Firebase
+cred = credentials.Certificate("../creds.json")
+firebase_admin.initialize_app(cred)
+db = firestore.client()
 
 
-@app.route('/results')
-def results():
-    votes = {}
-    docs = db.collection('votes').stream()
-    for doc in docs:
-        animal = doc.to_dict().get('animal')
-        votes[animal] = votes.get(animal, 0) + 1
-    return render_template('results.html', votes=votes)
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=4208)
