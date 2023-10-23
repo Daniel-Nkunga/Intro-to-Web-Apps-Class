@@ -39,8 +39,8 @@ p{
     text-align: center;
 }
 .card{
-    width: 325px;
-    height: 325px;
+    width: 320px;
+    height: 320px;
     background-color: #fff;
     z-index: 10000;
     padding: 16px;
@@ -50,6 +50,7 @@ p{
     display: inline-block;
     padding: 8px;
     margin: 8px;
+    overflow: hidden;
 }
 .card h1{
     font-size: 1.5em;
@@ -64,17 +65,11 @@ p{
     font-family: 'Comfortaa', sans-serif;
     text-align: center;
     height: 3.25em;
+    padding: 4px;
 }
 .card img{
-    width: 200px;
+    width: 225px;
     margin-left: 23px;
-}
-.card form{
-    padding: 8px;
-    margin: auto;
-    text-align: center;
-    align-self: auto;
-    
 }
 input[type = checkbox]{
     font-size: 1.25em;
