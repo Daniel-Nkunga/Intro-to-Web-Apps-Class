@@ -204,9 +204,79 @@ public class Game {
     System.out.print("Standard (0) or Close Quarters(1): "); 
     int game = scan.nextInt();
     if(game == 0){
-        standard();
+        System.out.println("This is the standard verion of filler. You start at the edges and conquer inwards.");
+        // Scanner scan = new Scanner(System.in);
+        int boardSize = 10;
+        int[][] board = new int[boardSize][boardSize];
+        randomize(board);
+        int prevColor = board[0][0];
+        int doublePrevColor = board[board.length-1][board.length-1];
+        System.out.println(printBoard(board));
+        while(isGameOver(board) == false){
+            System.out.print("Capture: ");
+            int target = scan.nextInt();
+            if(target == prevColor || target == doublePrevColor || isValidS(board, target) == false){
+                System.out.print("Capture: ");
+                target = scan.nextInt();
+            } else {
+                floodFill(board, 0, 0, board[0][0], target);
+                System.out.println("\n Player 1 Turn");
+                System.out.println(printBoard(board));
+                doublePrevColor = prevColor;
+                prevColor = target;
+            }
+            System.out.print("Capture: ");
+            target = scan.nextInt();
+            if(target == prevColor || target == doublePrevColor || isValidS(board, target) == false){
+                System.out.print("Capture: ");
+                target = scan.nextInt();
+            } else {
+                floodFill(board, board.length-1, board.length-1, board[board.length-1][board.length-1], target);
+                System.out.println("\n Player 2 Turn");
+                System.out.println(printBoard(board));
+                doublePrevColor = prevColor;
+                prevColor = target;
+            }
+        }
+        winner(board); 
     } else if(game == 1){
-        closeQuarters();
+        System.out.println("In this version of filler, you start in the middle of the board and take over moving outwards.");
+        // Scanner scan = new Scanner(System.in);
+        int boardSize = 10;
+        int player1Start = boardSize/2-1;
+        int player2start = boardSize/2;
+        int[][] board = new int[boardSize][boardSize];
+        randomize(board);
+        int prevColor = board[4][4];
+        int doublePrevColor = board[5][5];
+        System.out.println(printBoard(board));
+        while(isGameOver(board) == false){
+            System.out.print("Capture: ");
+            int target = scan.nextInt();
+            if(target == prevColor || target == doublePrevColor || isValidC(board, target) == false){
+                System.out.print("Capture: ");
+                target = scan.nextInt();
+            } else {
+                floodFill(board, player1Start, player1Start, board[player1Start][player1Start], target);
+                System.out.println("\n Player 1 Turn");
+                System.out.println(printBoard(board));
+                doublePrevColor = prevColor;
+                prevColor = target;
+            }
+            System.out.print("Capture: ");
+            target = scan.nextInt();
+            if(target == prevColor || target == doublePrevColor || isValidC(board, target) == false){
+                System.out.print("Capture: ");
+                target = scan.nextInt();
+            } else {
+                floodFill(board, player2start, player2start, board[player2start][player2start], target);
+                System.out.println("\n Player 2 Turn");
+                System.out.println(printBoard(board));
+                doublePrevColor = prevColor;
+                prevColor = target;
+            }
+        }
+        winner(board); 
     } else {
         System.out.print("Standard (0) or Close Quarters(1): ");
         game = scan.nextInt();
