@@ -1,11 +1,15 @@
 from flask import *
 import random
-# import firebase_admin
-# from firebase_admin import credentials, firestore
 import html
+import firebase_admin
+from firebase_admin import credentials, firestore
 
 app = Flask(__name__,static_folder="static")
 app.secret_key = 'wowcool88'
+
+cred = credentials.Certificate("../creds.json")
+firebase_admin.initialize_app(cred)
+db = firestore.client()
 
 @app.route('/')
 def serve_home():
@@ -13,31 +17,31 @@ def serve_home():
 
 @app.route('/homepage')
 def serve_homepage():
-    return send_from_directory('static', 'BiositeHomepage.html')
+    return send_from_directory('static\Biosite', 'BiositeHomepage.html')
 
 @app.route('/about')
 def serve_about():
-    return send_from_directory('static', 'BiositeAboutMe.html')
+    return send_from_directory('static\Biosite', 'BiositeAboutMe.html')
 
 @app.route('/schedule')
 def serve_schedule():
-    return send_from_directory('static', 'BiositeSchedule.html')
+    return send_from_directory('static\Biosite', 'BiositeSchedule.html')
 
 @app.route('/favorite')
 def serve_favorite():
-    return send_from_directory('static', 'BiositeFavoriteWebsites.html')
+    return send_from_directory('static\Biosite', 'BiositeFavoriteWebsites.html')
 
 @app.route('/other')
 def serve_other():
-    return send_from_directory('static', 'BiositeOther.html')
+    return send_from_directory('static\Biosite', 'BiositeOther.html')
 
 @app.route('/bad')
 def serve_bad():
-    return send_from_directory('static', 'BadCSS.html')
+    return send_from_directory('static\BadCSS', 'BadCSS.html')
 
 @app.route('/good')
 def serve_good():
-    return send_from_directory('static', 'CSS Zen Garden_ The Beauty of CSS Design.html')
+    return send_from_directory('static\CoolCSS', 'CSS Zen Garden_ The Beauty of CSS Design.html')
 
 @app.route('/valid')
 def serve_valid():
@@ -234,14 +238,22 @@ def passed():
 def serve_game():
     return send_from_directory('static', 'Game.html')
 
-# #Firebase
-# cred = credentials.Certificate("../creds.json")
-# firebase_admin.initialize_app(cred)
-# db = firestore.client()
-
-@app.route('/vote')
+@app.route('/vote', methods = ['POST'])
 def vote():
-    return render_template('vote.html')
+    fruit = request.form.get('Vote')
+    if fruit:
+        votes_ref = db.collection('votes').document(fruit)
+        votes_ref.set({'count': firestore.Increment(1)}, merge=True)        
+    return render_template('results.html')
+
+@app.route('/results')
+def results():
+    votes = {}
+    docs = db.collection('votes').stream()
+    for doc in docs:
+        votes[doc.id] = doc.to_dict().get('count', 0)
+    return render_template('results.html', votes=votes)
+
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=4208)

@@ -58,6 +58,7 @@ p{
     text-align: center;
     padding: 4px;
     font-family: 'Comfortaa', sans-serif;
+    margin: 1em;
 }
 .card p{
     font-size: 1em;
@@ -91,4 +92,20 @@ input:hover{
     100%{
         transform: scale(1.5);
     }
+}
+.tiers{
+    width: 75%;
+    height: 350px;
+    background-color: rgb(53, 53, 53);
+    margin: auto;
+}
+h3{
+    font-size: 4.5em;
+    text-align: center;
+    letter-spacing: 12px;
+    font-family: 'Black Ops One', sans-serif;
+    margin: 12px;
+    padding: 4px;
+    border-top: 16px solid red;
+    border-bottom: 16px solid red;
 }
