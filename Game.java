@@ -109,7 +109,6 @@ public class Game {
             return true;
         }
     }
-            if(target == prevColor || target == doublePrevColor || isValidS(board, target) == false){
     public static boolean isValidC(int[][] board, int target){
         if(target < 1){
             return false;
