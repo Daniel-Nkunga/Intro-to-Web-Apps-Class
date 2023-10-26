@@ -72,7 +72,7 @@ public class Game {
         }
     }
 
-    public static void winner(int[][] board) {
+    public static void winnerS(int[][] board) {
         int player1 = board[0][0];
         int palyer1Count = 0;
         int player2 = board[board.length-1][board.length-1];
@@ -93,6 +93,34 @@ public class Game {
             System.out.printf("Player 2 Wins!");
             System.out.println("Player 2 Wins!");
         } else {
+            System.out.printf("Player 1: %d\n",palyer1Count);
+            System.out.printf("Player 2: %d\n",palyer2Count);
+            System.out.println("It's a tie");
+        }
+    }
+    public static void winnerC(int[][] board) {
+        int player1 = board[board.length/2-1][board.length/2-1];
+        int palyer1Count = 0;
+        int player2 = board[board.length/2][board.length/2];
+        int palyer2Count = 0;
+        for (int i = 0; i < board.length; i++) {
+            for (int j = 0; j < board[i].length; j++) {
+                if(board[i][j] == player1) palyer1Count++;
+                if(board[i][j] == player2) palyer2Count++;
+            }
+        }
+        if(palyer1Count > palyer2Count){
+            System.out.printf("Player 1: %d\n",palyer1Count);
+            System.out.printf("Player 2: %d\n",palyer2Count);
+            System.out.printf("Player 1 Wins!");
+        } else if(palyer2Count > palyer1Count){
+            System.out.printf("Player 1: %d\n",palyer1Count);
+            System.out.printf("Player 2: %d\n",palyer2Count);
+            System.out.printf("Player 2 Wins!");
+            System.out.println("Player 2 Wins!");
+        } else {
+            System.out.printf("Player 1: %d\n",palyer1Count);
+            System.out.printf("Player 2: %d\n",palyer2Count);
             System.out.println("It's a tie");
         }
     }
@@ -161,7 +189,7 @@ public class Game {
                 prevColor = target;
             }
         }
-        winner(board); 
+        winnerS(board); 
     } else if(game == 1){
         System.out.println("In this version of filler, you start in the middle of the board and take over moving outwards.");
         int boardSize = 10;
@@ -198,7 +226,7 @@ public class Game {
                 prevColor = target;
             }
         }
-        winner(board); 
+        winnerC(board); 
     } else {
         System.out.print("Standard (0) or Close Quarters(1): ");
         game = scan.nextInt();
