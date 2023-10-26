@@ -1,17 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Filler Game</title>
-    <link rel="stylesheet" type="text/css" href="/static/Game/fillerGame.css">
+    <title>Flood Fill Game</title>
 </head>
 <body>
-    <h1>FIller</h1>
-    <h2>Filler is a Game on Gampe Gidgeon for iOS where you goal to to capture more squares than your opponenet. <br>In this version of the game, you can play a STANDARD version where you start from the top left and bottom right, or a game mode called CLOSE QUARTERS where you start right next to each other in the center of the board.</h2>
-    <div id="game-board"></div>
-    <div class = "hotbar">
-        <button type="button" id = "standard" value =  "standard" onclick = "standard();">Standard</button>
-        <button type="button" id = "closeQuarters" value =  "closeQuarters" onclick = "closeQuarters();">Close Quarters</button>
+    <div id="terminal">
+        <pre id="output"></pre>
+        <input id="input" type="text" autofocus>
     </div>
-    <script src="/static/Game/fillerGame.js"></script>
+    <script src="fillerGame.js"></script>
 </body>
 </html>

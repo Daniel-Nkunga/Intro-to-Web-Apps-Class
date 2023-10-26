@@ -1,221 +1,183 @@
-let boardSize = 10;
-function printBoard(board) {
-  let boardString = '';
-  for (let i = 0; i < board.length; i++) {
-      for (let j = 0; j < board[i].length; j++) {
-          boardString += board[i][j] + ' ';
-      }
-      boardString += '\n';
-  }
-  return boardString;
-}
+const terminal = document.getElementById('terminal');
+        const output = document.getElementById('output');
+        const input = document.getElementById('input');
 
-function randomize(board) {
-  const rows = board.length;
-  const columns = board[0].length;
-  for (let i = 0; i < rows; i++) {
-      for (let j = 0; j < columns; j++) {
-          let randomNumber;
-          do {
-              randomNumber = Math.floor(Math.random() * 6) + 1;
-          } while ((i > 0 && board[i - 1][j] === randomNumber) || (j > 0 && board[i][j - 1] === randomNumber) || (i > 0 && j > 0 && board[i - 1][j - 1] === randomNumber));
+        let board = [];
+        let game = -1;
+        let boardSize = 10;
+        let player1Start, player2Start;
+        let prevColor, doublePrevColor;
+        let currentPlayer = 1;
 
-          board[i][j] = randomNumber;
-      }
-  }
-  if (board[0][0] === board[board.length - 1][board.length - 1]) {
-      if (board[0][0] < 6) {
-          board[0][0]++;
-      } else {
-          board[0][0]--;
-      }
-  }
-}
+        function print(text) {
+            output.textContent += text;
+            terminal.scrollTop = terminal.scrollHeight;
+        }
 
-function floodFill(board, row, col, targetColor, replacementColor) {
-  if (board[row][col] !== targetColor) {
-      return;
-  }
-  const stack = [{ row, col }];
-  while (stack.length > 0) {
-      const { row, col } = stack.pop();
-      if (board[row][col] === targetColor) {
-          board[row][col] = replacementColor;
-          if (row > 0) {
-              stack.push({ row: row - 1, col });
-          }
-          if (row < boardSize - 1) {
-              stack.push({ row: row + 1, col });
-          }
-          if (col > 0) {
-              stack.push({ row, col: col - 1 });
-          }
-          if (col < boardSize - 1) {
-              stack.push({ row, col: col + 1 });
-          }
-      }
-  }
-}
+        function println(text) {
+            print(text + '\n');
+        }
 
-function isGameOver(board) {
-  const colorSet = new Set();
-  colorSet.add(0);
-  for (let i = 0; i < board.length; i++) {
-      for (let j = 0; j < board[i].length; j++) {
-          if (!colorSet.has(board[i][j])) {
-              colorSet.add(board[i][j]);
-          }
-      }
-  }
-  return colorSet.size <= 3;
-}
+        function randomizeBoard() {
+            board = Array.from({ length: boardSize }, () => Array(boardSize).fill(0));
+            for (let i = 0; i < boardSize; i++) {
+                for (let j = 0; j < boardSize; j++) {
+                    let randomNumber;
+                    do {
+                        randomNumber = Math.floor(Math.random() * 6) + 1;
+                    } while (
+                        (i > 0 && board[i - 1][j] === randomNumber) ||
+                        (j > 0 && board[i][j - 1] === randomNumber) ||
+                        (i > 0 && j > 0 && board[i - 1][j - 1] === randomNumber)
+                    );
 
-function winner(board) {
-  const player1 = board[0][0];
-  let player1Count = 0;
-  const player2 = board[board.length - 1][board.length - 1];
-  let player2Count = 0;
-  for (let i = 0; i < board.length; i++) {
-      for (let j = 0; j < board[i].length; j++) {
-          if (board[i][j] === player1) player1Count++;
-          if (board[i][j] === player2) player2Count++;
-      }
-  }
-  if (player1Count > player2Count) {
-      console.log(`Player 1: ${player1Count}`);
-      console.log(`Player 2: ${player2Count}`);
-      console.log("Player 1 Wins!");
-  } else if (player2Count > player1Count) {
-      console.log(`Player 1: ${player1Count}`);
-      console.log(`Player 2: ${player2Count}`);
-      console.log("Player 2 Wins!");
-  } else {
-      console.log("It's a tie");
-  }
-}
+                    board[i][j] = randomNumber;
+                }
+            }
+            if (game === 0) {
+                prevColor = board[0][0];
+                doublePrevColor = board[boardSize - 1][boardSize - 1];
+            } else if (game === 1) {
+                prevColor = board[player1Start][player1Start];
+                doublePrevColor = board[player2Start][player2Start];
+            }
+            println(printBoard());
+        }
 
-function isValidS(board, target) {
-  if (target < 1) {
-      return false;
-  } else if (target > 6) {
-      return false;
-  } else if (target === board[0][0]) {
-      return false;
-  } else if (target === board[board.length - 1][board.length - 1]) {
-      return false;
-  } else {
-      return true;
-  }
-}
+        function printBoard() {
+            let boardString = '\n'; // Add '\n' here
+            for (let i = 0; i < boardSize; i++) {
+                for (let j = 0; j < boardSize; j++) {
+                    boardString += board[i][j] + ' ';
+                }
+                boardString += '\n';
+            }
+            return boardString;
+        }
 
-function standard() {
-  console.log("This is the standard version of filler. You start at the edges and conquer inwards.");
+        function floodFill(row, col, targetColor, replacementColor) {
+            if (row < 0 || row >= boardSize || col < 0 || col >= boardSize) {
+                return;
+            }
+            if (board[row][col] !== targetColor) {
+                return;
+            }
+            board[row][col] = replacementColor;
+            floodFill(row - 1, col, targetColor, replacementColor);
+            floodFill(row + 1, col, targetColor, replacementColor);
+            floodFill(row, col - 1, targetColor, replacementColor);
+            floodFill(row, col + 1, targetColor, replacementColor);
+        }
 
-  const boardSize = 10;
-  const board = new Array(boardSize).fill(0).map(() => new Array(boardSize).fill(0));
-  randomize(board);
-  let prevColor = board[0][0];
-  let doublePrevColor = board[board.length - 1][board.length - 1];
-  console.log(printBoard(board));
+        function isGameOver() {
+            const colorSet = new Set([0]);
+            for (let i = 0; i < boardSize; i++) {
+                for (let j = 0; j < boardSize; j++) {
+                    colorSet.add(board[i][j]);
+                }
+            }
+            return colorSet.size <= 3;
+        }
 
-  function takeTurn() {
-      const target = prompt("Capture: ");
-      if (target == prevColor || target == doublePrevColor || !isValidS(board, target)) {
-          takeTurn();
-      } else {
-          floodFill(board, 0, 0, board[0][0], target);
-          console.log("\nPlayer 1 Turn");
-          console.log(printBoard(board));
-          doublePrevColor = prevColor;
-          prevColor = target;
+        function winner() {
+            const player1 = game === 0 ? board[0][0] : board[player1Start][player1Start];
+            let player1Count = 0;
+            const player2 = game === 0 ? board[boardSize - 1][boardSize - 1] : board[player2Start][player2Start];
+            let player2Count = 0;
+            for (let i = 0; i < boardSize; i++) {
+                for (let j = 0; j < boardSize; j++) {
+                    if (board[i][j] === player1) player1Count++;
+                    if (board[i][j] === player2) player2Count++;
+                }
+            }
+            if (player1Count > player2Count) {
+                println(`Player 1: ${player1Count}`);
+                println(`Player 2: ${player2Count}`);
+                println('Player 1 Wins!');
+            } else if (player2Count > player1Count) {
+                println(`Player 1: ${player1Count}`);
+                println(`Player 2: ${player2Count}`);
+                println('Player 2 Wins!');
+            } else {
+                println(`Player 1: ${player1Count}`);
+                println(`Player 2: ${player2Count}`);
+                println("It's a tie");
+            }
+        }
 
-          const target2 = prompt("Capture: ");
-          if (target2 == prevColor || target2 == doublePrevColor || !isValidS(board, target2)) {
-              takeTurn();
-          } else {
-              floodFill(board, board.length - 1, board.length - 1, board[board.length - 1][board.length - 1], target2);
-              console.log("\nPlayer 2 Turn");
-              console.log(printBoard(board));
-              doublePrevColor = prevColor;
-              prevColor = target2;
+        function isValid(target) {
+            if (target < 1 || target > 6) {
+                return false;
+            }
+            if (game === 0) {
+                if (target === board[0][0] || target === board[boardSize - 1][boardSize - 1]) {
+                    return false;
+                }
+            } else if (game === 1) {
+                if (target === board[player1Start][player1Start] || target === board[player2Start][player2Start]) {
+                    return false;
+                }
+            }
+            return true;
+        }
 
-              if (!isGameOver(board)) {
-                  takeTurn();
-              } else {
-                  winner(board);
-              }
-          }
-      }
-  }
+        function playGame() {
+            if (isGameOver()) {
+                winner();
+            } else {
+                println(`Player ${currentPlayer} Turn`);
+                print('Capture: ');
+                input.value = '';
+                input.focus();
+            }
+        }
 
-  takeTurn();
-}
+        input.addEventListener('keyup', function (event) {
+            if (event.key === 'Enter') {
+                const inputValue = parseInt(input.value);
+                if (!isNaN(inputValue)) {
+                    if (isValid(inputValue)) {
+                        if (game === 0) {
+                            if (currentPlayer === 1) {
+                                floodFill(0, 0, board[0][0], inputValue);
+                            } else {
+                                floodFill(boardSize - 1, boardSize - 1, board[boardSize - 1][boardSize - 1], inputValue);
+                            }
+                        } else if (game === 1) {
+                            if (currentPlayer === 1) {
+                                floodFill(player1Start, player1Start, board[player1Start][player1Start], inputValue);
+                            } else {
+                                floodFill(player2Start, player2Start, board[player2Start][player2Start], inputValue);
+                            }
+                        }
+                        println(printBoard());
+                        doublePrevColor = prevColor;
+                        prevColor = inputValue;
+                        currentPlayer = currentPlayer === 1 ? 2 : 1;
+                    } else {
+                        println('Invalid input. Try again.');
+                    }
+                } else {
+                    println('Invalid input. Try again.');
+                }
+                playGame();
+            }
+        });
 
-function isValidC(board, target) {
-  if (target < 1) {
-      return false;
-  } else if (target > 6) {
-      return false;
-  } else if (target === board[4][4]) {
-      return false;
-  } else if (target === board[5][5]) {
-      return false;
-  } else {
-      return true;
-  }
-}
+        function startGame(selectedGame) {
+            game = selectedGame;
+            if (game === 0) {
+                player1Start = 0;
+                player2Start = boardSize - 1;
+            } else if (game === 1) {
+                player1Start = Math.floor(boardSize / 2) - 1;
+                player2Start = Math.floor(boardSize / 2);
+            }
 
-function closeQuarters() {
-  console.log("In this version of filler, you start in the middle of the board and take over moving outwards.");
+            println(`This is the ${game === 0 ? 'standard' : 'close quarters'} version of filler.`);
+            println(`You start at the edges and conquer inwards.`);
+            randomizeBoard();
+            playGame();
+        }
 
-  const boardSize = 10;
-  const player1Start = Math.floor(boardSize / 2) - 1;
-  const player2Start = Math.floor(boardSize / 2);
-  const board = new Array(boardSize).fill(0).map(() => new Array(boardSize).fill(0));
-  randomize(board);
-  let prevColor = board[4][4];
-  let doublePrevColor = board[5][5];
-  console.log(printBoard(board));
-
-  function takeTurn() {
-      const target = prompt("Capture: ");
-      if (target == prevColor || target == doublePrevColor || !isValidC(board, target)) {
-          takeTurn();
-      } else {
-          floodFill(board, player1Start, player1Start, board[player1Start][player1Start], target);
-          console.log("\nPlayer 1 Turn");
-          console.log(printBoard(board));
-          doublePrevColor = prevColor;
-          prevColor = target;
-
-          const target2 = prompt("Capture: ");
-          if (target2 == prevColor || target2 == doublePrevColor || !isValidC(board, target2)) {
-              takeTurn();
-          } else {
-              floodFill(board, player2Start, player2Start, board[player2Start][player2Start], target2);
-              console.log("\nPlayer 2 Turn");
-              console.log(printBoard(board));
-              doublePrevColor = prevColor;
-              prevColor = target2;
-
-              if (!isGameOver(board)) {
-                  takeTurn();
-              } else {
-                  winner(board);
-              }
-          }
-      }
-  }
-
-  takeTurn();
-}
-
-console.log("Which gamemode would you like to play?");
-console.log("Standard (0) or Close Quarters (1):");
-
-// const game = prompt("Enter the game mode (0 or 1):");
-// if (game == 0) {
-//   standard();
-// } else if (game == 1) {
-//   closeQuarters();
-// }
+        startGame(0);
