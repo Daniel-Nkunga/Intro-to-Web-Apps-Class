@@ -201,17 +201,13 @@ public class Game {
     public static void main(String[] args) {
     Scanner scan = new Scanner(System.in);
     System.out.println("Which gamemode would you like to play?");
-    // System.out.print("Standard (0), Close Quarters(1), Conquest(2): ");
     System.out.print("Standard (0) or Close Quarters(1): "); 
     int game = scan.nextInt();
     if(game == 0){
         standard();
     } else if(game == 1){
         closeQuarters();
-    // } else if(game ==2){
-    //     conquest();
     } else {
-        // System.out.print("Standard (0), Close Quarters(1), Conquest(2): ");
         System.out.print("Standard (0) or Close Quarters(1): ");
         game = scan.nextInt();
     }
