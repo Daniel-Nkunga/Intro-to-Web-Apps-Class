@@ -238,6 +238,10 @@ def passed():
 def serve_game():
     return send_from_directory('static', 'Game.html')
 
+@app.route('/survey')
+def serve_survey():
+    return render_template('vote.html')
+
 @app.route('/vote', methods = ['POST'])
 def vote():
     fruit = request.form.get('Vote')
