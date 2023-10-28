@@ -7,9 +7,9 @@ from firebase_admin import credentials, firestore
 app = Flask(__name__,static_folder="static")
 app.secret_key = 'wowcool88'
 
-cred = credentials.Certificate("../creds.json")
-firebase_admin.initialize_app(cred)
-db = firestore.client()
+# cred = credentials.Certificate("../creds.json")
+# firebase_admin.initialize_app(cred)
+# db = firestore.client()
 
 @app.route('/')
 def serve_home():
@@ -238,25 +238,25 @@ def passed():
 def serve_game():
     return send_from_directory('static', 'Game.html')
 
-@app.route('/survey')
-def serve_survey():
-    return render_template('vote.html')
+# @app.route('/survey')
+# def serve_survey():
+#     return render_template('vote.html')
 
-@app.route('/vote', methods = ['POST'])
-def vote():
-    fruit = request.form.get('Vote')
-    if fruit:
-        votes_ref = db.collection('votes').document(fruit)
-        votes_ref.set({'count': firestore.Increment(1)}, merge=True)        
-    return render_template('results.html')
+# @app.route('/vote', methods = ['POST'])
+# def vote():
+#     fruit = request.form.get('Vote')
+#     if fruit:
+#         votes_ref = db.collection('votes').document(fruit)
+#         votes_ref.set({'count': firestore.Increment(1)}, merge=True)        
+#     return render_template('results.html')
 
-@app.route('/results')
-def results():
-    votes = {}
-    docs = db.collection('votes').stream()
-    for doc in docs:
-        votes[doc.id] = doc.to_dict().get('count', 0)
-    return render_template('results.html', votes=votes)
+# @app.route('/results')
+# def results():
+#     votes = {}
+#     docs = db.collection('votes').stream()
+#     for doc in docs:
+#         votes[doc.id] = doc.to_dict().get('count', 0)
+#     return render_template('results.html', votes=votes)
 
 
 if __name__ == '__main__':
