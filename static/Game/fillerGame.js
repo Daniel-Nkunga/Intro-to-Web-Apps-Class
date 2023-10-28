@@ -32,15 +32,6 @@ function render() {
 }
 
 function startGame(selectedGame) {
-    game = selectedGame;
-    if (game === 0) {
-        player1Start = 0;
-        player2Start = boardSize - 1;
-    } else if (game === 1) {
-        player1Start = Math.floor(boardSize / 2) - 1;
-        player2Start = Math.floor(boardSize / 2);
-    }
-
     board = Array.from({ length: boardSize }, () => Array(boardSize).fill(0));
     for (let i = 0; i < boardSize; i++) {
         for (let j = 0; j < boardSize; j++) {
@@ -56,10 +47,31 @@ function startGame(selectedGame) {
             board[i][j] = randomNumber;
         }
     }
-
+    game = selectedGame;
+    if (game === 0) {
+        player1Start = 0;
+        player2Start = boardSize - 1;
+    } else if (game === 1) {
+        player1Start = Math.floor(boardSize / 2) - 1;
+        player2Start = Math.floor(boardSize / 2);
+    } else if (game === 2){
+        player1Start = 0;
+        player2Start = boardSize - 1;
+        addBlocks();
+    }
     render();
-    print("Player 1's turn");
-    playGame();
+}
+
+function addBlocks(){
+    for (let i = 0; i < boardSize; i++) {
+        for (let j = 0; j < boardSize; j++) {
+            let randomNum = Math.floor(Math.random() * 4);
+            if(randomNum == 0 && (i != 0 && j != 0) && (i != boardSize-1 && j != boardSize-1)){
+                board[i][j] = 0;
+            }
+        }
+    }
+
 }
 
 function isValid(target) {
@@ -102,12 +114,13 @@ function switchPlayer() {
 
 function checkWin() {
     const uniqueColors = new Set();
+    uniqueColors.add(0);
     for (let i = 0; i < boardSize; i++) {
         for (let j = 0; j < boardSize; j++) {
             uniqueColors.add(board[i][j]);
         }
     }
-    if (uniqueColors.size > 2) {
+    if (uniqueColors.size > 3) {
         return false;
     } else {
         let player1Count = board[player1Start][player1Start];
@@ -124,10 +137,13 @@ function checkWin() {
             }
         }
         if (player1Count > player2Count) {
+            alert(`Player 1: ${player1Count} Player 2: ${player2Count}\nPlayer 1 Wins!`);
             print(`Player 1: ${player1Count} Player 2: ${player2Count}\nPlayer 1 Wins!`);
         } else if (player1Count < player2Count) {
+            alert(`Player 1: ${player1Count} Player 2: ${player2Count}\nPlayer 2 Wins!`);
             print(`Player 1: ${player1Count} Player 2: ${player2Count}\nPlayer 2 Wins!`);
         } else {
+            alert(`Player 1: ${player1Count} Player 2: ${player2Count}\nIt's a tie!`);
             print(`Player 1: ${player1Count} Player 2: ${player2Count}\nIt's a tie!`);
         }
         return true;
@@ -145,7 +161,6 @@ function handleCellClick(row, col) {
         render();
         switchPlayer();
         if (checkWin()) {
-            // Game is over, do something here
         }
     }
 }

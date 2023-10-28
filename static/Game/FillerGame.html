@@ -1,14 +1,20 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Flood Fill Game</title>
+    <title>Filler</title>
     <link rel="styleSheet" href="\static\Game\FillerGame.css">
 </head>
 <body>
-    <div id="terminal">
-        <div id="grid-container"></div>
-        <div id="output"></div>
-        <input id="input" type="text">
+    <div id = "terminal">
+    <div id = "grid-container"></div>
+    <div class = "rules-gamemode">
+        <h1>This is Filler</h1>
+        <p>The goal of filler is to get more colors than your opponent. You do that by capturing more colors by clicking them on the grid. You cannot capture the color you opponent is using. Whoever has the most colors by the end wins</p>
+        <p>In standard you start from the edge of the board (top left and bottom right). In close quarters you start from the center of the board. In blocked random blocks that you can't capture are generated.</p>
+        <button onclick = "startGame(0)">Standard</button>
+        <button onclick = "startGame(1)">Close Quarters</button>
+        <button onclick = "startGame(2)">Blocked</button>
+    </div>
     </div>
     <script src="fillerGame.js"></script>
 </body>

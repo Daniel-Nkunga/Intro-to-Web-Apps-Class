@@ -4,13 +4,27 @@
     color: black;
     text-align: center;
 }
-#game-board {
-    display: grid;
-    grid-template-columns: repeat(10, 1fr);
-    grid-template-rows: repeat(10, 1fr);
-    gap: 2px;
+.rules-gamemode{
+    background-color: #afafaf;
+    width: 75%;
+    margin: auto;
+    margin-top: 4px;
+    padding: 4px;
 }
-
+.rules-gamemode h1{
+    margin: 0px;
+    font-size: 1.5em;
+}
+.rules-gamemode p{
+    margin: 0px;
+    font-size: .75em;
+}
+.rules-gamemode button{
+    border-radius: 8px;
+}
+.rules-gamemode button:hover{
+    background-color: #495057;
+}
 .cell {
     width: 50px;
     height: 50px;
@@ -53,54 +67,77 @@ body {
     background-position: 0 0, 0 0, 40px 70px, 40px 70px, 0 0, 40px 70px;
     }
 
-    #grid-container {
-        display: grid;
-        grid-template-columns: repeat(10, 1fr); 
-        grid-gap: 2px; 
-        width: 550px; 
-        height: 550px; 
-        border: 2px solid black; 
-        margin: auto;
-        padding: 4px;
-        background-color: #495057;
-    }
-    
-    .game-text {
-        font-size: 18px;
-        font-weight: bold;
-        color: #fff;
-    }
+#grid-container {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr); 
+    grid-gap: 2px; 
+    width: 550px; 
+    height: 550px; 
+    border: 2px solid black; 
+    margin: auto;
+    padding: 4px;
+    background-color: #495057;
+    margin-top: .5%;
+}
 
-    .grid-item {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 24px;
-    }
-    .grid-item:hover{
-        background-color: #fff;
-    }
-    
-    .grid-item-1 {
-        background-color: red;
-    }
-    
-    .grid-item-2 {
-        background-color: orange;
-    }
-    
-    .grid-item-3 {
-        background-color: yellow;
-    }
-    
-    .grid-item-4 {
-        background-color: green;
-    }
-    
-    .grid-item-5 {
-        background-color: blue;
-    }
-    
-    .grid-item-6 {
-        background-color: purple;
-    }
+.grid-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+}
+.grid-item:hover{
+    background-color: #fff;
+}
+
+.grid-item-0 {
+    background-color: #212529;
+}
+
+.grid-item-1 {
+    background-color: red;
+}
+
+.grid-item-2 {
+    background-color: orange;
+}
+
+.grid-item-3 {
+    background-color: yellow;
+}
+
+.grid-item-4 {
+    background-color: green;
+}
+
+.grid-item-5 {
+    background-color: blue;
+}
+
+.grid-item-6 {
+    background-color: purple;
+}
+
+/* .colorChanger {
+    display: flex; 
+    justify-content: space-between; 
+    width: 550px;
+    height: 125px;
+    background-color: #495057;
+    margin: auto;
+    border-radius: 16px;
+    vertical-align: middle;
+}
+
+.vertical-slider {
+    writing-mode: bt-lr;
+    appearance: slider-vertical;
+    width: 10px;
+    height: 80%;
+    background: #f1f1f1;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    flex-grow: 1;
+    padding: 4px;
+} */
