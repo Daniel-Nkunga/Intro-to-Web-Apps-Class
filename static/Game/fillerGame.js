@@ -137,13 +137,13 @@ function checkWin() {
             }
         }
         if (player1Count > player2Count) {
-            alert(`Player 1: ${player1Count} Player 2: ${player2Count}\nPlayer 1 Wins!`);
+            // alert(`Player 1: ${player1Count} Player 2: ${player2Count}\nPlayer 1 Wins!`);
             print(`Player 1: ${player1Count} Player 2: ${player2Count}\nPlayer 1 Wins!`);
         } else if (player1Count < player2Count) {
-            alert(`Player 1: ${player1Count} Player 2: ${player2Count}\nPlayer 2 Wins!`);
+            // alert(`Player 1: ${player1Count} Player 2: ${player2Count}\nPlayer 2 Wins!`);
             print(`Player 1: ${player1Count} Player 2: ${player2Count}\nPlayer 2 Wins!`);
         } else {
-            alert(`Player 1: ${player1Count} Player 2: ${player2Count}\nIt's a tie!`);
+            // alert(`Player 1: ${player1Count} Player 2: ${player2Count}\nIt's a tie!`);
             print(`Player 1: ${player1Count} Player 2: ${player2Count}\nIt's a tie!`);
         }
         return true;
