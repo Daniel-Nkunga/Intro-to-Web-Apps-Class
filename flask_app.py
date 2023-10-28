@@ -236,7 +236,7 @@ def passed():
 
 @app.route('/game')
 def serve_game():
-    return send_from_directory('static', 'Game.html')
+    return send_from_directory('static\Game', 'Game.html')
 
 # @app.route('/survey')
 # def serve_survey():
