@@ -17,31 +17,31 @@ def serve_home():
 
 @app.route('/homepage')
 def serve_homepage():
-    return send_from_directory('static\Biosite', 'BiositeHomepage.html')
+    return send_from_directory('static', 'Biosite\BiositeHomepage.html')
 
 @app.route('/about')
 def serve_about():
-    return send_from_directory('static\Biosite', 'BiositeAboutMe.html')
+    return send_from_directory('static', 'Biosite\BiositeAboutMe.html')
 
 @app.route('/schedule')
 def serve_schedule():
-    return send_from_directory('static\Biosite', 'BiositeSchedule.html')
+    return send_from_directory('static', 'Biosite\BiositeSchedule.html')
 
 @app.route('/favorite')
 def serve_favorite():
-    return send_from_directory('static\Biosite', 'BiositeFavoriteWebsites.html')
+    return send_from_directory('static', 'Biosite\BiositeFavoriteWebsites.html')
 
 @app.route('/other')
 def serve_other():
-    return send_from_directory('static\Biosite', 'BiositeOther.html')
+    return send_from_directory('static', 'Biosite\BiositeOther.html')
 
 @app.route('/bad')
 def serve_bad():
-    return send_from_directory('static\BadCSS', 'BadCSS.html')
+    return send_from_directory('static', 'BadCSS\BadCSS.html')
 
 @app.route('/good')
 def serve_good():
-    return send_from_directory('static\CoolCSS', 'CSS Zen Garden_ The Beauty of CSS Design.html')
+    return send_from_directory('static', 'CoolCSS\CSS Zen Garden_ The Beauty of CSS Design.html')
 
 @app.route('/valid')
 def serve_valid():
@@ -236,7 +236,7 @@ def passed():
 
 @app.route('/game')
 def serve_game():
-    return send_from_directory('static\Game', 'FillerGame.html')
+    return send_from_directory('static', 'Game\FillerGame.html')
 
 # @app.route('/survey')
 # def serve_survey():
