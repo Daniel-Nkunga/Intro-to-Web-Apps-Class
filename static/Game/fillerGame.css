@@ -1,7 +1,7 @@
 *{
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: 18px;
-    color: #fff;
+    color: black;
     text-align: center;
 }
 #game-board {
@@ -55,20 +55,30 @@ body {
 
     #grid-container {
         display: grid;
-        grid-template-columns: repeat(10, 1fr); /* Adjust the number of columns as needed */
-        grid-gap: 2px; /* Adjust the gap between grid items */
-        width: 300px; /* Set the desired width for the grid */
-        height: 300px; /* Set the desired height for the grid */
-        border: 1px solid black; /* Add borders for visualization */
+        grid-template-columns: repeat(10, 1fr); 
+        grid-gap: 2px; 
+        width: 550px; 
+        height: 550px; 
+        border: 2px solid black; 
         margin: auto;
+        padding: 4px;
+        background-color: #495057;
     }
     
+    .game-text {
+        font-size: 18px;
+        font-weight: bold;
+        color: #fff;
+    }
+
     .grid-item {
         display: flex;
         align-items: center;
         justify-content: center;
-        border: 1px solid #ddd;
         font-size: 24px;
+    }
+    .grid-item:hover{
+        background-color: #fff;
     }
     
     .grid-item-1 {
