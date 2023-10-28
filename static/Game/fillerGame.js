@@ -1,11 +1,14 @@
 const gridContainer = document.getElementById('grid-container');
 const outputDiv = document.getElementById('output');
-const inputElement = document.getElementById('input');
 
-function createGridItem(value) {
+function createGridItem(value, row, col) {
     const gridItem = document.createElement('div');
     gridItem.classList.add('grid-item', `grid-item-${value}`);
     gridContainer.appendChild(gridItem);
+
+    gridItem.addEventListener('click', () => {
+        handleCellClick(row, col);
+    });
 }
 
 const boardSize = 10;
@@ -23,7 +26,7 @@ function render() {
     gridContainer.innerHTML = '';
     for (let i = 0; i < boardSize; i++) {
         for (let j = 0; j < boardSize; j++) {
-            createGridItem(board[i][j]);
+            createGridItem(board[i][j], i, j);
         }
     }
 }
@@ -111,18 +114,18 @@ function checkWin() {
         let player2Count = board[player2Start][player2Start];
         for (let i = 0; i < boardSize; i++) {
             for (let j = 0; j < boardSize; j++) {
-                if(board[i][j] == board[player1Start][player1Start]){
+                if (board[i][j] == board[player1Start][player1Start]) {
                     player1Count++;
-                }else if(board[i][j] == board[player2Start][player2Start]){
+                } else if (board[i][j] == board[player2Start][player2Start]) {
                     player2Count++;
                 } else {
-                    console.print();
+                    console.log();
                 }
             }
         }
-        if(player1Count > player2Count){
+        if (player1Count > player2Count) {
             print(`Player 1: ${player1Count} Player 2: ${player2Count}\nPlayer 1 Wins!`);
-        } else if (player1Count < player2Count){
+        } else if (player1Count < player2Count) {
             print(`Player 1: ${player1Count} Player 2: ${player2Count}\nPlayer 2 Wins!`);
         } else {
             print(`Player 1: ${player1Count} Player 2: ${player2Count}\nIt's a tie!`);
@@ -131,26 +134,20 @@ function checkWin() {
     }
 }
 
-function print(text) {
-    outputDiv.innerHTML = `<p class="game-text">${text}</p>`;
+function handleCellClick(row, col) {
+    const targetColor = board[row][col];
+    if (isValid(targetColor)) {
+        if (currentPlayer === 0) {
+            floodFill(player1Start, player1Start, board[player1Start][player1Start], targetColor);
+        } else {
+            floodFill(player2Start, player2Start, board[player2Start][player2Start], targetColor);
+        }
+        render();
+        switchPlayer();
+        if (checkWin()) {
+            // Game is over, do something here
+        }
+    }
 }
 
-function playGame() {
-    inputElement.addEventListener('keyup', function (event) {
-        if (event.key === 'Enter') {
-        const inputValue = parseInt(inputElement.value, 10);
-            if (isValid(inputValue)) {
-                if (currentPlayer === 0) {
-                    floodFill(player1Start, player1Start, board[player1Start][player1Start], inputValue);
-                } else {
-                    floodFill(player2Start, player2Start, board[player2Start][player2Start], inputValue);
-                }
-                render();
-                switchPlayer();
-                checkWin();
-            }
-            inputElement.value = '';
-        }
-    });
-}
 startGame(0);
