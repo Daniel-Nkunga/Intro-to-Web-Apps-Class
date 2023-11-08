@@ -10,832 +10,855 @@
     </header>
     <body>
         <h1>THE ULTIMATE FRUIT TIER LIST</h1>
-        <p>Vote for your favorite fruit!</p>
+        <p>Vote for all your favorite fruit!</p>
         <div class = "main"></div>
         <div class = "page">
+            <form action="/vote" method="POST">
                 <p>Beware you can only submit the form once!</p>
                 <div class="card">
                     <h1>Apples</h1>
                     <p>Classic with a crunch. Comes in a variety of colors and flavors from the red Cosmic Crisp to the Green Granny Smiths!</p>
-                    <img src="/static/Images/Fruit/Apples.jpg" alt="A picture of apples">
-                    <form action="/vote" method="POST">
-                        <input type="checkbox" name="Vote" value="Apples">
-                    </form>
-                </div> 
-
+                    <label>
+                        <input type="checkbox" value="apples" name="fruit">
+                        <img src="/static/Images/Fruit/Apples.jpg" alt="A picture of apples">
+                    </label>
+                </div>
+                
                 <div class="card">
                     <h1>Apricots</h1>
                     <p>A juicy, orange treasure that's like biting into a burst of summer sunshine.</p>
-                    <img src="/static/Images/Fruit/Apricots.jpg" alt="A picture of apricots">
-                    <form action="/vote" method="POST">
-                        <input type="checkbox" name="Vote" value="Apricots">
-                    </form>
+                    <label>
+                        <input required type="checkbox" value="apricots" name="lang">
+                        <img src="/static/Images/Fruit/Apricots.jpg" alt="A picture of apricots" name="Apricots">    
+                    </label>
                 </div>
                 
                 <div class="card">
                     <h1>Avocados</h1>
                     <p>Creamy and green, avocados are the ultimate addition to any dish, turning it into a smooth and buttery sensation.</p>
-                    <img src="/static/Images/Fruit/Avocados.jpg" alt="A picture of avocados">
-                    <form action="/vote" method="POST">
-                        <input type="checkbox" name="Vote" value="Avocados">
-                    </form>
+                    <label>
+                        <input required type="checkbox" value="avocados" name="lang">
+                        <img src="/static/Images/Fruit/Avocados.jpg" alt="A picture of avocados" name="Avocados">    
+                    </label>
                 </div>
                 
                 <div class="card">
                     <h1>Bananas</h1>
                     <p>Tropical delight, bananas are always ready for a sunshine snack with their vibrant yellow peel.</p>
-                    <img src="/static/Images/Fruit/Bananas.jpg" alt="A picture of bananas">
-                    <form action="/vote" method="POST">
-                        <input type="checkbox" name="Vote" value="Bananas">
-                    </form>
+                    <label>
+                        <input required type="checkbox" value="bananas" name="lang">
+                        <img src="/static/Images/Fruit/Bananas.jpg" alt="A picture of bananas" name="Bananas">    
+                    </label>
                 </div>
                 
                 <div class="card">
                     <h1>Bilberry</h1>
                     <p>These small, dark blue gems are like wild blueberries, bursting with intense flavor and antioxidants.</p>
-                    <img src="/static/Images/Fruit/Bilberry.jpg" alt="A picture of bilberries">
-                    <form action="/vote" method="POST">
-                        <input type="checkbox" name="Vote" value="Bilberry">
-                    </form>
+                    <label>
+                        <input required type="checkbox" value="bilberry" name="lang">
+                        <img src="/static/Images/Fruit/Bilberry.jpg" alt="A picture of bilberries" name="Bilberry">    
+                    </label>
                 </div>
                 
                 <div class="card">
                     <h1>Blackberry</h1>
                     <p>Sweet and slightly tart, these deep purple berries are perfect for pies, jams, or simply snacking.</p>
-                    <img src="/static/Images/Fruit/Blackberries.jpg" alt="A picture of blackberries">
-                    <form action="/vote" method="POST">
-                        <input type="checkbox" name="Vote" value="Blackberry">
-                    </form>
+                    <label>
+                        <input required type="checkbox" value="blackberry" name="lang">
+                        <img src="/static/Images/Fruit/Blackberries.jpg" alt="A picture of blackberries" name="Blackberry">    
+                    </label>
                 </div>
-
+                
                 <div class="card">
                     <h1>Blackcurrant</h1>
                     <p>These tiny, tangy jewels are a rich, dark purple delight, perfect for jams and desserts.</p>
-                    <img src="/static/Images/Fruit/Blackcurrants.jpg" alt="A picture of blackcurrants">
-                    <form action="/vote" method="POST">
-                        <input type="checkbox" name="Vote" value="Blackcurrant">
-                    </form>
+                    <label>
+                        <input required type="checkbox" value="blackcurrant" name="lang">
+                        <img src="/static/Images/Fruit/Blackcurrants.jpg" alt="A picture of blackcurrants" name="Blackcurrant">    
+                    </label>
                 </div>
-
+                
                 <div class="card">
                     <h1>Blueberry</h1>
                     <p>Pop one of these plump, indigo orbs in your mouth, and experience a burst of sweet, fruity goodness.</p>
-                    <img src="/static/Images/Fruit/Blueberries.jpg" alt="A picture of blueberries">
-                    <form action="/vote" method="POST">
-                        <input type="checkbox" name="Vote" value="Blueberry">
-                    </form>
+                    <label>
+                        <input required type="checkbox" value="blueberry" name="lang">
+                        <img src="/static/Images/Fruit/Blueberries.jpg" alt="A picture of blueberries" name="Blueberry">    
+                    </label>
                 </div>
-
+                
                 <div class="card">
                     <h1>Boysenberry</h1>
                     <p>A berry bonanza with a rich, deep maroon hue and a medley of sweet and tangy flavors.</p>
-                    <img src="/static/Images/Fruit/Boysenberry.jpg" alt="A picture of boysenberries">
-                    <form action="/vote" method="POST">
-                        <input type="checkbox" name="Vote" value="Boysenberry">
-                    </form>
+                    <label>
+                        <input required type="checkbox" value="boysenberry" name="lang">
+                        <img src="/static/Images/Fruit/Boysenberry.jpg" alt="A picture of boysenberries" name="Boysenberry">    
+                    </label>
                 </div>
-
+                
                 <div class="card">
                     <h1>Cantaloupe</h1>
                     <p>With a webbed rind and vibrant orange flesh, cantaloupes provide a sweet, fragrant bite that's great for snacks.</p>
-                    <img src="/static/Images/Fruit/Cantalopue.jpg" alt="A picture of cantaloupe">
-                    <form action="/vote" method="POST">
-                        <input type="checkbox" name="Vote" value="Cantaloupe">
-                    </form>
+                    <label>
+                        <input required type="checkbox" value="cantaloupe" name="lang">
+                        <img src="/static/Images/Fruit/Cantalopue.jpg" alt="A picture of cantaloupes" name="Cantaloupe">    
+                    </label>
                 </div>
-
+                
                 <div class="card">
                     <h1>Currant</h1>
                     <p>Small and radiant red, currants pack a zesty punch, ideal for jams and sauces.</p>
-                    <img src="/static/Images/Fruit/Currant.jpg" alt="A picture of currants">
-                    <form action="/vote" method="POST">
-                        <input type="checkbox" name="Vote" value="Currant">
-                    </form>
+                    <label>
+                        <input required type="checkbox" value="currant" name="lang">
+                        <img src="/static/Images/Fruit/Currant.jpg" alt="A picture of currants" name="Currant">    
+                    </label>
                 </div>
-
+                
                 <div class="card">
                     <h1>Cherry</h1>
                     <p>These plump, ruby-red or deep purple treasures are nature's candy, bursting with sweet juiciness.</p>
-                    <img src="/static/Images/Fruit/Cherry.jpg" alt="A picture of cherries">
-                    <form action="/vote" method="POST">
-                        <input type="checkbox" name="Vote" value="Cherry">
-                    </form>
+                    <label>
+                        <input required type="checkbox" value="cherry" name="lang">
+                        <img src="/static/Images/Fruit/Cherry.jpg" alt="A picture of cherries" name="Cherry">    
+                    </label>
                 </div>
-
+                
                 <div class="card">
                     <h1>Cherimoya</h1>
                     <p>A tropical delight with pale green, scaly skin and a creamy, vanilla-like flesh that'll transport you to a sunny paradise.</p>
-                    <img src="/static/Images/Fruit/Cherimoya.jpg" alt="A picture of cherimoya">
-                    <form action="/vote" method="POST">
-                        <input type="checkbox" name="Vote" value="Cherimoya">
-                    </form>
+                    <label>
+                        <input required type="checkbox" value="cherimoya" name="lang">
+                        <img src="/static/Images/Fruit/Cherimoya.jpg" alt="A picture of cherimoyas" name="Cherimoya">    
+                    </label>
                 </div>
                 
                 <div class="card">
                     <h1>Chico Fruit</h1>
                     <p>This small, brown, and fuzzy delight is an explosion of sweet, honeyed flavor with a unique texture.</p>
-                    <img src="/static/Images/Fruit/ChicoFruit.jpg" alt="A picture of chico fruit">
-                    <form action="/vote" method="POST">
-                        <input type="checkbox" name="Vote" value="Chico Fruit">
-                    </form>
+                    <label>
+                        <input required type="checkbox" value="chico" name="lang">
+                        <img src="/static/Images/Fruit/ChicoFruit.jpg" alt="A picture of chico fruit" name="ChicoFruit">    
+                    </label>
                 </div>
                 
                 <div class="card">
                     <h1>Cloudberry</h1>
                     <p>Like nuggets of gold, these orange, raspberry-like gems thrive in the Nordic wilderness, offering a rare, tangy-sweet taste.</p>
-                    <img src="/static/Images/Fruit/Cloudberry.jpg" alt="A picture of cloudberry">
-                    <form action="/vote" method="POST">
-                        <input type="checkbox" name="Vote" value="Cloudberry">
-                    </form>
+                    <label>
+                        <input required type="checkbox" value="cloudberry" name="lang">
+                        <img src="/static/Images/Fruit/Cloudberry.jpg" alt="A picture of cloudberries" name="Cloudberry">    
+                    </label>
                 </div>
                 
                 <div class="card">
                     <h1>Coconut</h1>
                     <p>Tropical icon with a hard, brown shell hiding a treasure of sweet, milky-white flesh.</p>
-                    <img src="/static/Images/Fruit/Coconut.jpg" alt="A picture of coconut">
-                    <form action="/vote" method="POST">
-                        <input type="checkbox" name="Vote" value="Coconut">
-                    </form>
+                    <label>
+                        <input required type="checkbox" value="coconut" name="lang">
+                        <img src="/static/Images/Fruit/Coconut.jpg" alt="A picture of coconuts" name="Coconut">    
+                    </label>
                 </div>
                 
                 <div class="card">
                     <h1>Cranberry</h1>
                     <p>Tangy, crimson orbs that pop with flavor, making them essential for zesty sauces and holiday feasts.</p>
-                    <img src="/static/Images/Fruit/Cranberry.jpg" alt="A picture of cranberries">
-                    <form action="/vote" method="POST">
-                        <input type="checkbox" name="Vote" value="Cranberry">
-                    </form>
+                    <label>
+                        <input required type="checkbox" value="cranberry" name="lang">
+                        <img src="/static/Images/Fruit/Cranberry.jpg" alt="A picture of cranberries" name="Cranberry">    
+                    </label>
                 </div>
                 
                 <div class="card">
                     <h1>Cucumber</h1>
                     <p>Crisp and green, cucumbers are the cool, refreshing choice for salads and snacking.</p>
-                    <img src="/static/Images/Fruit/Cucumber.jpg" alt="A picture of cucumber">
-                    <form action="/vote" method="POST">
-                        <input type="checkbox" name="Vote" value="Cucumber">
-                    </form>
+                    <label>
+                        <input required type="checkbox" value="cucumber" name="lang">
+                        <img src="/static/Images/Fruit/Cucumber.jpg" alt="A picture of cucumbers" name="Cucumber">    
+                    </label>
                 </div>
                 
                 <div class="card">
                     <h1>Custard Apple</h1>
                     <p>With green, bumpy skin and sweet, custard-like flesh, this fruit is a tropical treat.</p>
-                    <img src="/static/Images/Fruit/CustardApple.jpg" alt="A picture of custard apple">
-                    <form action="/vote" method="POST">
-                        <input type="checkbox" name="Vote" value="Custard Apple">
-                    </form>
-                </div>
+                    <label>
+                        <input required type="checkbox" value="custardapple" name="lang">
+                        <img src="/static/Images/Fruit/CustardApple.jpg" alt="A picture of custard apples" name="CustardApple">    
+                    </label>
+                </div>                
                 
                 <div class="card">
                     <h1>Damson</h1>
                     <p>Small and purple, these plums are perfect for jams and desserts, offering a tart and juicy burst.</p>
-                    <img src="/static/Images/Fruit/Damson.jpg" alt="A picture of damson plums">
-                    <form action="/vote" method="POST">
-                        <input type="checkbox" name="Vote" value="Damson">
-                    </form>
+                    <label>
+                        <input required type="checkbox" value="damson" name="lang">
+                        <img src="/static/Images/Fruit/Damson.jpg" alt="A picture of damsons" name="Damson">    
+                    </label>
                 </div>
                 
                 <div class="card">
                     <h1>Date</h1>
                     <p>Nature's sweetest brown nugget, perfect for satisfying your sugar cravings.</p>
-                    <img src="/static/Images/Fruit/Date.jpg" alt="A picture of dates">
-                    <form action="/vote" method="POST">
-                        <input type="checkbox" name="Vote" value="Date">
-                    </form>
+                    <label>
+                        <input required type="checkbox" value="date" name="lang">
+                        <img src="/static/Images/Fruit/Date.jpg" alt="A picture of dates" name="Date">    
+                    </label>
                 </div>
                 
                 <div class="card">
                     <h1>Dragonfruit</h1>
                     <p>Vibrant pink or yellow with speckled skin, this exotic fruit offers a subtly sweet, crunchy, and refreshing experience.</p>
-                    <img src="/static/Images/Fruit/DragonFruit.jpg" alt="A picture of dragonfruit">
-                    <form action="/vote" method="POST">
-                        <input type="checkbox" name="Vote" value="Dragonfruit">
-                    </form>
+                    <label>
+                        <input required type="checkbox" value="dragonfruit" name="lang">
+                        <img src="/static/Images/Fruit/Dragonfruit.jpg" alt="A picture of dragonfruit" name="Dragonfruit">    
+                    </label>
                 </div>
                 
                 <div class="card">
                     <h1>Durian</h1>
                     <p>Known as the "King of Fruits," it boasts a divisive odor but is adored for its rich, custard-like flesh.</p>
-                    <img src="/static/Images/Fruit/Durian.jpg" alt="A picture of durian">
-                    <form action="/vote" method="POST">
-                        <input type="checkbox" name="Vote" value="Durian">
-                    </form>
+                    <label>
+                        <input required type="checkbox" value="durian" name="lang">
+                        <img src="/static/Images/Fruit/Durian.jpg" alt="A picture of durian" name="Durian">    
+                    </label>
                 </div>
                 
                 <div class="card">
                     <h1>Elderberry</h1>
                     <p>Small, dark berries perfect for immune-boosting syrups, with a deep, purple hue and tangy taste.</p>
-                    <img src="/static/Images/Fruit/Elderberry.jpg" alt="A picture of elderberries">
-                    <form action="/vote" method="POST">
-                        <input type="checkbox" name="Vote" value="Elderberry">
-                    </form>
+                    <label>
+                        <input required type="checkbox" value="elderberry" name="lang">
+                        <img src="/static/Images/Fruit/Elderberry.jpg" alt="A picture of elderberries" name="Elderberry">    
+                    </label>
                 </div>
                 
                 <div class="card">
                     <h1>Feijoa</h1>
                     <p>Bright green, oval delights with a tropical flavor reminiscent of guava and pineapple.</p>
-                    <img src="/static/Images/Fruit/Feijoa.jpg" alt="A picture of feijoa">
-                    <form action="/vote" method="POST">
-                        <input type="checkbox" name="Vote" value="Feijoa">
-                    </form>
+                    <label>
+                        <input required type="checkbox" value="feijoa" name="lang">
+                        <img src="/static/Images/Fruit/Feijoa.jpg" alt="A picture of feijoas" name="Feijoa">    
+                    </label>
                 </div>
                 
                 <div class="card">
                     <h1>Fig</h1>
                     <p>Velvety and purple or green, figs offer a luscious, honeyed taste that's perfect for desserts or snacking.</p>
-                    <img src="/static/Images/Fruit/Fig.jpg" alt="A picture of figs">
-                    <form action="/vote" method="POST">
-                        <input type="checkbox" name="Vote" value="Fig">
-                    </form>
+                    <label>
+                        <input required type="checkbox" value="fig" name="lang">
+                        <img src="/static/Images/Fruit/Fig.jpg" alt="A picture of figs" name="Fig">    
+                    </label>
                 </div>
                 
                 <div class="card">
                     <h1>Goji Berry</h1>
                     <p>Bright red and packed with antioxidants, these tiny berries are a healthy and tangy delight.</p>
-                    <img src="/static/Images/Fruit/GojiBerry.jpg" alt="A picture of goji berries">
-                    <form action="/vote" method="POST">
-                        <input type="checkbox" name="Vote" value="Goji Berry">
-                    </form>
+                    <label>
+                        <input required type="checkbox" value="gojiberry" name="lang">
+                        <img src="/static/Images/Fruit/GojiBerry.jpg" alt="A picture of goji berries" name="GojiBerry">    
+                    </label>
                 </div>
                 
                 <div class="card">
                     <h1>Gooseberry</h1>
                     <p>Green or red, these small, translucent orbs are sweet and tart, perfect for jams and pies.</p>
-                    <img src="/static/Images/Fruit/Gooseberry.jpg" alt="A picture of gooseberries">
-                    <form action="/vote" method="POST">
-                        <input type="checkbox" name="Vote" value="Gooseberry">
-                    </form>
+                    <label>
+                        <input required type="checkbox" value="gooseberry" name="lang">
+                        <img src="/static/Images/Fruit/Gooseberry.jpg" alt="A picture of gooseberries" name="Gooseberry">    
+                    </label>
                 </div>
                 
                 <div class="card">
                     <h1>Grape</h1>
                     <p>From deep purple to vibrant green, grapes are nature's candy, with a burst of sweetness in every bite.</p>
-                    <img src="/static/Images/Fruit/Grape.jpg" alt="A picture of grapes">
-                    <form action="/vote" method="POST">
-                        <input type="checkbox" name="Vote" value="Grape">
-                    </form>
+                    <label>
+                        <input required type="checkbox" value="grape" name="lang">
+                        <img src="/static/Images/Fruit/Grape.jpg" alt="A picture of grapes" name="Grape">    
+                    </label>
                 </div>
                 
                 <div class="card">
                     <h1>Grapefruit</h1>
                     <p>Large and yellow or pink, grapefruits offer a zesty and tangy flavor that's invigorating.</p>
-                    <img src="/static/Images/Fruit/Grapefruit.jpg" alt="A picture of grapefruits">
-                    <form action="/vote" method="POST">
-                        <input type="checkbox" name="Vote" value="Grapefruit">
-                    </form>
+                    <label>
+                        <input required type="checkbox" value="grapefruit" name="lang">
+                        <img src="/static/Images/Fruit/Grapefruit.jpg" alt="A picture of grapefruits" name="Grapefruit">    
+                    </label>
                 </div>
                 
                 <div class="card">
                     <h1>Guava</h1>
                     <p>With pink or yellow skin and sweet, tropical taste, guavas are a paradise in every bite.</p>
-                    <img src="/static/Images/Fruit/Guava.jpg" alt="A picture of guavas">
-                    <form action="/vote" method="POST">
-                        <input type="checkbox" name="Vote" value="Guava">
-                    </form>
+                    <label>
+                        <input required type="checkbox" value="guava" name="lang">
+                        <img src="/static/Images/Fruit/Guava.jpg" alt="A picture of guavas" name="Guava">    
+                    </label>
                 </div>
                 
                 <div class="card">
                     <h1>Honeyberry</h1>
                     <p>Blue-black and honey-sweet, these berries are a rare and delightful treat.</p>
-                    <img src="/static/Images/Fruit/Honeyberry.jpg" alt="A picture of honeyberries">
-                    <form action="/vote" method="POST">
-                        <input type="checkbox" name="Vote" value="Honeyberry">
-                    </form>
+                    <label>
+                        <input required type="checkbox" value="honeyberry" name="lang">
+                        <img src="/static/Images/Fruit/Honeyberry.jpg" alt="A picture of honeyberries" name="Honeyberry">    
+                    </label>
                 </div>
                 
                 <div class="card">
                     <h1>Honeydew</h1>
                     <p>Smooth and pale green, honeydews are the epitome of succulent sweetness, delivering a mild and refreshing flavor.</p>
-                    <img src="/static/Images/Fruit/Honeydew.jpg" alt="A picture of honeydews">
-                    <form action="/vote" method="POST">
-                        <input type="checkbox" name="Vote" value="Honeydew">
-                    </form>
+                    <label>
+                        <input required type="checkbox" value="honeydew" name="lang">
+                        <img src="/static/Images/Fruit/Honeydew.jpg" alt="A picture of honeydews" name="Honeydew">    
+                    </label>
                 </div>
                 
                 <div class="card">
                     <h1>Huckleberry</h1>
                     <p>Small and dark blue, these wild berries are a sweet and slightly tart wilderness treasure.</p>
-                    <img src="/static/Images/Fruit/Huckleberry.jpg" alt="A picture of huckleberries">
-                    <form action="/vote" method="POST">
-                        <input type="checkbox" name="Vote" value="Huckleberry">
-                    </form>
+                    <label>
+                        <input required type="checkbox" value="huckleberry" name="lang">
+                        <img src="/static/Images/Fruit/Huckleberry.jpg" alt="A picture of huckleberries" name="Huckleberry">    
+                    </label>
                 </div>
                 
                 <div class="card">
                     <h1>Jabuticaba</h1>
                     <p>These small, dark berries grow directly on the trunk, offering a unique and exotic experience.</p>
-                    <img src="/static/Images/Fruit/Jabuticaba.jpg" alt="A picture of jabuticaba">
-                    <form action="/vote" method="POST">
-                        <input type="checkbox" name="Vote" value="Jabuticaba">
-                    </form>
+                    <label>
+                        <input required type="checkbox" value="jabuticaba" name="lang">
+                        <img src="/static/Images/Fruit/Jabuticaba.jpg" alt="A picture of jabuticabas" name="Jabuticaba">    
+                    </label>
                 </div>
                 
                 <div class="card">
                     <h1>Jackfruit</h1>
                     <p>Massive and green with a tropical flavor, it's often called the "vegetable meat."</p>
-                    <img src="/static/Images/Fruit/Jackfruit.jpg" alt="A picture of jackfruit">
-                    <form action="/vote" method="POST">
-                        <input type="checkbox" name="Vote" value="Jackfruit">
-                    </form>
+                    <label>
+                        <input required type="checkbox" value="jackfruit" name="lang">
+                        <img src="/static/Images/Fruit/Jackfruit.jpg" alt="A picture of jackfruits" name="Jackfruit">    
+                    </label>
                 </div>
                 
                 <div class="card">
                     <h1>Jambul</h1>
                     <p>Small, dark purple or black berries with a sweet-tart taste, perfect for jams and desserts.</p>
-                    <img src="/static/Images/Fruit/Jambul.jpg" alt="A picture of jambul">
-                    <form action="/vote" method="POST">
-                        <input type="checkbox" name="Vote" value="Jambul">
-                    </form>
+                    <label>
+                        <input required type="checkbox" value="jambul" name="lang">
+                        <img src="/static/Images/Fruit/Jambul.jpg" alt="A picture of jambuls" name="Jambul">    
+                    </label>
                 </div>
                 
-                <div class = "card">
+                <div class="card">
                     <h1>Jujube</h1>
                     <p>Small, reddish-brown wonders with a crisp and sweet apple-like flavor.</p>
-                    <img src="/static/Images/Fruit/Jujube.jpg" alt="A picture of jujube">
-                    <form action="/vote" method="POST">
-                        <input type="checkbox" name="Vote" value="Jujube">
-                    </form>
+                    <label>
+                        <input required type="checkbox" value="jujube" name="lang">
+                        <img src="/static/Images/Fruit/Jujube.jpg" alt="A picture of jujubes" name="Jujube">    
+                    </label>
                 </div>
                 
                 <div class="card">
                     <h1>Juniper Berry</h1>
                     <p>Tiny, dark blue gems that infuse a piney, citrusy note into cuisine and spirits.</p>
-                    <img src="/static/Images/Fruit/JuniperBerry.jpg" alt="A picture of juniper berries">
-                    <form action="/vote" method="POST">
-                        <input type="checkbox" name="Vote" value="Juniper Berry">
-                    </form>
-                </div>
+                    <label>
+                        <input required type="checkbox" value="juniperberry" name="lang">
+                        <img src="/static/Images/Fruit/JuniperBerry.jpg" alt="A picture of juniper berries" name="JuniperBerry">    
+                    </label>
+                </div>                
                 
                 <div class="card">
                     <h1>Kiwano</h1>
                     <p>Also known as the "horned melon," it's spiky and orange with a jelly-like green interior, offering a sweet and mildly tart taste.</p>
-                    <img src="/static/Images/Fruit/Kiwano.jpg" alt="A picture of kiwano">
-                    <form action="/vote" method="POST">
-                        <input type="checkbox" name="Vote" value="Kiwano">
-                    </form>
+                    <label>
+                        <input required type="checkbox" value="kiwano" name="lang">
+                        <img src="/static/Images/Fruit/Kiwano.jpg" alt="A picture of kiwano" name="Kiwano">    
+                    </label>
                 </div>
                 
                 <div class="card">
                     <h1>Kiwifruit</h1>
                     <p>Fuzzy, brown on the outside, and vibrant green on the inside, kiwis provide a sweet-tart flavor that's perfect for snacking or salads.</p>
-                    <img src="/static/Images/Fruit/Kiwifruit.jpg" alt="A picture of kiwifruit">
-                    <form action="/vote" method="POST">
-                        <input type="checkbox" name="Vote" value="Kiwifruit">
-                    </form>
+                    <label>
+                        <input required type="checkbox" value="kiwifruit" name="lang">
+                        <img src="/static/Images/Fruit/Kiwifruit.jpg" alt="A picture of kiwifruit" name="Kiwifruit">    
+                    </label>
                 </div>
                 
                 <div class="card">
                     <h1>Kumquat</h1>
                     <p>Tiny, orange orbs with a sweet and tangy taste, eaten whole, skin and all.</p>
-                    <img src="/static/Images/Fruit/Kumquat.jpg" alt="A picture of kumquats">
-                    <form action="/vote" method="POST">
-                        <input type="checkbox" name="Vote" value="Kumquat">
-                    </form>
+                    <label>
+                        <input required type="checkbox" value="kumquat" name="lang">
+                        <img src="/static/Images/Fruit/Kumquat.jpg" alt="A picture of kumquat" name="Kumquat">    
+                    </label>
                 </div>
                 
                 <div class="card">
                     <h1>Lemon</h1>
                     <p>Zesty and bright yellow, lemons add a burst of citrusy flavor to a variety of dishes.</p>
-                    <img src="/static/Images/Fruit/Lemon.jpg" alt="A picture of lemons">
-                    <form action="/vote" method="POST">
-                        <input type="checkbox" name="Vote" value="Lemon">
-                    </form>
+                    <label>
+                        <input required type="checkbox" value="lemon" name="lang">
+                        <img src="/static/Images/Fruit/Lemon.jpg" alt="A picture of lemon" name="Lemon">    
+                    </label>
                 </div>
                 
                 <div class="card">
                     <h1>Lime</h1>
                     <p>Green and tangy, limes are the key to refreshing beverages and zesty cuisine.</p>
-                    <img src="/static/Images/Fruit/Lime.jpg" alt="A picture of limes">
-                    <form action="/vote" method="POST">
-                        <input type="checkbox" name="Vote" value="Lime">
-                    </form>
+                    <label>
+                        <input required type="checkbox" value="lime" name="lang">
+                        <img src="/static/Images/Fruit/Lime.jpg" alt="A picture of lime" name="Lime">    
+                    </label>
                 </div>
                 
                 <div class="card">
                     <h1>Loquat</h1>
                     <p>These small, orange fruits are sweet and slightly tart, perfect for snacking or preserves.</p>
-                    <img src="/static/Images/Fruit/Loquat.jpg" alt="A picture of loquats">
-                    <form action="/vote" method="POST">
-                        <input type="checkbox" name="Vote" value="Loquat">
-                    </form>
+                    <label>
+                        <input required type="checkbox" value="loquat" name="lang">
+                        <img src="/static/Images/Fruit/Loquat.jpg" alt="A picture of loquat" name="Loquat">    
+                    </label>
                 </div>
                 
                 <div class="card">
                     <h1>Longan</h1>
                     <p>Like a small, translucent lychee, longans offer a sweet and juicy bite.</p>
-                    <img src="/static/Images/Fruit/Longan.jpg" alt="A picture of longans">
-                    <form action="/vote" method="POST">
-                        <input type="checkbox" name="Vote" value="Longan">
-                    </form>
+                    <label>
+                        <input required type="checkbox" value="longan" name="lang">
+                        <img src="/static/Images/Fruit/Longan.jpg" alt="A picture of longan" name="Longan">    
+                    </label>
                 </div>
                 
                 <div class="card">
                     <h1>Lychee</h1>
                     <p>Small, round fruits with rough, pinkish skin and sweet, juicy, translucent flesh.</p>
-                    <img src="/static/Images/Fruit/Lychee.jpg" alt="A picture of lychees">
-                    <form action="/vote" method="POST">
-                        <input type="checkbox" name="Vote" value="Lychee">
-                    </form>
+                    <label>
+                        <input required type="checkbox" value="lychee" name="lang">
+                        <img src="/static/Images/Fruit/Lychee.jpg" alt="A picture of lychee" name="Lychee">    
+                    </label>
                 </div>
                 
                 <div class="card">
                     <h1>Mandarine</h1>
                     <p>Sweet and easy to peel, mandarins are a delightful snack.</p>
-                    <img src="/static/Images/Fruit/Mandarine.jpg" alt="A picture of mandarins">
-                    <form action="/vote" method="POST">
-                        <input type="checkbox" name="Vote" value="Mandarine">
-                    </form>
+                    <label>
+                        <input required type="checkbox" value="mandarine" name="lang">
+                        <img src="/static/Images/Fruit/Mandarine.jpg" alt="A picture of mandarine" name="Mandarine">    
+                    </label>
                 </div>
                 
                 <div class="card">
                     <h1>Mango</h1>
                     <p>The king of tropical fruits, with a vibrant orange hue and a sweet, exotic flavor.</p>
-                    <img src="/static/Images/Fruit/Mango.jpg" alt="A picture of mangoes">
-                    <form action="/vote" method="POST">
-                        <input type="checkbox" name="Vote" value="Mango">
-                    </form>
+                    <label>
+                        <input required type="checkbox" value="mango" name="lang">
+                        <img src="/static/Images/Fruit/Mango.jpg" alt="A picture of mango" name="Mango">    
+                    </label>
                 </div>
                 
                 <div class="card">
                     <h1>Mangosteen</h1>
                     <p>With a thick, purple rind and a snow-white interior, it offers a unique and sweet taste, often described as the "queen of fruits."</p>
-                    <img src="/static/Images/Fruit/Mangosteen.jpg" alt="A picture of mangosteens">
-                    <form action="/vote" method="POST">
-                        <input type="checkbox" name="Vote" value="Mangosteen">
-                    </form>
+                    <label>
+                        <input required type="checkbox" value="mangosteen" name="lang">
+                        <img src="/static/Images/Fruit/Mangosteen.jpg" alt="A picture of mangosteen" name="Mangosteen">    
+                    </label>
                 </div>
                 
                 <div class="card">
                     <h1>Marionberry</h1>
                     <p>A sweet and tart delight with deep, dark purple-black color, perfect for pies and jams.</p>
-                    <img src="/static/Images/Fruit/Marionberry.jpg" alt="A picture of marionberries">
-                    <form action="/vote" method="POST">
-                        <input type="checkbox" name="Vote" value="Marionberry">
-                    </form>
+                    <label>
+                        <input required type="checkbox" value="marionberry" name="lang">
+                        <img src="/static/Images/Fruit/Marionberry.jpg" alt="A picture of marionberry" name="Marionberry">    
+                    </label>
                 </div>
                 
                 <div class="card">
                     <h1>Miracle Fruit</h1>
                     <p>Small and red, this berry temporarily alters your taste buds to make sour foods taste sweet.</p>
-                    <img src="/static/Images/Fruit/MiracleFruit.jpg" alt="A picture of miracle fruits">
-                    <form action="/vote" method="POST">
-                        <input type="checkbox" name="Vote" value="Miracle Fruit">
-                    </form>
+                    <label>
+                        <input required type="checkbox" value="miraclefruit" name="lang">
+                        <img src="/static/Images/Fruit/MiracleFruit.jpg" alt="A picture of miracle fruit" name="MiracleFruit">    
+                    </label>
                 </div>
                 
                 <div class="card">
                     <h1>Mulberry</h1>
                     <p>Small and dark purple or red, mulberries are a sweet and tangy treat, often enjoyed fresh or in preserves.</p>
-                    <img src="/static/Images/Fruit/Mulberry.jpg" alt="A picture of mulberries">
-                    <form action="/vote" method="POST">
-                        <input type="checkbox" name="Vote" value="Mulberry">
-                    </form>
+                    <label>
+                        <input required type="checkbox" value="mulberry" name="lang">
+                        <img src="/static/Images/Fruit/Mulberry.jpg" alt="A picture of mulberry" name="Mulberry">    
+                    </label>
                 </div>
                 
                 <div class="card">
                     <h1>Nectarine</h1>
                     <p>Resembling peaches but with smooth skin, nectarines offer a sweet, juicy experience.</p>
-                    <img src="/static/Images/Fruit/Nectarine.jpg" alt="A picture of nectarines">
-                    <form action="/vote" method="POST">
-                        <input type="checkbox" name="Vote" value="Nectarine">
-                    </form>
+                    <label>
+                        <input required type="checkbox" value="nectarine" name="lang">
+                        <img src="/static/Images/Fruit/Nectarine.jpg" alt="A picture of nectarine" name="Nectarine">    
+                    </label>
                 </div>
                 
                 <div class="card">
                     <h1>Nance</h1>
                     <p>Tiny and yellow, these fruits Nance exceptionally sweet, often used in preserves.</p>
-                    <img src="/static/Images/Fruit/Nance.jpg" alt="A picture of nance fruits">
-                    <form action="/vote" method="POST">
-                        <input type="checkbox" name="Vote" value="Nance">
-                    </form>
+                    <label>
+                        <input required type="checkbox" value="nance" name="lang">
+                        <img src="/static/Images/Fruit/Nance.jpg" alt="A picture of nance" name="Nance">    
+                    </label>
                 </div>
                 
                 <div class="card">
                     <h1>Olive</h1>
                     <p>Small and green or black, olives are a Mediterranean delicacy with a briny, rich flavor.</p>
-                    <img src="/static/Images/Fruit/Olive.jpg" alt="A picture of olives">
-                    <form action="/vote" method="POST">
-                        <input type="checkbox" name="Vote" value="Olive">
-                    </form>
+                    <label>
+                        <input required type="checkbox" value="olive" name="lang">
+                        <img src="/static/Images/Fruit/Olive.jpg" alt="A picture of olive" name="Olive">    
+                    </label>
                 </div>
                 
                 <div class="card">
                     <h1>Orange</h1>
                     <p>Bright and citrusy, oranges are the epitome of vitamin C-packed refreshment.</p>
-                    <img src="/static/Images/Fruit/Orange.jpg" alt="A picture of oranges">
-                    <form action="/vote" method="POST">
-                        <input type="checkbox" name="Vote" value="Orange">
-                    </form>
-                </div>
-                
-                <div class="card">
-                    <h1>Tangerine</h1>
-                    <p>Sweet and tangy, tangerines are a burst of orange goodness.</p>
-                    <img src="/static/Images/Fruit/Tangerine.jpg" alt="A picture of tangerines">
-                    <form action="/vote" method="POST">
-                        <input type="checkbox" name="Vote" value="Tangerine">
-                    </form>
+                    <label>
+                        <input required type="checkbox" value="orange" name="lang">
+                        <img src="/static/Images/Fruit/Orange.jpg" alt="A picture of orange" name="Orange">    
+                    </label>
                 </div>
                 
                 <div class="card">
                     <h1>Papaya</h1>
                     <p>With vibrant orange flesh and tropical flavor, papayas are a sunny treat.</p>
-                    <img src="/static/Images/Fruit/Papaya.jpg" alt="A picture of papayas">
-                    <form action="/vote" method="POST">
-                        <input type="checkbox" name="Vote" value="Papaya">
-                    </form>
+                    <label>
+                        <input required type="checkbox" value="papaya" name="lang">
+                        <img src="/static/Images/Fruit/Papaya.jpg" alt="A picture of papaya" name="Papaya">    
+                    </label>
                 </div>
                 
                 <div class="card">
                     <h1>Passionfruit</h1>
                     <p>Small, round wonders with a vibrant purple or yellow skin and a sweet-tart taste.</p>
-                    <img src="/static/Images/Fruit/Passionfruit.jpg" alt="A picture of passionfruits">
-                    <form action="/vote" method="POST">
-                        <input type="checkbox" name="Vote" value="Passionfruit">
-                    </form>
+                    <label>
+                        <input required type="checkbox" value="passionfruit" name="lang">
+                        <img src="/static/Images/Fruit/Passionfruit.jpg" alt="A picture of passionfruit" name="Passionfruit">    
+                    </label>
                 </div>
                 
                 <div class="card">
                     <h1>Peach</h1>
                     <p>Fuzzy and ripe, peaches offer a juicy and sweet bite.</p>
-                    <img src="/static/Images/Fruit/Peach.jpg" alt="A picture of peaches">
-                    <form action="/vote" method="POST">
-                        <input type="checkbox" name="Vote" value="Peach">
-                    </form>
+                    <label>
+                        <input required type="checkbox" value="peach" name="lang">
+                        <img src="/static/Images/Fruit/Peach.jpg" alt="A picture of peach" name="Peach">    
+                    </label>
                 </div>
                 
                 <div class="card">
                     <h1>Pear</h1>
                     <p>With a smooth skin and a variety of colors, pears are a sweet and crisp delight.</p>
-                    <img src="/static/Images/Fruit/Pear.jpg" alt="A picture of pears">
-                    <form action="/vote" method="POST">
-                        <input type="checkbox" name="Vote" value="Pear">
-                    </form>
+                    <label>
+                        <input required type="checkbox" value="pear" name="lang">
+                        <img src="/static/Images/Fruit/Pear.jpg" alt="A picture of pear" name="Pear">    
+                    </label>
                 </div>
                 
                 <div class="card">
                     <h1>Persimmon</h1>
                     <p>Hachiya persimmons are orange and sweet when ripe, while Fuyu persimmons are squat, yellow, and offer a firm, sweet taste.</p>
-                    <img src="/static/Images/Fruit/Persimmon.jpg" alt="A picture of persimmons">
-                    <form action="/vote" method="POST">
-                        <input type="checkbox" name="Vote" value="Persimmon">
-                    </form>
+                    <label>
+                        <input required type="checkbox" value="persimmon" name="lang">
+                        <img src="/static/Images/Fruit/Persimmon.jpg" alt="A picture of persimmon" name="Persimmon">    
+                    </label>
                 </div>
                 
                 <div class="card">
                     <h1>Physalis</h1>
                     <p>Small, orange or yellow, these fruits are enveloped in papery husks and provide a sweet-tart taste.</p>
-                    <img src="/static/Images/Fruit/Physalis.jpg" alt="A picture of physalis">
-                    <form action="/vote" method="POST">
-                        <input type="checkbox" name="Vote" value="Physalis">
-                    </form>
+                    <label>
+                        <input required type="checkbox" value="physalis" name="lang">
+                        <img src="/static/Images/Fruit/Physalis.jpg" alt="A picture of physalis" name="Physalis">    
+                    </label>
                 </div>
                 
                 <div class="card">
                     <h1>Plantain</h1>
                     <p>Larger and starchier than regular bananas, plantains are the ultimate choice for frying or cooking.</p>
-                    <img src="/static/Images/Fruit/Plantain.jpg" alt="A picture of plantains">
-                    <form action="/vote" method="POST">
-                        <input type="checkbox" name="Vote" value="Plantain">
-                    </form>
+                    <label>
+                        <input required type="checkbox" value="plantain" name="lang">
+                        <img src="/static/Images/Fruit/Plantain.jpg" alt="A picture of plantain" name="Plantain">    
+                    </label>
                 </div>
                 
                 <div class="card">
                     <h1>Plum</h1>
                     <p>Sweet and juicy with a range of colors from red to purple, plums are perfect for snacking or baking.</p>
-                    <img src="/static/Images/Fruit/Plum.jpg" alt="A picture of plums">
-                    <form action="/vote" method="POST">
-                        <input type="checkbox" name="Vote" value="Plum">
-                    </form>
+                    <label>
+                        <input required type="checkbox" value="plum" name="lang">
+                        <img src="/static/Images/Fruit/Plum.jpg" alt="A picture of plum" name="Plum">    
+                    </label>
                 </div>
                 
                 <div class="card">
                     <h1>Prune</h1>
                     <p>Dried plums that offer a sweet and chewy experience.</p>
-                    <img src="/static/Images/Fruit/Prune.jpg" alt="A picture of prunes">
-                    <form action="/vote" method="POST">
-                        <input type="checkbox" name="Vote" value="Prune">
-                    </form>
+                    <label>
+                        <input required type="checkbox" value="prune" name="lang">
+                        <img src="/static/Images/Fruit/Prune.jpg" alt="A picture of prune" name="Prune">    
+                    </label>
                 </div>
                 
                 <div class="card">
                     <h1>Pineapple</h1>
                     <p>Tropical and prickly on the outside, sweet and juicy on the inside.</p>
-                    <img src="/static/Images/Fruit/Pineapple.jpg" alt="A picture of pineapples">
-                    <form action="/vote" method="POST">
-                        <input type="checkbox" name="Vote" value="Pineapple">
-                    </form>
+                    <label>
+                        <input required type="checkbox" value="pineapple" name="lang">
+                        <img src="/static/Images/Fruit/Pineapple.jpg" alt="A picture of pineapple" name="Pineapple">    
+                    </label>
                 </div>
                 
-                <div class = "card">
+                <div class="card">
                     <h1>Plumcot</h1>
                     <p>A hybrid of plums and apricots, plumcots have a sweet and slightly tart flavor.</p>
-                    <img src="/static/Images/Fruit/Plumcot.jpg" alt="A picture of plumcots">
-                    <form action="/vote" method="POST">
-                        <input type="checkbox" name="Vote" value="Plumcot">
-                    </form>
+                    <label>
+                        <input required type="checkbox" value="plumcot" name="lang">
+                        <img src="/static/Images/Fruit/Plumcot.jpg" alt="A picture of plumcot" name="Plumcot">    
+                    </label>
                 </div>
                 
                 <div class="card">
                     <h1>Pomegranate</h1>
                     <p>With its ruby-red seeds, it offers a burst of sweet-tart flavor and antioxidants.</p>
-                    <img src="/static/Images/Fruit/Pomegranate.jpg" alt="A picture of pomegranates">
-                    <form action="/vote" method="POST">
-                        <input type="checkbox" name="Vote" value="Pomegranate">
-                    </form>
+                    <label>
+                        <input required type="checkbox" value="pomegranate" name="lang">
+                        <img src="/static/Images/Fruit/Pomegranate.jpg" alt="A picture of pomegranates" name="Pomegranate">    
+                    </label>
                 </div>
                 
                 <div class="card">
                     <h1>Pomelo</h1>
                     <p>Giant and yellow or green, pomelos are the original citrus delight, offering a sweet and slightly bitter taste.</p>
-                    <img src="/static/Images/Fruit/Pomelo.jpg" alt="A picture of pomelos">
-                    <form action="/vote" method="POST">
-                        <input type="checkbox" name="Vote" value="Pomelo">
-                    </form>
+                    <label>
+                        <input required type="checkbox" value="pomelo" name="lang">
+                        <img src="/static/Images/Fruit/Pomelo.jpg" alt="A picture of pomelos" name="Pomelo">    
+                    </label>
                 </div>
                 
                 <div class="card">
                     <h1>Purple Mangosteen</h1>
                     <p>With a thick, purple rind and juicy, white flesh, it's the "queen of fruits" with a unique, sweet-tangy flavor.</p>
-                    <img src="/static/Images/Fruit/PurpleMangosteen.jpg" alt="A picture of purple mangosteens">
-                    <form action="/vote" method="POST">
-                        <input type="checkbox" name="Vote" value="Purple Mangosteen">
-                    </form>
+                    <label>
+                        <input required type="checkbox" value="purplemangosteen" name="lang">
+                        <img src="/static/Images/Fruit/PurpleMangosteen.jpg" alt="A picture of purple mangosteens" name="Purple Mangosteen">    
+                    </label>
                 </div>
                 
                 <div class="card">
                     <h1>Pumpkin</h1>
                     <p>Large and orange, pumpkins are the symbol of autumn and provide a sweet and nutty flavor perfect for the season.</p>
-                    <img src="/static/Images/Fruit/Pumpkin.jpg" alt="A picture of pumpkins">
-                    <form action="/vote" method="POST">
-                        <input type="checkbox" name="Vote" value="Pumpkin">
-                    </form>
+                    <label>
+                        <input required type="checkbox" value="pumpkin" name="lang">
+                        <img src="/static/Images/Fruit/Pumpkin.jpg" alt="A picture of pumpkins" name="Pumpkin">    
+                    </label>
                 </div>
                 
                 <div class="card">
                     <h1>Quince</h1>
                     <p>Golden and fragrant when ripe, quinces are known for their floral aroma and sweet, perfumed taste.</p>
-                    <img src="/static/Images/Fruit/Quince.jpg" alt="A picture of quinces">
-                    <form action="/vote" method="POST">
-                        <input type="checkbox" name="Vote" value="Quince">
-                    </form>
+                    <label>
+                        <input required type="checkbox" value="quince" name="lang">
+                        <img src="/static/Images/Fruit/Quince.jpg" alt="A picture of quinces" name="Quince">    
+                    </label>
                 </div>
                 
                 <div class="card">
                     <h1>Raspberry</h1>
                     <p>Small and red or black, these berries are sweet, juicy, and perfect for pies and jams.</p>
-                    <img src="/static/Images/Fruit/Raspberry.jpg" alt="A picture of raspberries">
-                    <form action="/vote" method="POST">
-                        <input type="checkbox" name="Vote" value="Raspberry">
-                    </form>
+                    <label>
+                        <input required type="checkbox" value="raspberry" name="lang">
+                        <img src="/static/Images/Fruit/Raspberry.jpg" alt="A picture of raspberries" name="Raspberry">    
+                    </label>
                 </div>
                 
                 <div class="card">
                     <h1>Salmonberry</h1>
                     <p>Orange or red, these berries have a unique, sweet-tart taste reminiscent of salmon roe.</p>
-                    <img src="/static/Images/Fruit/Salmonberry.jpg" alt="A picture of salmonberries">
-                    <form action="/vote" method="POST">
-                        <input type="checkbox" name="Vote" value="Salmonberry">
-                    </form>
+                    <label>
+                        <input required type="checkbox" value="salmonberry" name="lang">
+                        <img src="/static/Images/Fruit/Salmonberry.jpg" alt="A picture of salmonberries" name="Salmonberry">    
+                    </label>
                 </div>
                 
                 <div class="card">
                     <h1>Rambutan</h1>
                     <p>Hairy and red or yellow, these tropical fruits are sweet and juicy, perfect for snacking.</p>
-                    <img src="/static/Images/Fruit/Rambutan.jpg" alt="A picture of rambutans">
-                    <form action="/vote" method="POST">
-                        <input type="checkbox" name="Vote" value="Rambutan">
-                    </form>
+                    <label>
+                        <input required type="checkbox" value="rambutan" name="lang">
+                        <img src="/static/Images/Fruit/Rambutan.jpg" alt="A picture of rambutans" name="Rambutan">    
+                    </label>
                 </div>
                 
                 <div class="card">
                     <h1>Redcurrant</h1>
                     <p>Tiny, bright red jewels, they are tart and perfect for making jams and desserts.</p>
-                    <img src="/static/Images/Fruit/Redcurrant.jpg" alt="A picture of redcurrants">
-                    <form action="/vote" method="POST">
-                        <input type="checkbox" name="Vote" value="Redcurrant">
-                    </form>
-                </div>
+                    <label>
+                        <input required type="checkbox" value="redcurrant" name="lang">
+                        <img src="/static/Images/Fruit/Redcurrant.jpg" alt="A picture of redcurrants" name="Redcurrant">    
+                    </label>
+                </div>                
                 
                 <div class="card">
                     <h1>Salal Berry</h1>
                     <p>Small and purplish-black, these berries are sweet with a slight tartness and are native to the Pacific Northwest.</p>
-                    <img src="/static/Images/Fruit/SalalBerry.jpg" alt="A picture of salal berries">
-                    <form action="/vote" method="POST">
-                        <input type="checkbox" name="Vote" value="Salal Berry">
-                    </form>
+                    <label>
+                        <input required type="checkbox" value="salalberry" name="lang">
+                        <img src="/static/Images/Fruit/SalalBerry.jpg" alt="A picture of salal berries" name="Salal Berry">    
+                    </label>
                 </div>
                 
                 <div class="card">
                     <h1>Salak</h1>
                     <p>Also known as snake fruit, they have reddish-brown scaly skin and sweet, tangy flesh.</p>
-                    <img src="/static/Images/Fruit/Salak.jpg" alt="A picture of salak fruit">
-                    <form action="/vote" method="POST">
-                        <input type="checkbox" name="Vote" value="Salak">
-                    </form>
+                    <label>
+                        <input required type="checkbox" value="salak" name="lang">
+                        <img src="/static/Images/Fruit/Salak.jpg" alt="A picture of salak" name="Salak">    
+                    </label>
                 </div>
                 
                 <div class="card">
                     <h1>Satsuma</h1>
                     <p>Seedless and easy to peel, Satsumas are sweet and a delightful citrus snack.</p>
-                    <img src="/static/Images/Fruit/Satsuma.jpg" alt="A picture of satsumas">
-                    <form action="/vote" method="POST">
-                        <input type="checkbox" name="Vote" value="Satsuma">
-                    </form>
+                    <label>
+                        <input required type="checkbox" value="satsuma" name="lang">
+                        <img src="/static/Images/Fruit/Satsuma.jpg" alt="A picture of satsumas" name="Satsuma">    
+                    </label>
                 </div>
                 
                 <div class="card">
                     <h1>Soursop</h1>
                     <p>With green, spiky skin and soft, white flesh, it offers a tropical flavor that's a mix of strawberry, pineapple, and citrus.</p>
-                    <img src="/static/Images/Fruit/Soursop.jpg" alt="A picture of soursops">
-                    <form action="/vote" method="POST">
-                        <input type="checkbox" name="Vote" value="Soursop">
-                    </form>
+                    <label>
+                        <input required type="checkbox" value="soursop" name="lang">
+                        <img src="/static/Images/Fruit/Soursop.jpg" alt="A picture of soursop" name="Soursop">    
+                    </label>
                 </div>
                 
                 <div class="card">
                     <h1>Star Fruit</h1>
                     <p>Star-shaped when sliced, this fruit has a unique sweet and slightly tart taste.</p>
-                    <img src="/static/Images/Fruit/StarFruit.jpg" alt="A picture of star fruits">
-                    <form action="/vote" method="POST">
-                        <input type="checkbox" name="Vote" value="Star Fruit">
-                    </form>
+                    <label>
+                        <input required type="checkbox" value="starfruit" name="lang">
+                        <img src="/static/Images/Fruit/StarFruit.jpg" alt="A picture of star fruit" name="Star Fruit">    
+                    </label>
                 </div>
                 
                 <div class="card">
                     <h1>Salanum Quitoense</h1>
                     <p>Also known as naranjilla, it's green and bumpy, with a tangy, citrusy flavor.</p>
-                    <img src="/static/Images/Fruit/SolanumQuitoense.jpg" alt="A picture of naranjillas">
-                    <form action="/vote" method="POST">
-                        <input type="checkbox" name="Vote" value="Salanum Quitoense">
-                    </form>
+                    <label>
+                        <input required type="checkbox" value="naranjilla" name="lang">
+                        <img src="/static/Images/Fruit/SolanumQuitoense.jpg" alt="A picture of naranjilla" name="Salanum Quitoense">    
+                    </label>
                 </div>
                 
                 <div class="card">
                     <h1>Strawberry</h1>
                     <p>Small, red, and heart-shaped, strawberries are a classic, sweet berry perfect for desserts and snacking.</p>
-                    <img src="/static/Images/Fruit/Strawberry.jpg" alt="A picture of strawberries">
-                    <form action="/vote" method="POST">
-                        <input type="checkbox" name="Vote" value="Strawberry">
-                    </form>
+                    <label>
+                        <input required type="checkbox" value="strawberry" name="lang">
+                        <img src="/static/Images/Fruit/Strawberry.jpg" alt="A picture of strawberries" name="Strawberry">    
+                    </label>
                 </div>
                 
                 <div class="card">
                     <h1>Tamarillo</h1>
                     <p>Egg-shaped and bright red or yellow, tamarillos have a unique, tangy-sweet taste.</p>
-                    <img src="/static/Images/Fruit/Tamarillo.jpg" alt="A picture of tamarillos">
-                    <form action="/vote" method="POST">
-                        <input type="checkbox" name="Vote" value="Tamarillo">
-                    </form>
+                    <label>
+                        <input required type="checkbox" value="tamarillo" name="lang">
+                        <img src="/static/Images/Fruit/Tamarillo.jpg" alt="A picture of tamarillos" name="Tamarillo">    
+                    </label>
                 </div>
                 
                 <div class="card">
                     <h1>Tamarind</h1>
                     <p>Brown and pod-like, tamarind is known for its sweet-sour flavor and use in various cuisines.</p>
-                    <img src="/static/Images/Fruit/Tamarind.jpg" alt="A picture of tamarinds">
-                    <form action="/vote" method="POST">
-                        <input type="checkbox" name="Vote" value="Tamarind">
-                    </form>
+                    <label>
+                        <input required type="checkbox" value="tamarind" name="lang">
+                        <img src="/static/Images/Fruit/Tamarind.jpg" alt="A picture of tamarind" name="Tamarind">    
+                    </label>
+                </div>
+
+                <div class="card">
+                    <h1>Tangerine</h1>
+                    <p>Sweet and tangy, tangerines are a burst of orange goodness.</p>
+                    <label>
+                        <input required type="checkbox" value="tangerine" name="lang">
+                        <img src="/static/Images/Fruit/Tangerine.jpg" alt="A picture of tangerine" name="Tangerine">    
+                    </label>
                 </div>
                 
                 <div class="card">
                     <h1>Tomato</h1>
                     <p>Tomatoes come in various colors, including red, yellow, and green, and they offer a burst of juicy, tangy flavor.</p>
-                    <img src="/static/Images/Fruit/Tomato.jpg" alt="A picture of tomatoes">
-                    <form action="/vote" method="POST">
-                        <input type="checkbox" name="Vote" value="Tomato">
-                    </form>
+                    <label>
+                        <input required type="checkbox" value="tomato" name="lang">
+                        <img src="/static/Images/Fruit/Tomato.jpg" alt="A picture of tomatoes" name="Tomato">    
+                    </label>
                 </div>
                 
                 <div class="card">
                     <h1>Ugli Fruit</h1>
                     <p>This wrinkled, green or yellow citrus offers a sweet-tart, refreshing taste.</p>
-                    <img src="/static/Images/Fruit/UgliFruit.jpg" alt="A picture of ugli fruits">
-                    <form action="/vote" method="POST">
-                        <input type="checkbox" name="Vote" value="Ugli Fruit">
-                    </form>
+                    <label>
+                        <input required type="checkbox" value="uglifruit" name="lang">
+                        <img src="/static/Images/Fruit/UgliFruit.jpg" alt="A picture of ugli fruit" name="Ugli Fruit">    
+                    </label>
                 </div>
                 
                 <div class="card">
                     <h1>Watermelon</h1>
                     <p>Iconically refreshing offer a juicy and sweet experience that's perfect for summer.</p>
-                    <img src="/static/Images/Fruit/Watermelon.jpg" alt="A picture of watermelons">
-                    <form action="/vote" method="POST">
-                        <input type="checkbox" name="Vote" value="Watermelon">
-                    </form>
+                    <label>
+                        <input required type="checkbox" value="watermelon" name="lang">
+                        <img src="/static/Images/Fruit/Watermelon.jpg" alt="A picture of watermelons" name="Watermelon">    
+                    </label>
                 </div>
                 
                 <div class="card">
                     <h1>Yuzu</h1>
                     <p>Small and yellow, yuzu has a unique, zesty citrus flavor, often used in Japanese cuisine.</p>
-                    <img src="/static/Images/Fruit/Yuzu.jpg" alt="A picture of yuzu">
-                    <form action="/vote" method="POST">
-                        <input type="checkbox" name="Vote" value="Yuzu">
-                    </form>
-                </div>
-                
+                    <label>
+                        <input required type="checkbox" value="yuzu" name="lang">
+                        <img src="/static/Images/Fruit/Yuzu.jpg" alt="A picture of yuzu" name="Yuzu">    
+                    </label>
+                </div>                
                 <br>
                 <input type = "submit" value = "Vote">
+            </form>
             </div>
-        <script src="/static/FruitTierList/Test.js"></script>
+            <script type="module">
+                // Import the functions you need from the SDKs you need
+                import { initializeApp } from "https://www.gstatic.com/firebasejs/10.5.2/firebase-app.js";
+                import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.5.2/firebase-analytics.js";
+                // TODO: Add SDKs for Firebase products that you want to use
+                // https://firebase.google.com/docs/web/setup#available-libraries
+              
+                // Your web app's Firebase configuration
+                // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+                const firebaseConfig = {
+                  apiKey: "AIzaSyAH0MKM2DwdXZY9JEW227hsdrlF7D4aGPE",
+                  authDomain: "fruit-9a563.firebaseapp.com",
+                  projectId: "fruit-9a563",
+                  storageBucket: "fruit-9a563.appspot.com",
+                  messagingSenderId: "490519364270",
+                  appId: "1:490519364270:web:cf0bf31c4d7f4841b1a33f",
+                  measurementId: "G-00DGRDZS7L"
+                };
+              
+                // Initialize Firebase
+                const app = initializeApp(firebaseConfig);
+                const analytics = getAnalytics(app);
+              </script>
     </body>
 </html>

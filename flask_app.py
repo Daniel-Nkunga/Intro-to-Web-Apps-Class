@@ -1,15 +1,15 @@
 from flask import *
 import random
-import html
 import firebase_admin
 from firebase_admin import credentials, firestore
+import html
 
 app = Flask(__name__,static_folder="static")
 app.secret_key = 'wowcool88'
 
-# cred = credentials.Certificate("../creds.json")
-# firebase_admin.initialize_app(cred)
-# db = firestore.client()
+cred = credentials.Certificate("../creds.json")  # Replace with the path to your Firebase Admin SDK key
+firebase_admin.initialize_app(cred)
+db = firestore.client()
 
 @app.route('/')
 def serve_home():
@@ -238,25 +238,47 @@ def passed():
 def serve_game():
     return send_from_directory('static', 'Game/FillerGame.html')
 
-# @app.route('/survey')
-# def serve_survey():
-#     return render_template('vote.html')
+@app.route('/survey')
+def serve_survey():
+    return render_template('vote.html')
 
-# @app.route('/vote', methods = ['POST'])
-# def vote():
-#     fruit = request.form.get('Vote')
-#     if fruit:
-#         votes_ref = db.collection('votes').document(fruit)
-#         votes_ref.set({'count': firestore.Increment(1)}, merge=True)        
-#     return render_template('results.html')
+@app.route('/vote', methods=['POST'])
+def vote():
+    fruit = request.form.get('fruit')
+    if fruit:
+        vote_ref = db.collection('votes').add({
+            'fruit': fruit,
+            'timestamp': firestore.SERVER_TIMESTAMP  # Assuming you might want a timestamp for each vote
+        })
+        print(vote_ref[-1].id)
+    return redirect(url_for('results'))
 
-# @app.route('/results')
-# def results():
-#     votes = {}
-#     docs = db.collection('votes').stream()
-#     for doc in docs:
-#         votes[doc.id] = doc.to_dict().get('count', 0)
-#     return render_template('results.html', votes=votes)
+
+# @app.route('/check/<doc_id>', methods=['GET'])
+# def check_id(doc_id):
+#     doc_ref = db.collection('votes').document(doc_id)
+#     doc = doc_ref.get()
+#     if doc.exists:
+#         return jsonify({"exists": "yes"})
+#     else:
+#         return jsonify({"exists": "no"})
+
+
+@app.route('/results')
+def results():
+    votes = {}
+    docs = db.collection('votes').stream()
+    for doc in docs:
+        fruit = doc.to_dict().get('fruit')
+        votes[fruit] = votes.get(fruit, 0) + 1
+    return render_template('results.html', votes=votes)
+
+# @app.route('/user_info')
+# def user_info():
+#     out=f"<p>ip:{request.remote_addr}</p>"
+#     for key,value in request.headers:
+#         out+=f"<p>{key}:{value}</p>"
+#     return out
 
 
 if __name__ == '__main__':
