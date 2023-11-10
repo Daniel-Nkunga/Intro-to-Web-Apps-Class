@@ -136,3 +136,30 @@ h3{
     /* outline: 2px solid #f00; */
     opacity: 1.0;
 }
+
+.bar-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 80vh; /* Adjust the height as needed */
+}
+
+.bar {
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+.bar-label {
+    width: 100px;
+    text-align: right;
+    padding-right: 10px;
+}
+
+.bar-graph {
+    width: 200px;
+    height: 20px;
+    background-color: blue;
+}

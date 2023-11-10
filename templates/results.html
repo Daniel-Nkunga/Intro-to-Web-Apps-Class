@@ -4,15 +4,22 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Fruit Tier List</title>
-        <link rel="styleSheet" href="\static\FruitTierList\FTL.css">
+        <link rel="stylesheet" href="\static\FruitTierList\FTL.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Comfortaa:400,700&display=swap">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Black+Ops+One">
     </header>
-    <body>x
+    <body>
         <h1>THE ULTIMATE FRUIT TIER LIST</h1>
-        <div class = "main"></div>
-        <div class = "tiers">
-            <h3>S-Tier</h3>
+        <div class="main"></div>
+        <h2>Voting Results</h2>
+        <div class="bar-container">
+            {% for fruit, count in fruits.items() %}
+            <div class="bar">
+                <div class="bar-label">{{ fruit }}:</div>
+                <div class="bar-graph" style="width: {{ count * 10 }}px;"></div>
+                <div>{{ count }} votes</div>
+            </div>
+            {% endfor %}
         </div>
     </body>
 </html>

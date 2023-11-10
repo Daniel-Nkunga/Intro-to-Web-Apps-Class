@@ -3,11 +3,14 @@ import random
 import firebase_admin
 from firebase_admin import credentials, firestore
 import html
+import os
 
 app = Flask(__name__,static_folder="static")
 app.secret_key = 'wowcool88'
 
-cred = credentials.Certificate("../creds.json")  # Replace with the path to your Firebase Admin SDK key
+print(os.getcwd())
+print("\n\n")
+cred = credentials.Certificate("..\creds.json")  # Replace with the path to your Firebase Admin SDK key
 firebase_admin.initialize_app(cred)
 db = firestore.client()
 
@@ -245,41 +248,27 @@ def serve_survey():
 @app.route('/vote', methods=['POST'])
 def vote():
     fruit = request.form.get('fruit')
-    if fruit:
+    escaped_fruit = html.escape(fruit)
+    if escaped_fruit:
         vote_ref = db.collection('votes').add({
-            'fruit': fruit,
-            'timestamp': firestore.SERVER_TIMESTAMP  # Assuming you might want a timestamp for each vote
-        })
-        print(vote_ref[-1].id)
-    return redirect(url_for('results'))
-
-
-# @app.route('/check/<doc_id>', methods=['GET'])
-# def check_id(doc_id):
-#     doc_ref = db.collection('votes').document(doc_id)
-#     doc = doc_ref.get()
-#     if doc.exists:
-#         return jsonify({"exists": "yes"})
-#     else:
-#         return jsonify({"exists": "no"})
-
+            'fruit': escaped_fruit,
+            'timestamp': firestore.SERVER_TIMESTAMP
+            })
+        return redirect(url_for('results'))
 
 @app.route('/results')
 def results():
-    votes = {}
+    fruits = {}  # Create an empty dictionary to hold the fruits and their counts
     docs = db.collection('votes').stream()
+    
     for doc in docs:
         fruit = doc.to_dict().get('fruit')
-        votes[fruit] = votes.get(fruit, 0) + 1
-    return render_template('results.html', votes=votes)
-
-# @app.route('/user_info')
-# def user_info():
-#     out=f"<p>ip:{request.remote_addr}</p>"
-#     for key,value in request.headers:
-#         out+=f"<p>{key}:{value}</p>"
-#     return out
-
+        count = doc.to_dict().get('count', 0)
+        
+        # Update the 'fruits' dictionary with the fruit and its count
+        fruits[fruit] = count
+    
+    return render_template('results.html', fruits=fruits)
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=4208)
+    app.run(host='0.0.0.0', port=80)

@@ -13,32 +13,41 @@
         <p>Vote for all your favorite fruit!</p>
         <div class = "main"></div>
         <div class = "page">
-            <form action="/vote" method="POST">
-                <p>Beware you can only submit the form once!</p>
-                <div class="card">
+            <form action = "\vote" method = "POST">
+                <select name = "fruit">
+                    <option value = "apple">Apple</option>
+                    <option value = "banana">Banana</option>
+                    <option value = "orange">Orange</option>
+                    <option value = "pomegranate">Pomegranate</option>
+                </select>
+                <input type="submit" value = "Vote">
+            </form>
+            <!-- <form action="/vote" method="POST">
+                <p>Beware you can only submit the form once!</p> -->
+                <!-- <div class="card">
                     <h1>Apples</h1>
                     <p>Classic with a crunch. Comes in a variety of colors and flavors from the red Cosmic Crisp to the Green Granny Smiths!</p>
                     <label>
-                        <input type="checkbox" value="apples" name="fruit">
+                        <input type="radio" value="apples" name="fruit1">
                         <img src="/static/Images/Fruit/Apples.jpg" alt="A picture of apples">
                     </label>
                 </div>
-                
+        
                 <div class="card">
                     <h1>Apricots</h1>
                     <p>A juicy, orange treasure that's like biting into a burst of summer sunshine.</p>
                     <label>
-                        <input required type="checkbox" value="apricots" name="lang">
-                        <img src="/static/Images/Fruit/Apricots.jpg" alt="A picture of apricots" name="Apricots">    
+                        <input type="radio" value="apricots" name="fruit2">
+                        <img src="/static/Images/Fruit/Apricots.jpg" alt="A picture of apricots">
                     </label>
                 </div>
-                
+        
                 <div class="card">
                     <h1>Avocados</h1>
                     <p>Creamy and green, avocados are the ultimate addition to any dish, turning it into a smooth and buttery sensation.</p>
                     <label>
-                        <input required type="checkbox" value="avocados" name="lang">
-                        <img src="/static/Images/Fruit/Avocados.jpg" alt="A picture of avocados" name="Avocados">    
+                        <input type="radio" value="avocados" name="fruit3">
+                        <img src="/static/Images/Fruit/Avocados.jpg" alt="A picture of avocados">
                     </label>
                 </div>
                 
@@ -46,8 +55,8 @@
                     <h1>Bananas</h1>
                     <p>Tropical delight, bananas are always ready for a sunshine snack with their vibrant yellow peel.</p>
                     <label>
-                        <input required type="checkbox" value="bananas" name="lang">
-                        <img src="/static/Images/Fruit/Bananas.jpg" alt="A picture of bananas" name="Bananas">    
+                        <input type="radio" value="bananas" name="fruit4">
+                        <img src="/static/Images/Fruit/Bananas.jpg" alt="A picture of bananas">
                     </label>
                 </div>
                 
@@ -55,8 +64,8 @@
                     <h1>Bilberry</h1>
                     <p>These small, dark blue gems are like wild blueberries, bursting with intense flavor and antioxidants.</p>
                     <label>
-                        <input required type="checkbox" value="bilberry" name="lang">
-                        <img src="/static/Images/Fruit/Bilberry.jpg" alt="A picture of bilberries" name="Bilberry">    
+                        <input type="radio" value="bilberry" name="fruit5">
+                        <img src="/static/Images/Fruit/Bilberry.jpg" alt="A picture of bilberries">
                     </label>
                 </div>
                 
@@ -64,8 +73,8 @@
                     <h1>Blackberry</h1>
                     <p>Sweet and slightly tart, these deep purple berries are perfect for pies, jams, or simply snacking.</p>
                     <label>
-                        <input required type="checkbox" value="blackberry" name="lang">
-                        <img src="/static/Images/Fruit/Blackberries.jpg" alt="A picture of blackberries" name="Blackberry">    
+                        <input type="radio" value="blackberry" name="fruit6">
+                        <img src="/static/Images/Fruit/Blackberries.jpg" alt="A picture of blackberries">
                     </label>
                 </div>
                 
@@ -73,8 +82,8 @@
                     <h1>Blackcurrant</h1>
                     <p>These tiny, tangy jewels are a rich, dark purple delight, perfect for jams and desserts.</p>
                     <label>
-                        <input required type="checkbox" value="blackcurrant" name="lang">
-                        <img src="/static/Images/Fruit/Blackcurrants.jpg" alt="A picture of blackcurrants" name="Blackcurrant">    
+                        <input type="radio" value="blackcurrant" name="fruit7">
+                        <img src="/static/Images/Fruit/Blackcurrants.jpg" alt="A picture of blackcurrants">
                     </label>
                 </div>
                 
@@ -82,8 +91,8 @@
                     <h1>Blueberry</h1>
                     <p>Pop one of these plump, indigo orbs in your mouth, and experience a burst of sweet, fruity goodness.</p>
                     <label>
-                        <input required type="checkbox" value="blueberry" name="lang">
-                        <img src="/static/Images/Fruit/Blueberries.jpg" alt="A picture of blueberries" name="Blueberry">    
+                        <input type="radio" value="blueberry" name="fruit8">
+                        <img src="/static/Images/Fruit/Blueberries.jpg" alt="A picture of blueberries">
                     </label>
                 </div>
                 
@@ -91,8 +100,8 @@
                     <h1>Boysenberry</h1>
                     <p>A berry bonanza with a rich, deep maroon hue and a medley of sweet and tangy flavors.</p>
                     <label>
-                        <input required type="checkbox" value="boysenberry" name="lang">
-                        <img src="/static/Images/Fruit/Boysenberry.jpg" alt="A picture of boysenberries" name="Boysenberry">    
+                        <input type="radio" value="boysenberry" name="fruit9">
+                        <img src="/static/Images/Fruit/Boysenberry.jpg" alt="A picture of boysenberries">
                     </label>
                 </div>
                 
@@ -100,8 +109,8 @@
                     <h1>Cantaloupe</h1>
                     <p>With a webbed rind and vibrant orange flesh, cantaloupes provide a sweet, fragrant bite that's great for snacks.</p>
                     <label>
-                        <input required type="checkbox" value="cantaloupe" name="lang">
-                        <img src="/static/Images/Fruit/Cantalopue.jpg" alt="A picture of cantaloupes" name="Cantaloupe">    
+                        <input type="radio" value="cantaloupe" name="fruit10">
+                        <img src="/static/Images/Fruit/Cantalopue.jpg" alt="A picture of cantaloupes">
                     </label>
                 </div>
                 
@@ -109,8 +118,8 @@
                     <h1>Currant</h1>
                     <p>Small and radiant red, currants pack a zesty punch, ideal for jams and sauces.</p>
                     <label>
-                        <input required type="checkbox" value="currant" name="lang">
-                        <img src="/static/Images/Fruit/Currant.jpg" alt="A picture of currants" name="Currant">    
+                        <input type="radio" value="currant" name="fruit11">
+                        <img src="/static/Images/Fruit/Currant.jpg" alt="A picture of currants">
                     </label>
                 </div>
                 
@@ -118,8 +127,8 @@
                     <h1>Cherry</h1>
                     <p>These plump, ruby-red or deep purple treasures are nature's candy, bursting with sweet juiciness.</p>
                     <label>
-                        <input required type="checkbox" value="cherry" name="lang">
-                        <img src="/static/Images/Fruit/Cherry.jpg" alt="A picture of cherries" name="Cherry">    
+                        <input type="radio" value="cherry" name="fruit12">
+                        <img src="/static/Images/Fruit/Cherry.jpg" alt="A picture of cherries">
                     </label>
                 </div>
                 
@@ -127,43 +136,43 @@
                     <h1>Cherimoya</h1>
                     <p>A tropical delight with pale green, scaly skin and a creamy, vanilla-like flesh that'll transport you to a sunny paradise.</p>
                     <label>
-                        <input required type="checkbox" value="cherimoya" name="lang">
-                        <img src="/static/Images/Fruit/Cherimoya.jpg" alt="A picture of cherimoyas" name="Cherimoya">    
+                        <input type="radio" value="cherimoya" name="fruit13">
+                        <img src="/static/Images/Fruit/Cherimoya.jpg" alt="A picture of cherimoyas">
                     </label>
                 </div>
                 
-                <div class="card">
-                    <h1>Chico Fruit</h1>
-                    <p>This small, brown, and fuzzy delight is an explosion of sweet, honeyed flavor with a unique texture.</p>
-                    <label>
-                        <input required type="checkbox" value="chico" name="lang">
-                        <img src="/static/Images/Fruit/ChicoFruit.jpg" alt="A picture of chico fruit" name="ChicoFruit">    
-                    </label>
+                <div class = "card">
+                <h1>Chico Fruit</h1>
+                <p>This small, brown, and fuzzy delight is an explosion of sweet, honeyed flavor with a unique texture.</p>
+                <label>
+                <input type="radio" value="chico" name="fruit14">
+                <img src="/static/Images/Fruit/ChicoFruit.jpg" alt="A picture of chico fruit">
+                </label>
                 </div>
                 
                 <div class="card">
-                    <h1>Cloudberry</h1>
-                    <p>Like nuggets of gold, these orange, raspberry-like gems thrive in the Nordic wilderness, offering a rare, tangy-sweet taste.</p>
-                    <label>
-                        <input required type="checkbox" value="cloudberry" name="lang">
-                        <img src="/static/Images/Fruit/Cloudberry.jpg" alt="A picture of cloudberries" name="Cloudberry">    
-                    </label>
+                <h1>Cloudberry</h1>
+                <p>Like nuggets of gold, these orange, raspberry-like gems thrive in the Nordic wilderness, offering a rare, tangy-sweet taste.</p>
+                <label>
+                <input type="radio" value="cloudberry" name="fruit15">
+                <img src="/static/Images/Fruit/Cloudberry.jpg" alt="A picture of cloudberries">
+                </label>
                 </div>
                 
                 <div class="card">
-                    <h1>Coconut</h1>
-                    <p>Tropical icon with a hard, brown shell hiding a treasure of sweet, milky-white flesh.</p>
-                    <label>
-                        <input required type="checkbox" value="coconut" name="lang">
-                        <img src="/static/Images/Fruit/Coconut.jpg" alt="A picture of coconuts" name="Coconut">    
-                    </label>
+                <h1>Coconut</h1>
+                <p>Tropical icon with a hard, brown shell hiding a treasure of sweet, milky-white flesh.</p>
+                <label>
+                <input type="radio" value="coconut" name="fruit16">
+                <img src="/static/Images/Fruit/Coconut.jpg" alt="A picture of coconuts">
+                </label>
                 </div>
                 
                 <div class="card">
                     <h1>Cranberry</h1>
                     <p>Tangy, crimson orbs that pop with flavor, making them essential for zesty sauces and holiday feasts.</p>
                     <label>
-                        <input required type="checkbox" value="cranberry" name="lang">
+                        <input required type="radio" value="cranberry" name="fruit17">
                         <img src="/static/Images/Fruit/Cranberry.jpg" alt="A picture of cranberries" name="Cranberry">    
                     </label>
                 </div>
@@ -172,7 +181,7 @@
                     <h1>Cucumber</h1>
                     <p>Crisp and green, cucumbers are the cool, refreshing choice for salads and snacking.</p>
                     <label>
-                        <input required type="checkbox" value="cucumber" name="lang">
+                        <input required type="radio" value="cucumber" name="fruit18">
                         <img src="/static/Images/Fruit/Cucumber.jpg" alt="A picture of cucumbers" name="Cucumber">    
                     </label>
                 </div>
@@ -181,7 +190,7 @@
                     <h1>Custard Apple</h1>
                     <p>With green, bumpy skin and sweet, custard-like flesh, this fruit is a tropical treat.</p>
                     <label>
-                        <input required type="checkbox" value="custardapple" name="lang">
+                        <input required type="radio" value="custardapple" name="fruit19">
                         <img src="/static/Images/Fruit/CustardApple.jpg" alt="A picture of custard apples" name="CustardApple">    
                     </label>
                 </div>                
@@ -190,35 +199,35 @@
                     <h1>Damson</h1>
                     <p>Small and purple, these plums are perfect for jams and desserts, offering a tart and juicy burst.</p>
                     <label>
-                        <input required type="checkbox" value="damson" name="lang">
+                        <input required type="radio" value="damson" name="fruit20">
                         <img src="/static/Images/Fruit/Damson.jpg" alt="A picture of damsons" name="Damson">    
                     </label>
-                </div>
+                </div> -->
                 
-                <div class="card">
+                <!-- <div class="card">
                     <h1>Date</h1>
-                    <p>Nature's sweetest brown nugget, perfect for satisfying your sugar cravings.</p>
+                    <p>Sweet and chewy, dates are a delicious natural energy boost, perfect for snacking or adding to desserts.</p>
                     <label>
-                        <input required type="checkbox" value="date" name="lang">
-                        <img src="/static/Images/Fruit/Date.jpg" alt="A picture of dates" name="Date">    
+                        <input type="radio" value="date" name="fruit21">
+                        <img src="/static/Images/Fruit/Date.jpg" alt="A picture of dates">
                     </label>
                 </div>
                 
                 <div class="card">
                     <h1>Dragonfruit</h1>
-                    <p>Vibrant pink or yellow with speckled skin, this exotic fruit offers a subtly sweet, crunchy, and refreshing experience.</p>
+                    <p>A striking pink fruit with white or red flesh speckled with tiny black seeds. Its flavor is as exotic as its appearance.</p>
                     <label>
-                        <input required type="checkbox" value="dragonfruit" name="lang">
-                        <img src="/static/Images/Fruit/Dragonfruit.jpg" alt="A picture of dragonfruit" name="Dragonfruit">    
+                        <input type="radio" value="dragonfruit" name="fruit22">
+                        <img src="/static/Images/Fruit/Dragonfruit.jpg" alt="A picture of dragonfruit">
                     </label>
                 </div>
                 
                 <div class="card">
                     <h1>Durian</h1>
-                    <p>Known as the "King of Fruits," it boasts a divisive odor but is adored for its rich, custard-like flesh.</p>
+                    <p>Known for its strong odor, the durian's flavor is a unique combination of sweet and savory, making it a delicacy for some.</p>
                     <label>
-                        <input required type="checkbox" value="durian" name="lang">
-                        <img src="/static/Images/Fruit/Durian.jpg" alt="A picture of durian" name="Durian">    
+                        <input type="radio" value="durian" name="fruit23">
+                        <img src="/static/Images/Fruit/Durian.jpg" alt="A picture of durian">
                     </label>
                 </div>
                 
@@ -226,7 +235,7 @@
                     <h1>Elderberry</h1>
                     <p>Small, dark berries perfect for immune-boosting syrups, with a deep, purple hue and tangy taste.</p>
                     <label>
-                        <input required type="checkbox" value="elderberry" name="lang">
+                        <input required type="radio" value="elderberry" name="fruit24">
                         <img src="/static/Images/Fruit/Elderberry.jpg" alt="A picture of elderberries" name="Elderberry">    
                     </label>
                 </div>
@@ -235,7 +244,7 @@
                     <h1>Feijoa</h1>
                     <p>Bright green, oval delights with a tropical flavor reminiscent of guava and pineapple.</p>
                     <label>
-                        <input required type="checkbox" value="feijoa" name="lang">
+                        <input required type="radio" value="feijoa" name="fruit25">
                         <img src="/static/Images/Fruit/Feijoa.jpg" alt="A picture of feijoas" name="Feijoa">    
                     </label>
                 </div>
@@ -244,7 +253,7 @@
                     <h1>Fig</h1>
                     <p>Velvety and purple or green, figs offer a luscious, honeyed taste that's perfect for desserts or snacking.</p>
                     <label>
-                        <input required type="checkbox" value="fig" name="lang">
+                        <input required type="radio" value="fig" name="fruit26">
                         <img src="/static/Images/Fruit/Fig.jpg" alt="A picture of figs" name="Fig">    
                     </label>
                 </div>
@@ -253,7 +262,7 @@
                     <h1>Goji Berry</h1>
                     <p>Bright red and packed with antioxidants, these tiny berries are a healthy and tangy delight.</p>
                     <label>
-                        <input required type="checkbox" value="gojiberry" name="lang">
+                        <input required type="radio" value="gojiberry" name="fruit27">
                         <img src="/static/Images/Fruit/GojiBerry.jpg" alt="A picture of goji berries" name="GojiBerry">    
                     </label>
                 </div>
@@ -262,7 +271,7 @@
                     <h1>Gooseberry</h1>
                     <p>Green or red, these small, translucent orbs are sweet and tart, perfect for jams and pies.</p>
                     <label>
-                        <input required type="checkbox" value="gooseberry" name="lang">
+                        <input required type="radio" value="gooseberry" name="fruit28">
                         <img src="/static/Images/Fruit/Gooseberry.jpg" alt="A picture of gooseberries" name="Gooseberry">    
                     </label>
                 </div>
@@ -271,7 +280,7 @@
                     <h1>Grape</h1>
                     <p>From deep purple to vibrant green, grapes are nature's candy, with a burst of sweetness in every bite.</p>
                     <label>
-                        <input required type="checkbox" value="grape" name="lang">
+                        <input required type="radio" value="grape" name="fruit29">
                         <img src="/static/Images/Fruit/Grape.jpg" alt="A picture of grapes" name="Grape">    
                     </label>
                 </div>
@@ -280,7 +289,7 @@
                     <h1>Grapefruit</h1>
                     <p>Large and yellow or pink, grapefruits offer a zesty and tangy flavor that's invigorating.</p>
                     <label>
-                        <input required type="checkbox" value="grapefruit" name="lang">
+                        <input required type="radio" value="grapefruit" name="fruit30">
                         <img src="/static/Images/Fruit/Grapefruit.jpg" alt="A picture of grapefruits" name="Grapefruit">    
                     </label>
                 </div>
@@ -289,7 +298,7 @@
                     <h1>Guava</h1>
                     <p>With pink or yellow skin and sweet, tropical taste, guavas are a paradise in every bite.</p>
                     <label>
-                        <input required type="checkbox" value="guava" name="lang">
+                        <input required type="radio" value="guava" name="fruit31">
                         <img src="/static/Images/Fruit/Guava.jpg" alt="A picture of guavas" name="Guava">    
                     </label>
                 </div>
@@ -298,7 +307,7 @@
                     <h1>Honeyberry</h1>
                     <p>Blue-black and honey-sweet, these berries are a rare and delightful treat.</p>
                     <label>
-                        <input required type="checkbox" value="honeyberry" name="lang">
+                        <input required type="radio" value="honeyberry" name="fruit32">
                         <img src="/static/Images/Fruit/Honeyberry.jpg" alt="A picture of honeyberries" name="Honeyberry">    
                     </label>
                 </div>
@@ -307,7 +316,7 @@
                     <h1>Honeydew</h1>
                     <p>Smooth and pale green, honeydews are the epitome of succulent sweetness, delivering a mild and refreshing flavor.</p>
                     <label>
-                        <input required type="checkbox" value="honeydew" name="lang">
+                        <input required type="radio" value="honeydew" name="fruit33">
                         <img src="/static/Images/Fruit/Honeydew.jpg" alt="A picture of honeydews" name="Honeydew">    
                     </label>
                 </div>
@@ -316,7 +325,7 @@
                     <h1>Huckleberry</h1>
                     <p>Small and dark blue, these wild berries are a sweet and slightly tart wilderness treasure.</p>
                     <label>
-                        <input required type="checkbox" value="huckleberry" name="lang">
+                        <input required type="radio" value="huckleberry" name="fruit34">
                         <img src="/static/Images/Fruit/Huckleberry.jpg" alt="A picture of huckleberries" name="Huckleberry">    
                     </label>
                 </div>
@@ -325,7 +334,7 @@
                     <h1>Jabuticaba</h1>
                     <p>These small, dark berries grow directly on the trunk, offering a unique and exotic experience.</p>
                     <label>
-                        <input required type="checkbox" value="jabuticaba" name="lang">
+                        <input required type="radio" value="jabuticaba" name="fruit35">
                         <img src="/static/Images/Fruit/Jabuticaba.jpg" alt="A picture of jabuticabas" name="Jabuticaba">    
                     </label>
                 </div>
@@ -334,7 +343,7 @@
                     <h1>Jackfruit</h1>
                     <p>Massive and green with a tropical flavor, it's often called the "vegetable meat."</p>
                     <label>
-                        <input required type="checkbox" value="jackfruit" name="lang">
+                        <input required type="radio" value="jackfruit" name="fruit36">
                         <img src="/static/Images/Fruit/Jackfruit.jpg" alt="A picture of jackfruits" name="Jackfruit">    
                     </label>
                 </div>
@@ -343,7 +352,7 @@
                     <h1>Jambul</h1>
                     <p>Small, dark purple or black berries with a sweet-tart taste, perfect for jams and desserts.</p>
                     <label>
-                        <input required type="checkbox" value="jambul" name="lang">
+                        <input required type="radio" value="jambul" name="fruit37">
                         <img src="/static/Images/Fruit/Jambul.jpg" alt="A picture of jambuls" name="Jambul">    
                     </label>
                 </div>
@@ -352,7 +361,7 @@
                     <h1>Jujube</h1>
                     <p>Small, reddish-brown wonders with a crisp and sweet apple-like flavor.</p>
                     <label>
-                        <input required type="checkbox" value="jujube" name="lang">
+                        <input required type="radio" value="jujube" name="fruit38">
                         <img src="/static/Images/Fruit/Jujube.jpg" alt="A picture of jujubes" name="Jujube">    
                     </label>
                 </div>
@@ -361,7 +370,7 @@
                     <h1>Juniper Berry</h1>
                     <p>Tiny, dark blue gems that infuse a piney, citrusy note into cuisine and spirits.</p>
                     <label>
-                        <input required type="checkbox" value="juniperberry" name="lang">
+                        <input required type="radio" value="juniperberry" name="fruit39">
                         <img src="/static/Images/Fruit/JuniperBerry.jpg" alt="A picture of juniper berries" name="JuniperBerry">    
                     </label>
                 </div>                
@@ -370,7 +379,7 @@
                     <h1>Kiwano</h1>
                     <p>Also known as the "horned melon," it's spiky and orange with a jelly-like green interior, offering a sweet and mildly tart taste.</p>
                     <label>
-                        <input required type="checkbox" value="kiwano" name="lang">
+                        <input required type="radio" value="kiwano" name="fruit40">
                         <img src="/static/Images/Fruit/Kiwano.jpg" alt="A picture of kiwano" name="Kiwano">    
                     </label>
                 </div>
@@ -379,7 +388,7 @@
                     <h1>Kiwifruit</h1>
                     <p>Fuzzy, brown on the outside, and vibrant green on the inside, kiwis provide a sweet-tart flavor that's perfect for snacking or salads.</p>
                     <label>
-                        <input required type="checkbox" value="kiwifruit" name="lang">
+                        <input required type="radio" value="kiwifruit" name="fruit41">
                         <img src="/static/Images/Fruit/Kiwifruit.jpg" alt="A picture of kiwifruit" name="Kiwifruit">    
                     </label>
                 </div>
@@ -388,7 +397,7 @@
                     <h1>Kumquat</h1>
                     <p>Tiny, orange orbs with a sweet and tangy taste, eaten whole, skin and all.</p>
                     <label>
-                        <input required type="checkbox" value="kumquat" name="lang">
+                        <input required type="radio" value="kumquat" name="fruit42">
                         <img src="/static/Images/Fruit/Kumquat.jpg" alt="A picture of kumquat" name="Kumquat">    
                     </label>
                 </div>
@@ -397,7 +406,7 @@
                     <h1>Lemon</h1>
                     <p>Zesty and bright yellow, lemons add a burst of citrusy flavor to a variety of dishes.</p>
                     <label>
-                        <input required type="checkbox" value="lemon" name="lang">
+                        <input required type="radio" value="lemon" name="fruit43">
                         <img src="/static/Images/Fruit/Lemon.jpg" alt="A picture of lemon" name="Lemon">    
                     </label>
                 </div>
@@ -406,7 +415,7 @@
                     <h1>Lime</h1>
                     <p>Green and tangy, limes are the key to refreshing beverages and zesty cuisine.</p>
                     <label>
-                        <input required type="checkbox" value="lime" name="lang">
+                        <input required type="radio" value="lime" name="fruit44">
                         <img src="/static/Images/Fruit/Lime.jpg" alt="A picture of lime" name="Lime">    
                     </label>
                 </div>
@@ -415,7 +424,7 @@
                     <h1>Loquat</h1>
                     <p>These small, orange fruits are sweet and slightly tart, perfect for snacking or preserves.</p>
                     <label>
-                        <input required type="checkbox" value="loquat" name="lang">
+                        <input required type="radio" value="loquat" name="fruit45">
                         <img src="/static/Images/Fruit/Loquat.jpg" alt="A picture of loquat" name="Loquat">    
                     </label>
                 </div>
@@ -424,7 +433,7 @@
                     <h1>Longan</h1>
                     <p>Like a small, translucent lychee, longans offer a sweet and juicy bite.</p>
                     <label>
-                        <input required type="checkbox" value="longan" name="lang">
+                        <input required type="radio" value="longan" name="fruit46">
                         <img src="/static/Images/Fruit/Longan.jpg" alt="A picture of longan" name="Longan">    
                     </label>
                 </div>
@@ -433,7 +442,7 @@
                     <h1>Lychee</h1>
                     <p>Small, round fruits with rough, pinkish skin and sweet, juicy, translucent flesh.</p>
                     <label>
-                        <input required type="checkbox" value="lychee" name="lang">
+                        <input required type="radio" value="lychee" name="fruit47">
                         <img src="/static/Images/Fruit/Lychee.jpg" alt="A picture of lychee" name="Lychee">    
                     </label>
                 </div>
@@ -442,7 +451,7 @@
                     <h1>Mandarine</h1>
                     <p>Sweet and easy to peel, mandarins are a delightful snack.</p>
                     <label>
-                        <input required type="checkbox" value="mandarine" name="lang">
+                        <input required type="radio" value="mandarine" name="fruit48">
                         <img src="/static/Images/Fruit/Mandarine.jpg" alt="A picture of mandarine" name="Mandarine">    
                     </label>
                 </div>
@@ -451,7 +460,7 @@
                     <h1>Mango</h1>
                     <p>The king of tropical fruits, with a vibrant orange hue and a sweet, exotic flavor.</p>
                     <label>
-                        <input required type="checkbox" value="mango" name="lang">
+                        <input required type="radio" value="mango" name="fruit49">
                         <img src="/static/Images/Fruit/Mango.jpg" alt="A picture of mango" name="Mango">    
                     </label>
                 </div>
@@ -460,7 +469,7 @@
                     <h1>Mangosteen</h1>
                     <p>With a thick, purple rind and a snow-white interior, it offers a unique and sweet taste, often described as the "queen of fruits."</p>
                     <label>
-                        <input required type="checkbox" value="mangosteen" name="lang">
+                        <input required type="radio" value="mangosteen" name="fruit50">
                         <img src="/static/Images/Fruit/Mangosteen.jpg" alt="A picture of mangosteen" name="Mangosteen">    
                     </label>
                 </div>
@@ -469,7 +478,7 @@
                     <h1>Marionberry</h1>
                     <p>A sweet and tart delight with deep, dark purple-black color, perfect for pies and jams.</p>
                     <label>
-                        <input required type="checkbox" value="marionberry" name="lang">
+                        <input required type="radio" value="marionberry" name="fruit51">
                         <img src="/static/Images/Fruit/Marionberry.jpg" alt="A picture of marionberry" name="Marionberry">    
                     </label>
                 </div>
@@ -478,7 +487,7 @@
                     <h1>Miracle Fruit</h1>
                     <p>Small and red, this berry temporarily alters your taste buds to make sour foods taste sweet.</p>
                     <label>
-                        <input required type="checkbox" value="miraclefruit" name="lang">
+                        <input required type="radio" value="miraclefruit" name="fruit52">
                         <img src="/static/Images/Fruit/MiracleFruit.jpg" alt="A picture of miracle fruit" name="MiracleFruit">    
                     </label>
                 </div>
@@ -487,7 +496,7 @@
                     <h1>Mulberry</h1>
                     <p>Small and dark purple or red, mulberries are a sweet and tangy treat, often enjoyed fresh or in preserves.</p>
                     <label>
-                        <input required type="checkbox" value="mulberry" name="lang">
+                        <input required type="radio" value="mulberry" name="fruit53">
                         <img src="/static/Images/Fruit/Mulberry.jpg" alt="A picture of mulberry" name="Mulberry">    
                     </label>
                 </div>
@@ -496,7 +505,7 @@
                     <h1>Nectarine</h1>
                     <p>Resembling peaches but with smooth skin, nectarines offer a sweet, juicy experience.</p>
                     <label>
-                        <input required type="checkbox" value="nectarine" name="lang">
+                        <input required type="radio" value="nectarine" name="fruit54">
                         <img src="/static/Images/Fruit/Nectarine.jpg" alt="A picture of nectarine" name="Nectarine">    
                     </label>
                 </div>
@@ -505,7 +514,7 @@
                     <h1>Nance</h1>
                     <p>Tiny and yellow, these fruits Nance exceptionally sweet, often used in preserves.</p>
                     <label>
-                        <input required type="checkbox" value="nance" name="lang">
+                        <input required type="radio" value="nance" name="fruit55">
                         <img src="/static/Images/Fruit/Nance.jpg" alt="A picture of nance" name="Nance">    
                     </label>
                 </div>
@@ -514,7 +523,7 @@
                     <h1>Olive</h1>
                     <p>Small and green or black, olives are a Mediterranean delicacy with a briny, rich flavor.</p>
                     <label>
-                        <input required type="checkbox" value="olive" name="lang">
+                        <input required type="radio" value="olive" name="fruit56">
                         <img src="/static/Images/Fruit/Olive.jpg" alt="A picture of olive" name="Olive">    
                     </label>
                 </div>
@@ -523,7 +532,7 @@
                     <h1>Orange</h1>
                     <p>Bright and citrusy, oranges are the epitome of vitamin C-packed refreshment.</p>
                     <label>
-                        <input required type="checkbox" value="orange" name="lang">
+                        <input required type="radio" value="orange" name="lang">
                         <img src="/static/Images/Fruit/Orange.jpg" alt="A picture of orange" name="Orange">    
                     </label>
                 </div>
@@ -532,7 +541,7 @@
                     <h1>Papaya</h1>
                     <p>With vibrant orange flesh and tropical flavor, papayas are a sunny treat.</p>
                     <label>
-                        <input required type="checkbox" value="papaya" name="lang">
+                        <input required type="radio" value="papaya" name="lang">
                         <img src="/static/Images/Fruit/Papaya.jpg" alt="A picture of papaya" name="Papaya">    
                     </label>
                 </div>
@@ -541,7 +550,7 @@
                     <h1>Passionfruit</h1>
                     <p>Small, round wonders with a vibrant purple or yellow skin and a sweet-tart taste.</p>
                     <label>
-                        <input required type="checkbox" value="passionfruit" name="lang">
+                        <input required type="radio" value="passionfruit" name="lang">
                         <img src="/static/Images/Fruit/Passionfruit.jpg" alt="A picture of passionfruit" name="Passionfruit">    
                     </label>
                 </div>
@@ -550,7 +559,7 @@
                     <h1>Peach</h1>
                     <p>Fuzzy and ripe, peaches offer a juicy and sweet bite.</p>
                     <label>
-                        <input required type="checkbox" value="peach" name="lang">
+                        <input required type="radio" value="peach" name="lang">
                         <img src="/static/Images/Fruit/Peach.jpg" alt="A picture of peach" name="Peach">    
                     </label>
                 </div>
@@ -559,7 +568,7 @@
                     <h1>Pear</h1>
                     <p>With a smooth skin and a variety of colors, pears are a sweet and crisp delight.</p>
                     <label>
-                        <input required type="checkbox" value="pear" name="lang">
+                        <input required type="radio" value="pear" name="lang">
                         <img src="/static/Images/Fruit/Pear.jpg" alt="A picture of pear" name="Pear">    
                     </label>
                 </div>
@@ -568,7 +577,7 @@
                     <h1>Persimmon</h1>
                     <p>Hachiya persimmons are orange and sweet when ripe, while Fuyu persimmons are squat, yellow, and offer a firm, sweet taste.</p>
                     <label>
-                        <input required type="checkbox" value="persimmon" name="lang">
+                        <input required type="radio" value="persimmon" name="lang">
                         <img src="/static/Images/Fruit/Persimmon.jpg" alt="A picture of persimmon" name="Persimmon">    
                     </label>
                 </div>
@@ -577,7 +586,7 @@
                     <h1>Physalis</h1>
                     <p>Small, orange or yellow, these fruits are enveloped in papery husks and provide a sweet-tart taste.</p>
                     <label>
-                        <input required type="checkbox" value="physalis" name="lang">
+                        <input required type="radio" value="physalis" name="lang">
                         <img src="/static/Images/Fruit/Physalis.jpg" alt="A picture of physalis" name="Physalis">    
                     </label>
                 </div>
@@ -586,7 +595,7 @@
                     <h1>Plantain</h1>
                     <p>Larger and starchier than regular bananas, plantains are the ultimate choice for frying or cooking.</p>
                     <label>
-                        <input required type="checkbox" value="plantain" name="lang">
+                        <input required type="radio" value="plantain" name="lang">
                         <img src="/static/Images/Fruit/Plantain.jpg" alt="A picture of plantain" name="Plantain">    
                     </label>
                 </div>
@@ -595,7 +604,7 @@
                     <h1>Plum</h1>
                     <p>Sweet and juicy with a range of colors from red to purple, plums are perfect for snacking or baking.</p>
                     <label>
-                        <input required type="checkbox" value="plum" name="lang">
+                        <input required type="radio" value="plum" name="lang">
                         <img src="/static/Images/Fruit/Plum.jpg" alt="A picture of plum" name="Plum">    
                     </label>
                 </div>
@@ -604,7 +613,7 @@
                     <h1>Prune</h1>
                     <p>Dried plums that offer a sweet and chewy experience.</p>
                     <label>
-                        <input required type="checkbox" value="prune" name="lang">
+                        <input required type="radio" value="prune" name="lang">
                         <img src="/static/Images/Fruit/Prune.jpg" alt="A picture of prune" name="Prune">    
                     </label>
                 </div>
@@ -613,7 +622,7 @@
                     <h1>Pineapple</h1>
                     <p>Tropical and prickly on the outside, sweet and juicy on the inside.</p>
                     <label>
-                        <input required type="checkbox" value="pineapple" name="lang">
+                        <input required type="radio" value="pineapple" name="lang">
                         <img src="/static/Images/Fruit/Pineapple.jpg" alt="A picture of pineapple" name="Pineapple">    
                     </label>
                 </div>
@@ -622,7 +631,7 @@
                     <h1>Plumcot</h1>
                     <p>A hybrid of plums and apricots, plumcots have a sweet and slightly tart flavor.</p>
                     <label>
-                        <input required type="checkbox" value="plumcot" name="lang">
+                        <input required type="radio" value="plumcot" name="lang">
                         <img src="/static/Images/Fruit/Plumcot.jpg" alt="A picture of plumcot" name="Plumcot">    
                     </label>
                 </div>
@@ -631,7 +640,7 @@
                     <h1>Pomegranate</h1>
                     <p>With its ruby-red seeds, it offers a burst of sweet-tart flavor and antioxidants.</p>
                     <label>
-                        <input required type="checkbox" value="pomegranate" name="lang">
+                        <input required type="radio" value="pomegranate" name="lang">
                         <img src="/static/Images/Fruit/Pomegranate.jpg" alt="A picture of pomegranates" name="Pomegranate">    
                     </label>
                 </div>
@@ -640,7 +649,7 @@
                     <h1>Pomelo</h1>
                     <p>Giant and yellow or green, pomelos are the original citrus delight, offering a sweet and slightly bitter taste.</p>
                     <label>
-                        <input required type="checkbox" value="pomelo" name="lang">
+                        <input required type="radio" value="pomelo" name="lang">
                         <img src="/static/Images/Fruit/Pomelo.jpg" alt="A picture of pomelos" name="Pomelo">    
                     </label>
                 </div>
@@ -649,7 +658,7 @@
                     <h1>Purple Mangosteen</h1>
                     <p>With a thick, purple rind and juicy, white flesh, it's the "queen of fruits" with a unique, sweet-tangy flavor.</p>
                     <label>
-                        <input required type="checkbox" value="purplemangosteen" name="lang">
+                        <input required type="radio" value="purplemangosteen" name="lang">
                         <img src="/static/Images/Fruit/PurpleMangosteen.jpg" alt="A picture of purple mangosteens" name="Purple Mangosteen">    
                     </label>
                 </div>
@@ -658,7 +667,7 @@
                     <h1>Pumpkin</h1>
                     <p>Large and orange, pumpkins are the symbol of autumn and provide a sweet and nutty flavor perfect for the season.</p>
                     <label>
-                        <input required type="checkbox" value="pumpkin" name="lang">
+                        <input required type="radio" value="pumpkin" name="lang">
                         <img src="/static/Images/Fruit/Pumpkin.jpg" alt="A picture of pumpkins" name="Pumpkin">    
                     </label>
                 </div>
@@ -667,7 +676,7 @@
                     <h1>Quince</h1>
                     <p>Golden and fragrant when ripe, quinces are known for their floral aroma and sweet, perfumed taste.</p>
                     <label>
-                        <input required type="checkbox" value="quince" name="lang">
+                        <input required type="radio" value="quince" name="lang">
                         <img src="/static/Images/Fruit/Quince.jpg" alt="A picture of quinces" name="Quince">    
                     </label>
                 </div>
@@ -676,7 +685,7 @@
                     <h1>Raspberry</h1>
                     <p>Small and red or black, these berries are sweet, juicy, and perfect for pies and jams.</p>
                     <label>
-                        <input required type="checkbox" value="raspberry" name="lang">
+                        <input required type="radio" value="raspberry" name="lang">
                         <img src="/static/Images/Fruit/Raspberry.jpg" alt="A picture of raspberries" name="Raspberry">    
                     </label>
                 </div>
@@ -685,7 +694,7 @@
                     <h1>Salmonberry</h1>
                     <p>Orange or red, these berries have a unique, sweet-tart taste reminiscent of salmon roe.</p>
                     <label>
-                        <input required type="checkbox" value="salmonberry" name="lang">
+                        <input required type="radio" value="salmonberry" name="lang">
                         <img src="/static/Images/Fruit/Salmonberry.jpg" alt="A picture of salmonberries" name="Salmonberry">    
                     </label>
                 </div>
@@ -694,7 +703,7 @@
                     <h1>Rambutan</h1>
                     <p>Hairy and red or yellow, these tropical fruits are sweet and juicy, perfect for snacking.</p>
                     <label>
-                        <input required type="checkbox" value="rambutan" name="lang">
+                        <input required type="radio" value="rambutan" name="lang">
                         <img src="/static/Images/Fruit/Rambutan.jpg" alt="A picture of rambutans" name="Rambutan">    
                     </label>
                 </div>
@@ -703,7 +712,7 @@
                     <h1>Redcurrant</h1>
                     <p>Tiny, bright red jewels, they are tart and perfect for making jams and desserts.</p>
                     <label>
-                        <input required type="checkbox" value="redcurrant" name="lang">
+                        <input required type="radio" value="redcurrant" name="lang">
                         <img src="/static/Images/Fruit/Redcurrant.jpg" alt="A picture of redcurrants" name="Redcurrant">    
                     </label>
                 </div>                
@@ -712,7 +721,7 @@
                     <h1>Salal Berry</h1>
                     <p>Small and purplish-black, these berries are sweet with a slight tartness and are native to the Pacific Northwest.</p>
                     <label>
-                        <input required type="checkbox" value="salalberry" name="lang">
+                        <input required type="radio" value="salalberry" name="lang">
                         <img src="/static/Images/Fruit/SalalBerry.jpg" alt="A picture of salal berries" name="Salal Berry">    
                     </label>
                 </div>
@@ -721,7 +730,7 @@
                     <h1>Salak</h1>
                     <p>Also known as snake fruit, they have reddish-brown scaly skin and sweet, tangy flesh.</p>
                     <label>
-                        <input required type="checkbox" value="salak" name="lang">
+                        <input required type="radio" value="salak" name="lang">
                         <img src="/static/Images/Fruit/Salak.jpg" alt="A picture of salak" name="Salak">    
                     </label>
                 </div>
@@ -730,7 +739,7 @@
                     <h1>Satsuma</h1>
                     <p>Seedless and easy to peel, Satsumas are sweet and a delightful citrus snack.</p>
                     <label>
-                        <input required type="checkbox" value="satsuma" name="lang">
+                        <input required type="radio" value="satsuma" name="lang">
                         <img src="/static/Images/Fruit/Satsuma.jpg" alt="A picture of satsumas" name="Satsuma">    
                     </label>
                 </div>
@@ -739,7 +748,7 @@
                     <h1>Soursop</h1>
                     <p>With green, spiky skin and soft, white flesh, it offers a tropical flavor that's a mix of strawberry, pineapple, and citrus.</p>
                     <label>
-                        <input required type="checkbox" value="soursop" name="lang">
+                        <input required type="radio" value="soursop" name="lang">
                         <img src="/static/Images/Fruit/Soursop.jpg" alt="A picture of soursop" name="Soursop">    
                     </label>
                 </div>
@@ -748,7 +757,7 @@
                     <h1>Star Fruit</h1>
                     <p>Star-shaped when sliced, this fruit has a unique sweet and slightly tart taste.</p>
                     <label>
-                        <input required type="checkbox" value="starfruit" name="lang">
+                        <input required type="radio" value="starfruit" name="lang">
                         <img src="/static/Images/Fruit/StarFruit.jpg" alt="A picture of star fruit" name="Star Fruit">    
                     </label>
                 </div>
@@ -757,7 +766,7 @@
                     <h1>Salanum Quitoense</h1>
                     <p>Also known as naranjilla, it's green and bumpy, with a tangy, citrusy flavor.</p>
                     <label>
-                        <input required type="checkbox" value="naranjilla" name="lang">
+                        <input required type="radio" value="naranjilla" name="lang">
                         <img src="/static/Images/Fruit/SolanumQuitoense.jpg" alt="A picture of naranjilla" name="Salanum Quitoense">    
                     </label>
                 </div>
@@ -766,7 +775,7 @@
                     <h1>Strawberry</h1>
                     <p>Small, red, and heart-shaped, strawberries are a classic, sweet berry perfect for desserts and snacking.</p>
                     <label>
-                        <input required type="checkbox" value="strawberry" name="lang">
+                        <input required type="radio" value="strawberry" name="lang">
                         <img src="/static/Images/Fruit/Strawberry.jpg" alt="A picture of strawberries" name="Strawberry">    
                     </label>
                 </div>
@@ -775,7 +784,7 @@
                     <h1>Tamarillo</h1>
                     <p>Egg-shaped and bright red or yellow, tamarillos have a unique, tangy-sweet taste.</p>
                     <label>
-                        <input required type="checkbox" value="tamarillo" name="lang">
+                        <input required type="radio" value="tamarillo" name="lang">
                         <img src="/static/Images/Fruit/Tamarillo.jpg" alt="A picture of tamarillos" name="Tamarillo">    
                     </label>
                 </div>
@@ -784,7 +793,7 @@
                     <h1>Tamarind</h1>
                     <p>Brown and pod-like, tamarind is known for its sweet-sour flavor and use in various cuisines.</p>
                     <label>
-                        <input required type="checkbox" value="tamarind" name="lang">
+                        <input required type="radio" value="tamarind" name="lang">
                         <img src="/static/Images/Fruit/Tamarind.jpg" alt="A picture of tamarind" name="Tamarind">    
                     </label>
                 </div>
@@ -793,7 +802,7 @@
                     <h1>Tangerine</h1>
                     <p>Sweet and tangy, tangerines are a burst of orange goodness.</p>
                     <label>
-                        <input required type="checkbox" value="tangerine" name="lang">
+                        <input required type="radio" value="tangerine" name="lang">
                         <img src="/static/Images/Fruit/Tangerine.jpg" alt="A picture of tangerine" name="Tangerine">    
                     </label>
                 </div>
@@ -802,7 +811,7 @@
                     <h1>Tomato</h1>
                     <p>Tomatoes come in various colors, including red, yellow, and green, and they offer a burst of juicy, tangy flavor.</p>
                     <label>
-                        <input required type="checkbox" value="tomato" name="lang">
+                        <input required type="radio" value="tomato" name="lang">
                         <img src="/static/Images/Fruit/Tomato.jpg" alt="A picture of tomatoes" name="Tomato">    
                     </label>
                 </div>
@@ -811,7 +820,7 @@
                     <h1>Ugli Fruit</h1>
                     <p>This wrinkled, green or yellow citrus offers a sweet-tart, refreshing taste.</p>
                     <label>
-                        <input required type="checkbox" value="uglifruit" name="lang">
+                        <input required type="radio" value="uglifruit" name="lang">
                         <img src="/static/Images/Fruit/UgliFruit.jpg" alt="A picture of ugli fruit" name="Ugli Fruit">    
                     </label>
                 </div>
@@ -820,7 +829,7 @@
                     <h1>Watermelon</h1>
                     <p>Iconically refreshing offer a juicy and sweet experience that's perfect for summer.</p>
                     <label>
-                        <input required type="checkbox" value="watermelon" name="lang">
+                        <input required type="radio" value="watermelon" name="lang">
                         <img src="/static/Images/Fruit/Watermelon.jpg" alt="A picture of watermelons" name="Watermelon">    
                     </label>
                 </div>
@@ -829,36 +838,13 @@
                     <h1>Yuzu</h1>
                     <p>Small and yellow, yuzu has a unique, zesty citrus flavor, often used in Japanese cuisine.</p>
                     <label>
-                        <input required type="checkbox" value="yuzu" name="lang">
+                        <input required type="radio" value="yuzu" name="lang">
                         <img src="/static/Images/Fruit/Yuzu.jpg" alt="A picture of yuzu" name="Yuzu">    
                     </label>
-                </div>                
-                <br>
-                <input type = "submit" value = "Vote">
-            </form>
+                </div>   -->              
+                <!-- <br>
+                <input type = "submit" value = "Vote"> 
+            </form> -->
             </div>
-            <script type="module">
-                // Import the functions you need from the SDKs you need
-                import { initializeApp } from "https://www.gstatic.com/firebasejs/10.5.2/firebase-app.js";
-                import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.5.2/firebase-analytics.js";
-                // TODO: Add SDKs for Firebase products that you want to use
-                // https://firebase.google.com/docs/web/setup#available-libraries
-              
-                // Your web app's Firebase configuration
-                // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-                const firebaseConfig = {
-                  apiKey: "AIzaSyAH0MKM2DwdXZY9JEW227hsdrlF7D4aGPE",
-                  authDomain: "fruit-9a563.firebaseapp.com",
-                  projectId: "fruit-9a563",
-                  storageBucket: "fruit-9a563.appspot.com",
-                  messagingSenderId: "490519364270",
-                  appId: "1:490519364270:web:cf0bf31c4d7f4841b1a33f",
-                  measurementId: "G-00DGRDZS7L"
-                };
-              
-                // Initialize Firebase
-                const app = initializeApp(firebaseConfig);
-                const analytics = getAnalytics(app);
-              </script>
     </body>
 </html>
