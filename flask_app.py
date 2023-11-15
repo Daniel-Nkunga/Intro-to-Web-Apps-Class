@@ -10,8 +10,8 @@ app.secret_key = 'wowcool88'
 
 print(os.getcwd())
 print("\n\n")
-# cred = credentials.Certificate("..\creds.json")  # Replace with the path to your Firebase Admin SDK key
-cred = credentials.Certificate("creds.json")
+cred = credentials.Certificate("..\creds.json")  # Replace with the path to your Firebase Admin SDK key
+# cred = credentials.Certificate("creds.json")
 firebase_admin.initialize_app(cred)
 db = firestore.client()
 
@@ -287,16 +287,38 @@ def results():
 def todo():
     return render_template('list.html')
 
+def get_subitems_for_task(task_id):
+    subitems_collection = db.collection('todo_list').document(task_id).collection('subitems')
+    subitems_docs = subitems_collection.stream()
+
+    subitems = []
+    for subitem_doc in subitems_docs:
+        subitem = subitem_doc.to_dict()
+        subitem["_id"] = subitem_doc.id
+        subitems.append(subitem)
+
+    return subitems
+
 @app.route('/list')
 def todolist():
     docs = db.collection('todo_list').stream()
-    output=[]
+    output = []
     for doc in docs:
-        doc_dict=doc.to_dict()
-        doc_dict["_id"]=doc.id
+        doc_dict = doc.to_dict()
+        doc_dict["_id"] = doc.id
+
+        # Add subitems to the data if available
+        subitems = get_subitems_for_task(doc.id)
+        doc_dict["subitems"] = subitems
+
         output.append(doc_dict)
- 
+<<<<<<< HEAD
+
     return jsonify(output)
+=======
+ 
+    return output
+>>>>>>> parent of 4a92b14 (python anywhere?)
     
 @app.route('/toggle/<doc_id>')
 def toggle(doc_id):
@@ -325,6 +347,17 @@ def delete_item(item_id):
         return {"message": "Item deleted successfully"}, 200
     except Exception as e:
         return {"error": str(e)}, 500
+
+@app.route('/addSubitem/<task_id>', methods=['GET'])
+def add_subitem(task_id):
+    if "subitem" in request.args:
+        subitem = request.args["subitem"]
+        subitems_collection = db.collection('todo_list').document(task_id).collection('subitems')
+        subitems_collection.add({
+            'subitem': subitem,
+            'timestamp': firestore.SERVER_TIMESTAMP
+        })
+    return ""
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=80)

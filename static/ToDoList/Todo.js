@@ -1,20 +1,14 @@
-// JavaScript code for ToDoList
-
 function add(name) {
-    // Construct the URL with the provided name
     const url = '/add?item=' + encodeURIComponent(name);
-
-    // Send a GET request to the endpoint
     fetch(url, {
         method: 'GET',
     })
     .then(response => {
         if (!response.ok) {
-            // If server responds with a non-200 status, reject the promise
             return Promise.reject('Failed to add item');
         }
         update();
-        return; // Assuming server responds with json
+        return; 
     })
     .then(data => {
         console.log('Item added successfully:', data);
@@ -25,20 +19,16 @@ function add(name) {
 }
 
 function deleteItem(id) {
-    // Construct the URL with the provided id
     const url = `/delete/${id}`;
-
-    // Send a DELETE request to the endpoint
     fetch(url, {
         method: 'DELETE',
     })
     .then(response => {
         if (!response.ok) {
-            // If server responds with a non-200 status, reject the promise
             return Promise.reject('Failed to delete item');
         }
-        update(); // Update the UI after successful deletion
-        return; // Assuming server responds with json
+        update();
+        return; 
     })
     .then(data => {
         console.log('Item deleted successfully:', data);
@@ -49,16 +39,12 @@ function deleteItem(id) {
 }
 
 function toggle(id) {
-    // Construct the URL with the provided id
     const url = `/toggle/${id}`;
-
-    // Send a GET request to the endpoint
     fetch(url, {
         method: 'GET',
     })
     .then(response => {
         if (!response.ok) {
-            // If server responds with a non-200 status, reject the promise
             return Promise.reject('Failed to toggle item');
         }
         update();
@@ -74,17 +60,14 @@ function toggle(id) {
 
 function update() {
     var xhr = new XMLHttpRequest();
-
     xhr.open('GET', '/list', true);
     xhr.onreadystatechange = function() {
         if (xhr.readyState == 4 && xhr.status == 200) {
             var data = JSON.parse(xhr.responseText);
-
             var completedList = document.getElementById('completed-list');
             var notCompletedList = document.getElementById('not-completed-list');
             completedList.innerHTML = "";
             notCompletedList.innerHTML = "";
-
             for (let i = 0; i < data.length; i++) {
                 createListItem(data[i], completedList, notCompletedList);
             }
@@ -96,28 +79,92 @@ function update() {
 function createListItem(data, completedList, notCompletedList) {
     let label = document.createElement('label');
     label.textContent = data.item;
-
     let checkbox = document.createElement('input');
     checkbox.type = 'checkbox';
     checkbox.onclick = function() {toggle(data._id);}
-
     let img = document.createElement('img');
     img.src = '/static/Images/Spooderman.png';
     img.alt = 'cage';
     img.style.cursor = 'pointer';
     img.onclick = function() {deleteItem(data._id);} // Attach delete function to the image
-
     let listItem = document.createElement('li');
     listItem.appendChild(checkbox);
     listItem.appendChild(label);
     label.appendChild(img);
 
+    // Add event listener for shift-click to handle selection
+    listItem.addEventListener('click', function(event) {
+        handleShiftClick(event, data._id);
+    });
+
+    // Check if the task is completed or not
     if (data.is_complete) {
         checkbox.checked = true;
         completedList.appendChild(listItem);
     } else {
-        notCompletedList.appendChild(listItem);
+        // Create a sublist for non-completed tasks
+        let subList = document.createElement('ul');
+        let subListItem = document.createElement('li');
+        subListItem.appendChild(listItem);
+        subList.appendChild(subListItem);
+
+        // Create subitems for each non-completed task
+        for (let i = 0; i < data.subitems.length; i++) {
+            let subItemLabel = document.createElement('label');
+            subItemLabel.textContent = data.subitems[i];
+            let subItemCheckbox = document.createElement('input');
+            subItemCheckbox.type = 'checkbox';
+            // Add any additional subitem properties as needed
+
+            let subItemListItem = document.createElement('li');
+            subItemListItem.appendChild(subItemCheckbox);
+            subItemListItem.appendChild(subItemLabel);
+            subList.appendChild(subItemListItem);
+        }
+
+        notCompletedList.appendChild(subList);
     }
+}
+
+let selectedItemId = null;
+
+function handleShiftClick(event, id) {
+    if (event.shiftKey) {
+        selectedItemId = id;
+        // Perform any visual indication or additional handling for the selected item if needed
+        update();
+    }
+}
+
+function addSubitem(name) {
+    if (selectedItemId) {
+        const url = `/addSubitem/${selectedItemId}?subitem=${encodeURIComponent(name)}`;
+        fetch(url, {
+            method: 'GET',
+        })
+        .then(response => {
+            if (!response.ok) {
+                return Promise.reject('Failed to add subitem');
+            }
+            update();
+            return;
+        })
+        .then(data => {
+            console.log('Subitem added successfully:', data);
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+    } else {
+        console.warn('No item selected for adding subitem. Shift-click on an item to select it.');
+    }
+}
+
+// Modify the process function to use addSubitem
+function process() {
+    let elem = document.getElementById('task_name');
+    addSubitem(elem.value);
+    elem.value = "";
 }
 
 function process() {
@@ -126,5 +173,4 @@ function process() {
     elem.value = "";
 }
 
-// Using XMLHttpRequest for the AJAX request
 update();

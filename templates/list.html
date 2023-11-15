@@ -8,20 +8,26 @@
 </head>
 <body>
     <h1>Tasks</h1>
-    <div class="container">
-        <div class="sidebar">
-            <h2>Completed</h2>
-            <ul id="completed-list"></ul>
-        </div>
-        <div class="content">
-            <h2>Not Completed</h2>
-    <ul id="not-completed-list"></ul>
-        </div>
+<<<<<<< HEAD
+    <div class="not_completed">
+        <h2>Not Completed</h2>
+        <ul id="not-completed-list"></ul>
+        <input type="text" id="task_name"/><input type="button" value="add" onclick="process();"/>
     </div>
+    <h2>Completed</h2>
+    <ul id="completed-list"></ul>
+=======
     <input type="text" id="task_name"/><input type="button" value="add" onclick="process();"/>
+    <h2>Not Completed</h2>
+    <ul id="not-completed-list"></ul>
+    <div class = "check"></div>
+    <div class = "completed">
+        <h2>Completed</h2>
+        <ul id="completed-list"></ul>
+    </div>
+>>>>>>> parent of 4a92b14 (python anywhere?)
     <script src="\static\ToDoList\Todo.js"></script>
     <script>
-        // Using XMLHttpRequest for the AJAX request
         update();
     </script>
 </body>
