@@ -312,13 +312,8 @@ def todolist():
         doc_dict["subitems"] = subitems
 
         output.append(doc_dict)
-<<<<<<< HEAD
-
-    return jsonify(output)
-=======
  
-    return output
->>>>>>> parent of 4a92b14 (python anywhere?)
+    return jsonify(output)
     
 @app.route('/toggle/<doc_id>')
 def toggle(doc_id):
