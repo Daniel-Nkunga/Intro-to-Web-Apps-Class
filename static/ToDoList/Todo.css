@@ -1,0 +1,26 @@
+ul{
+	list-style-type: none;	
+}
+img{
+	display: none;
+	height: 16px;
+}
+label:hover > img{
+	display: inline;
+}
+.completed{
+    display: none;
+}
+.check{
+    height: 150px;
+    width: 150px;
+    display: flex;
+    background-color: aquamarine;
+    border-radius: 25%;
+    position: fixed;
+    top: -25px;
+    right: -25px;
+}
+.check:hover + .completed {
+    display: flex;
+}

@@ -9,15 +9,14 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Black+Ops+One">
     </header>
     <body>
-        <h1>THE ULTIMATE FRUIT TIER LIST</h1>
+        <h1>THE ULTIMATE RANKING</h1>
         <div class="main"></div>
-        <h2>Voting Results</h2>
         <div class="bar-container">
             {% for fruit, count in fruits.items() %}
             <div class="bar">
-                <div class="bar-label">{{ fruit }}:</div>
-                <div class="bar-graph" style="width: {{ count * 10 }}px;"></div>
-                <div>{{ count }} votes</div>
+                <div class="bar-label">{{ fruit }}: {{ count }} votes</div>
+                <div class="bar-graph" style="height: {{ count * 10 }}px;"></div>
+                <!-- <div class="fruit-count">{{ count }} votes</div> -->
             </div>
             {% endfor %}
         </div>

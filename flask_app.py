@@ -10,7 +10,7 @@ app.secret_key = 'wowcool88'
 
 print(os.getcwd())
 print("\n\n")
-cred = credentials.Certificate("creds.json")  # Replace with the path to your Firebase Admin SDK key
+cred = credentials.Certificate("..\creds.json")  # Replace with the path to your Firebase Admin SDK key
 firebase_admin.initialize_app(cred)
 db = firestore.client()
 
@@ -243,32 +243,87 @@ def serve_game():
 
 @app.route('/survey')
 def serve_survey():
+    if 'voted' in session:
+        return redirect(url_for('results'))
     return render_template('vote.html')
+
 
 @app.route('/vote', methods=['POST'])
 def vote():
     fruit = request.form.get('fruit')
     escaped_fruit = html.escape(fruit)
     if escaped_fruit:
+        fruit_ref = db.collection('votes').where('fruit', '==', escaped_fruit).stream()
+        for doc in fruit_ref:
+            doc_ref = db.collection('votes').document(doc.id)
+            current_count = doc.to_dict().get('count', 0)
+            doc_ref.update({
+                'count': current_count + 1,
+                'timestamp': firestore.SERVER_TIMESTAMP
+            })
+            return redirect(url_for('results'))
         vote_ref = db.collection('votes').add({
             'fruit': escaped_fruit,
+            'count': 1,
             'timestamp': firestore.SERVER_TIMESTAMP
-            })
-        return redirect(url_for('results'))
+        })
+        session['voted'] = True
+
+    return redirect(url_for('results'))
 
 @app.route('/results')
 def results():
-    fruits = {}  # Create an empty dictionary to hold the fruits and their counts
+    fruits = {}
     docs = db.collection('votes').stream()
-    
     for doc in docs:
         fruit = doc.to_dict().get('fruit')
         count = doc.to_dict().get('count', 0)
-        
-        # Update the 'fruits' dictionary with the fruit and its count
+        fruit = fruit.capitalize()
         fruits[fruit] = count
-    
     return render_template('results.html', fruits=fruits)
+
+@app.route('/todo')
+def todo():
+    return render_template('list.html')
+
+@app.route('/list')
+def todolist():
+    docs = db.collection('todo_list').stream()
+    output=[]
+    for doc in docs:
+        doc_dict=doc.to_dict()
+        doc_dict["_id"]=doc.id
+        output.append(doc_dict)
+ 
+    return output
+    
+@app.route('/toggle/<doc_id>')
+def toggle(doc_id):
+    docref = db.collection('todo_list').document(doc_id)
+    doc = docref.get()
+    if doc.exists:
+        is_complete = doc.to_dict().get('is_complete', False)
+        docref.update({"is_complete": not is_complete})
+    return ""
+
+@app.route('/add', methods=['GET'])
+def add_item():
+    if "item" in request.args:
+        item=request.args["item"]
+        db.collection('todo_list').add({
+            'item': item,
+            'is_complete': False,
+            'timestamp': firestore.SERVER_TIMESTAMP
+        })
+    return ""
+
+@app.route('/delete/<item_id>', methods=['DELETE'])
+def delete_item(item_id):
+    try:
+        db.collection('todo_list').document(item_id).delete()
+        return {"message": "Item deleted successfully"}, 200
+    except Exception as e:
+        return {"error": str(e)}, 500
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=80)
