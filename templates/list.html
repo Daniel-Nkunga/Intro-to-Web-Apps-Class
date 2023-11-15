@@ -7,15 +7,26 @@
     <link rel="stylesheet" href="/static/ToDoList/Todo.css">
 </head>
 <body>
-    <h1>Tasks</h1>
-    <input type="text" id="task_name"/><input type="button" value="add" onclick="process();"/>
-    <h2>Not Completed</h2>
-    <ul id="not-completed-list"></ul>
-    <div class = "check"></div>
-    <div class = "completed">
-        <h2>Completed</h2>
-        <ul id="completed-list"></ul>
-    </div>
+    <!-- <div class = "page"> -->
+        <div class = "noncompleted">
+            <h2>Not Completed</h2>
+            <ul id="not-completed-list"></ul>
+            <div class = "add">
+                <form onsubmit="process(); return false;">
+                    <input type="text" id="task_name" />
+                </form>      
+            </div>
+        </div>
+    
+        <div class = "check">
+            <p>Completed Items</p>
+            <img src="/static/Images/ToDo/Checkmark.png" alt="A picture of a chekcmark">
+        </div>
+        <div class = "completed">
+            <h2>Completed</h2>
+            <ul id="completed-list"></ul>
+        </div>
+    <!-- </div> -->
     <script src="\static\ToDoList\Todo.js"></script>
     <script>
         // Using XMLHttpRequest for the AJAX request
