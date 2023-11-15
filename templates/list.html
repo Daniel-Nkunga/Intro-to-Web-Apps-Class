@@ -8,14 +8,17 @@
 </head>
 <body>
     <h1>Tasks</h1>
-    <input type="text" id="task_name"/><input type="button" value="add" onclick="process();"/>
-    <h2>Not Completed</h2>
+    <div class="container">
+        <div class="sidebar">
+            <h2>Completed</h2>
+            <ul id="completed-list"></ul>
+        </div>
+        <div class="content">
+            <h2>Not Completed</h2>
     <ul id="not-completed-list"></ul>
-    <div class = "check"></div>
-    <div class = "completed">
-        <h2>Completed</h2>
-        <ul id="completed-list"></ul>
+        </div>
     </div>
+    <input type="text" id="task_name"/><input type="button" value="add" onclick="process();"/>
     <script src="\static\ToDoList\Todo.js"></script>
     <script>
         // Using XMLHttpRequest for the AJAX request
