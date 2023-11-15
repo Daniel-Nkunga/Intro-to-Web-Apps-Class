@@ -296,7 +296,7 @@ def todolist():
         doc_dict["_id"]=doc.id
         output.append(doc_dict)
  
-    return jsonify(output)
+    return output
     
 @app.route('/toggle/<doc_id>')
 def toggle(doc_id):
