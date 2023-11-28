@@ -1,0 +1,14 @@
+*{
+    font-family: 'Helvetica', 'sans-serif';
+    font-size: 16px;
+}
+h1{
+    font-size: 6em;
+    text-align: center;
+    display: inline-flex;
+}
+h2{
+    font-size: 2em;
+    text-align: center;
+    display: inline-flex;
+}

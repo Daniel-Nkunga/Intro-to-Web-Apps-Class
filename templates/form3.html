@@ -1,0 +1,21 @@
+<html>
+    <head>
+        <title>What Type of Gamer are YOU? :O - Results May Suprise You!</title>
+        <link rel="stylesheet" href="/static/Quiz/QuizStyle.css">
+    </head>
+    <body>
+        <p>What was the cost of the most recent game you bought?</p>
+        <form action="/quiz" method="get">
+            <input type="hidden" name="quiz" value="3">
+            <input type="radio" id="price" name="price" value="Free">
+            <label>Free</label><br>
+            <input type="radio" id="price" name="price" value="$1-$30">
+            <label>$1-$30</label><br>
+            <input type="radio" id="price" name="price" value="$31-$60">
+            <label>$31-$60</label><br>
+            <input type="radio" id="price" name="price" value="$60+">
+            <label>$60+</label><br>
+            <input type="submit" value="Submit">
+        </form>
+    </body>
+</html>

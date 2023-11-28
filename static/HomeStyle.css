@@ -1,0 +1,38 @@
+/*#5C9EAD*/
+*{
+    font-family: 'Comfortaa', sans-serif;
+    color: black;
+    font-size: 16px;
+    text-decoration: none;
+    margin: 0px;
+}
+body{
+    background-color: #FFFFFF;
+}
+.web-display{
+    background-color: #EEEEEE;
+    width: 75%;
+    padding: 5px 50px 32px 32px;
+    border-radius: 32px;
+    margin: 2em;
+    box-shadow: 8px 8px 2px #326273;
+}
+h2{
+    font-size: 2em;
+    text-decoration: .1em solid underline;
+}
+h3{
+    font-size: .75em;
+    margin: 0px;
+    font-weight: 100;
+}
+p{
+    width: 70%;
+    margin: 1em;
+    line-height: 1.25em;
+}
+img{
+    float: right;
+    width: 25%
+    /* box-shadow: 8px 8px 2px #E39774; */
+}
