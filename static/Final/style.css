@@ -1,0 +1,61 @@
+*{
+    margin: 0px;
+    font-family: 'Roboto';
+}
+body{
+    background-color: #e5e5f7;
+    opacity: 1;
+    background-image:  radial-gradient(#444cf7 0.30000000000000004px, transparent 0.30000000000000004px), radial-gradient(#444cf7 0.30000000000000004px, #e5e5f7 0.30000000000000004px);
+    background-size: 12px 12px;
+    background-position: 0 0,6px 6px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    
+}
+.card{
+    background-color: green;
+    padding: 16px;
+    border-radius: 8px;
+    margin: 16px;
+}
+.furniture:hover rect{
+    fill: aqua;
+}
+.furniture:hover text{
+    fill: green;
+}
+svg{
+    stroke:purple;
+    stroke-width:1
+}
+.floor-plan{
+    fill: lime;
+    transform: scale(2);
+}
+rect{
+    transform: scale(2);
+    fill: blue;
+}
+text{
+    transform: scale(2);
+    font-family: "Arial";
+    font-size: "2px";
+    fill: yellow;
+    stroke: none;
+}
+#dot-container {
+    position: absolute;
+}
+
+.dot {
+    width: 20px;
+    height: 20px;
+    background-color: red;
+    border-radius: 50%;
+    position: absolute;
+}
+#clickCanvas {
+    position: absolute;
+    z-index: 1;
+}

@@ -10,14 +10,52 @@ app.secret_key = 'wowcool88'
 
 print(os.getcwd())
 print("\n\n")
-# cred = credentials.Certificate("..\creds.json")  # Replace with the path to your Firebase Admin SDK key
-cred = credentials.Certificate("creds.json")
+cred = credentials.Certificate("..\creds.json")  # Replace with the path to your Firebase Admin SDK key
+# cred = credentials.Certificate("creds.json")
 firebase_admin.initialize_app(cred)
 db = firestore.client()
 
 @app.route('/')
 def serve_home():
-    return send_from_directory('static', 'HelloThere.html')
+    # return send_from_directory('static', 'HelloThere.html')
+    return render_template('index.html')
+
+@app.route('/update_database', methods=['POST'])
+def update_database():
+    data = request.get_json()
+
+    if 'project_id' in data and 'x' in data and 'y' in data:
+        project_id = data['project_id']
+        x = data['x']
+        y = data['y']
+
+        # Update Firebase database with the x and y values under the specific project
+        db.child('projects').child(project_id).child('dots').push({'x': x, 'y': y})
+
+        return jsonify({'status': 'success'})
+    else:
+        return jsonify({'status': 'error', 'message': 'Invalid data format'})
+    
+@app.route('/add_dot', methods=['GET'])
+def add_dot():
+    if "x" in request.args and "y" in request.args:
+        x = float(request.args["x"])
+        y = float(request.args["y"])
+
+        # Add the dot data to the "dots" collection
+        db.collection('dots').add({
+            'x': x,
+            'y': y,
+            'timestamp': firestore.SERVER_TIMESTAMP
+        })
+
+    return ""
+
+@app.route('/get_dots')
+def get_dots():
+    docs = db.collection('dots').stream()
+    dots = [{'x': doc.to_dict()['x'], 'y': doc.to_dict()['y']} for doc in docs]
+    return jsonify(dots)
 
 @app.route('/homepage')
 def serve_homepage():
