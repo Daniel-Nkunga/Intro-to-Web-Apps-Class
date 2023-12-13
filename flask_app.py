@@ -43,8 +43,8 @@ app = Flask(__name__,static_folder="static")
 
 print(os.getcwd())
 print("\n\n")
-cred = credentials.Certificate("..\creds.json")  # Replace with the path to your Firebase Admin SDK key
-# cred = credentials.Certificate("creds.json")
+# cred = credentials.Certificate("..\creds.json")  # Replace with the path to your Firebase Admin SDK key
+cred = credentials.Certificate("creds.json")
 firebase_admin.initialize_app(cred)
 db = firestore.client()
 
