@@ -86,7 +86,7 @@ def add_dot():
             'y': y,
             'itemName': itemName,
             'itemDescription': itemDescription,
-            'timestamp': firestore.SERVER_TIMESTAMP
+            # 'timestamp': firestore.SERVER_TIMESTAMP
         })
 
         return jsonify({'status': 'success'})
