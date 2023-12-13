@@ -157,7 +157,9 @@ document.addEventListener("DOMContentLoaded", function () {
     function showDotInfo(dot) {
         // Display dot information
         var infoElement = document.getElementById('dotInfo');
-        infoElement.innerHTML = `<strong>${dot.itemName}</strong> <br> ${dot.itemDescription} <br> ${dot.timestamp}`;
+        // infoElement.innerHTML = `<h1>${dot.itemName}</h1> <br> ${dot.itemDescription} <br> ${dot.timestamp}`;
+        infoElement.innerHTML = `<h1>${dot.itemName}</h1> <br> ${dot.itemDescription}`;
+
     }
 
     function showUserInfo(dot) {

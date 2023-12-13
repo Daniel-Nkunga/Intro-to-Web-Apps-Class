@@ -1,6 +1,7 @@
 *{
     margin: 0px;
     font-family: 'Roboto';
+    font-size: 14px;
 }
 body{
     background-color: #EDEBD7;
@@ -83,4 +84,9 @@ text{
     height: 285px;
     background-color: #718F94;
     border-radius: 8px;
+}
+#dotInfo h1{
+    font-size: 2em;
+    text-decoration: underline;
+    text-align: center;
 }
