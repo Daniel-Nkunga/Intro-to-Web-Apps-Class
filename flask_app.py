@@ -1,21 +1,55 @@
+from flask import Flask
 from flask import *
 import random
+from flask import Flask, jsonify, render_template, request, redirect, url_for
 import firebase_admin
 from firebase_admin import credentials, firestore
-import html
 import os
+import pathlib
+import requests
+from flask import *
+from google.oauth2 import id_token
+from google_auth_oauthlib.flow import Flow
+import google.auth.transport.requests
+import time
+import collections
+import re
+import json
+from pip._vendor import cachecontrol
 
 app = Flask(__name__,static_folder="static")
-app.secret_key = 'wowcool88'
+# app.secret_key = "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"
+# os.environ["OAUTHLIB_INSECURE_TRANSPORT"] = "1" #REMOVE THIS WHEN YOU DEPLOY
+
+# GOOGLE_CLIENT_ID = "143525210526-jq3s8qlmh9bprh8f5m04qqfcjuhpggso.apps.googleusercontent.com"  
+# #client_secrets_file = os.path.join(pathlib.Path(__file__).parent, "oath.json")  #set the path to where the .json file you got Google console is
+# import socket
+
+# flow = Flow.from_client_secrets_file(  
+# 	client_secrets_file=".gitignore/oath.json",
+# 	scopes=["https://www.googleapis.com/auth/userinfo.profile", "https://www.googleapis.com/auth/userinfo.email", "openid"],  
+# 	redirect_uri="http://localhost:80/callback" #FIX THIS WHEN YOU DEPLOY
+# 	)
+
+
+# def login_is_required(function):  #a function to check if the user is authorized or not
+#     def wrapper(*args, **kwargs):
+#         if "sub" not in session:  #authorization required
+#             return redirect("/")
+#         else:
+#             return function()
+
+#     return wrapper
 
 print(os.getcwd())
 print("\n\n")
-cred = credentials.Certificate("..\creds.json")  # Replace with the path to your Firebase Admin SDK key
-# cred = credentials.Certificate("creds.json")
+# cred = credentials.Certificate("..\creds.json")  # Replace with the path to your Firebase Admin SDK key
+cred = credentials.Certificate("creds.json")
 firebase_admin.initialize_app(cred)
 db = firestore.client()
 
 @app.route('/')
+# @login_is_required
 def serve_home():
     # return send_from_directory('static', 'HelloThere.html')
     return render_template('index.html')
