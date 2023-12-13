@@ -49,27 +49,9 @@ firebase_admin.initialize_app(cred)
 db = firestore.client()
 
 @app.route('/')
-# @login_is_required
 def serve_home():
-    # return send_from_directory('static', 'HelloThere.html')
     return render_template('index.html')
 
-@app.route('/update_database', methods=['POST'])
-def update_database():
-    data = request.get_json()
-
-    if 'project_id' in data and 'x' in data and 'y' in data:
-        project_id = data['project_id']
-        x = data['x']
-        y = data['y']
-
-        # Update Firebase database with the x and y values under the specific project
-        db.child('projects').child(project_id).child('dots').push({'x': x, 'y': y})
-
-        return jsonify({'status': 'success'})
-    else:
-        return jsonify({'status': 'error', 'message': 'Invalid data format'})
-    
 @app.route('/add_dot', methods=['POST'])
 def add_dot():
     data = request.get_json()
