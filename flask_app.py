@@ -45,7 +45,6 @@ def add_dot():
         y = data['y']
         itemName = data['itemName']
         itemDescription = data.get('itemDescription', '')  # Optional, may not be present
-        # timestamp = data.get('timestamp', '')
 
         # Add the dot data to the "dots" collection
         db.collection('dots').add({
