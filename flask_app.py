@@ -49,7 +49,7 @@ firebase_admin.initialize_app(cred)
 db = firestore.client()
 
 @app.route('/')
-def serve_home():
+def index():
     return render_template('index.html')
 
 @app.route('/add_dot', methods=['POST'])
@@ -63,23 +63,17 @@ def add_dot():
         itemDescription = data.get('itemDescription', '')  # Optional, may not be present
 
         # Add the dot data to the "dots" collection
-        db.collection('dots').add({
+        doc_ref = db.collection('dots').add({
             'x': x,
             'y': y,
             'itemName': itemName,
             'itemDescription': itemDescription,
-            # 'timestamp': firestore.SERVER_TIMESTAMP
+            'timestamp': firestore.SERVER_TIMESTAMP
         })
 
-        return jsonify({'status': 'success'})
+        return jsonify({'status': 'success', 'dotId': doc_ref.id})
     else:
         return jsonify({'status': 'error', 'message': 'Invalid data format'})
-
-@app.route('/get_dots')
-def get_dots():
-    docs = db.collection('dots').stream()
-    dots = [{'x': doc.to_dict()['x'], 'y': doc.to_dict()['y']} for doc in docs]
-    return jsonify(dots)
 
 @app.route('/delete_dot', methods=['POST'])
 def delete_dot():
@@ -89,12 +83,17 @@ def delete_dot():
         dot_id = data['dotId']
 
         # Delete the dot from the database based on the dotId
-        # You'll need to adjust this based on how you uniquely identify dots in your database
-        # db.collection('dots').document(dot_id).delete()
+        db.collection('dots').document(dot_id).delete()
 
         return jsonify({'status': 'success'})
     else:
         return jsonify({'status': 'error', 'message': 'Invalid data format'})
+
+@app.route('/get_dots')
+def get_dots():
+    docs = db.collection('dots').stream()
+    dots = [{'id': doc.id, **doc.to_dict()} for doc in docs]
+    return jsonify(dots)
 
 @app.route('/homepage')
 def serve_homepage():
