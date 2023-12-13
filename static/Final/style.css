@@ -3,9 +3,9 @@
     font-family: 'Roboto';
 }
 body{
-    background-color: #e5e5f7;
+    background-color: #EDEBD7;
     opacity: 1;
-    background-image:  radial-gradient(#444cf7 0.30000000000000004px, transparent 0.30000000000000004px), radial-gradient(#444cf7 0.30000000000000004px, #e5e5f7 0.30000000000000004px);
+    background-image:  radial-gradient(#545775 0.30000000000000004px, transparent 0.30000000000000004px), radial-gradient(#545775 0.30000000000000004px, #EDEBD7 0.30000000000000004px);
     background-size: 12px 12px;
     background-position: 0 0,6px 6px;
     text-align: center;
@@ -26,22 +26,22 @@ body{
     fill: green;
 }
 svg{
-    stroke:purple;
+    stroke: #423E37;
     stroke-width:1
 }
 .floor-plan{
-    fill: lime;
+    fill: #DBCFB0;
     transform: scale(2);
 }
 rect{
     transform: scale(2);
-    fill: blue;
+    fill: #718F94;
 }
 text{
     transform: scale(2);
     font-family: "Arial";
     font-size: "2px";
-    fill: yellow;
+    fill: none;
     stroke: none;
 }
 #dot-container {
@@ -58,4 +58,29 @@ text{
 #clickCanvas {
     position: absolute;
     z-index: 1;
+}
+.big-flex{
+    margin-top: 24px;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    align-items: center;
+}
+.small-flex{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 100%;
+}
+#dotInfo{
+    width: 500px;
+    height: 250px;
+    background-color: #718F94;
+    border-radius: 8px;
+}
+#userInfo{
+    width: 400px;
+    height: 285px;
+    background-color: #718F94;
+    border-radius: 8px;
 }
