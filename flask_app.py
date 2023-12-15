@@ -18,28 +18,41 @@ import json
 from pip._vendor import cachecontrol
 
 app = Flask(__name__,static_folder="static")
-# app.secret_key = "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"
+app.secret_key = "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"
 # os.environ["OAUTHLIB_INSECURE_TRANSPORT"] = "1" #REMOVE THIS WHEN YOU DEPLOY
 
-# GOOGLE_CLIENT_ID = "143525210526-jq3s8qlmh9bprh8f5m04qqfcjuhpggso.apps.googleusercontent.com"  
-# #client_secrets_file = os.path.join(pathlib.Path(__file__).parent, "oath.json")  #set the path to where the .json file you got Google console is
-# import socket
+GOOGLE_CLIENT_ID = "143525210526-jq3s8qlmh9bprh8f5m04qqfcjuhpggso.apps.googleusercontent.com"  
+#client_secrets_file = os.path.join(pathlib.Path(__file__).parent, "oath.json")  #set the path to where the .json file you got Google console is
+import socket
 
-# flow = Flow.from_client_secrets_file(  
-# 	client_secrets_file=".gitignore/oath.json",
-# 	scopes=["https://www.googleapis.com/auth/userinfo.profile", "https://www.googleapis.com/auth/userinfo.email", "openid"],  
-# 	redirect_uri="http://localhost:80/callback" #FIX THIS WHEN YOU DEPLOY
-# 	)
+flow = Flow.from_client_secrets_file(  
+	client_secrets_file=".gitignore/oath.json",
+	scopes=["https://www.googleapis.com/auth/userinfo.profile", "https://www.googleapis.com/auth/userinfo.email", "openid"],  
+	redirect_uri="https://danielnkunga.pythonanywhere.com" #FIX THIS WHEN YOU DEPLOY
+	)
 
 
-# def login_is_required(function):  #a function to check if the user is authorized or not
-#     def wrapper(*args, **kwargs):
-#         if "sub" not in session:  #authorization required
-#             return redirect("/")
-#         else:
-#             return function()
+def login_is_required(function):
+    def wrapper(*args, **kwargs):
+        if "sub" not in session:  # Authorization required
+            return redirect(url_for('login'))  # Redirect to the login route
+        else:
+            return function(*args, **kwargs)
 
-#     return wrapper
+    return wrapper
+
+@app.route('/login')
+def login():
+    authorization_url, state = flow.authorization_url()
+    session['oauth_state'] = state
+    return redirect(authorization_url)
+
+@app.route('/callback')
+def callback():
+    flow.fetch_token(authorization_response=request.url)
+    userinfo = flow.userinfo()
+    session['sub'] = userinfo['sub']
+    return redirect(url_for('index'))
 
 print(os.getcwd())
 print("\n\n")
@@ -49,6 +62,7 @@ firebase_admin.initialize_app(cred)
 db = firestore.client()
 
 @app.route('/')
+@login_is_required  # Apply the login_is_required decorator to the index route
 def index():
     return render_template('index.html')
 

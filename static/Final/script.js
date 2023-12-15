@@ -161,13 +161,7 @@ document.addEventListener("DOMContentLoaded", function () {
     function showDotInfo(dot) {
         // Display dot information
         var infoElement = document.getElementById('dotInfo');
-        infoElement.innerHTML = `<strong>${dot.itemName}</strong> <br><strong> ${dot.itemDescription}</strong>`;
-    }
-
-    function showUserInfo(dot) {
-        // Display dot information
-        var infoElement = document.getElementById('userInfo');
-        infoElement.innerHTML = `<strong>${dot.itemName}</strong> <br><strong> ${dot.itemDescription}</strong>`;
+        infoElement.innerHTML = `<h1>${dot.itemName}</h1> <br><strong> ${dot.itemDescription}</strong>`;
     }
 
     function hideDotInfo() {
