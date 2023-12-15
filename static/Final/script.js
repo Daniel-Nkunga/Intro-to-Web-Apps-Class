@@ -81,6 +81,8 @@ document.addEventListener("DOMContentLoaded", function () {
             var dot = { id: data.dotId, x: x, y: y, itemName: itemName, itemDescription: itemDescription };
             dots.push(dot);
             drawDot(ctx, x, y);
+            // Reload the page to fetch and display all dots
+            location.reload();
         })
         .catch(error => {
             // Handle errors
@@ -90,7 +92,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function drawDot(context, x, y) {
         // Set dot color
-        context.fillStyle = '#E3B23C';
+        context.fillStyle = 'red';
 
         // Draw a filled circle
         context.beginPath();
@@ -137,6 +139,8 @@ document.addEventListener("DOMContentLoaded", function () {
             }
             // Redraw the canvas without the deleted dot
             redrawCanvas();
+            // Reload the page to fetch and display all dots
+            location.reload();
         })
         .catch(error => {
             // Handle errors
@@ -157,7 +161,7 @@ document.addEventListener("DOMContentLoaded", function () {
     function showDotInfo(dot) {
         // Display dot information
         var infoElement = document.getElementById('dotInfo');
-        infoElement.innerHTML = `<H1>${dot.itemName}</H1> <br> ${dot.itemDescription}`;
+        infoElement.innerHTML = `<strong>${dot.itemName}</strong> <br><strong> ${dot.itemDescription}</strong>`;
     }
 
     function showUserInfo(dot) {
@@ -176,6 +180,28 @@ document.addEventListener("DOMContentLoaded", function () {
         var infoElement = document.getElementById('userInfo');
         infoElement.innerHTML = '';
     }
+
+    function fetchDotsFromServerAndDraw() {
+        // Fetch existing dots from the server
+        fetch('/get_dots')
+        .then(response => response.json())
+        .then(dotsFromServer => {
+            // Update the dots array with the fetched dots
+            dots = dotsFromServer;
+    
+            // Clear the canvas
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+    
+            // Draw each dot on the canvas
+            dots.forEach(dot => {
+                drawDot(ctx, dot.x, dot.y);
+            });
+        })
+        .catch(error => {
+            // Handle errors
+            console.error('Error fetching dots from the server:', error);
+        });
+    }    
 
     function fetchDotsFromServerAndDraw() {
         // Fetch existing dots from the server

@@ -1,14 +1,76 @@
 *{
-    font-family: 'Helvetica', 'sans-serif';
-    font-size: 16px;
+    font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
+}
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #C4CAD0;
+    color: #333;
+}
+
+.page-wrapper {
+    max-width: 90%;
+    margin: 0 auto;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+}
+
+header {
+    background-color: #878C8F;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    width: 100%;
+}
+
+h1, h2, h3 {
+    margin-bottom: 4px;
+}
+
+section, .main, .sidebar {
+    padding: 20px;
+}
+
+section.intro {
+    background-color: #f8f8f8;
+    border-bottom: 1px solid #ddd;
+}
+
+.explanation, .participation, .benefits, .requirements {
+    margin-bottom: 30px;
+    width: 100%;
+}
+
+footer {
+    background-color: #878C8F;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    width: 100%;
+}
+
+footer a {
+    color: #fff;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+.design-selection, .design-archives, .zen-resources {
+    background-color: #f8f8f8;
 }
 h1{
-    font-size: 6em;
-    text-align: center;
-    display: inline-flex;
+    font-size: 2.5em;
+    text-decoration: underline;
 }
 h2{
-    font-size: 2em;
-    text-align: center;
-    display: inline-flex;
+    font-size: 1.5em;
+}
+h3{
+    font-size: 1.5em;
+}
+a{
+    color: #655560;
 }
