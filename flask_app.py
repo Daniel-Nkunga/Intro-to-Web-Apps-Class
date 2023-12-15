@@ -63,7 +63,7 @@ firebase_admin.initialize_app(cred)
 db = firestore.client()
 
 @app.route('/')
-@login_is_required  # Apply the login_is_required decorator to the index route
+# @login_is_required  # Apply the login_is_required decorator to the index route
 def index():
     return render_template('index.html')
 
@@ -111,6 +111,7 @@ def get_dots():
     return jsonify(dots)
 
 @app.route('/homepage')
+@login_is_required
 def serve_homepage():
     return send_from_directory('static', 'Biosite/BiositeHomepage.html')
 
