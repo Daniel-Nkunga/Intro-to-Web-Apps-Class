@@ -26,7 +26,8 @@ GOOGLE_CLIENT_ID = "143525210526-jq3s8qlmh9bprh8f5m04qqfcjuhpggso.apps.googleuse
 import socket
 
 flow = Flow.from_client_secrets_file(  
-	client_secrets_file=".gitignore/oath.json",
+	# client_secrets_file=".gitignore/oath.json",
+    client_secrets_file="oath.json",
 	scopes=["https://www.googleapis.com/auth/userinfo.profile", "https://www.googleapis.com/auth/userinfo.email", "openid"],  
 	redirect_uri="https://danielnkunga.pythonanywhere.com" #FIX THIS WHEN YOU DEPLOY
 	)
